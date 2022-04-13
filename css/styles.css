@@ -1,0 +1,15 @@
+:root {
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box; 
+}
+
+.container {
+    display: grid;
+    grid-template: auto repeat(3, fr);
+    ;
+}
