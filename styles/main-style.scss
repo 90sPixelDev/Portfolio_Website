@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// Main Color Components
+$mainBGColor1: #222A68;
+$mainBGColor2: #654597;
+
+$test: #301b52;
+
+
+* {
+    font-family: 'Open Sans', 'Arial';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+html {
+    height: 100%;
+    background: linear-gradient(55deg, $mainBGColor1, $mainBGColor2);
+}
+
+.container {
+    display: grid;
+}
+
+#nav-bar {
+    width: 100%;
+    display: inline-block;
+    text-align: end;
+    margin-bottom: 10em;
+
+    #nav-items-parent {
+        display: flex;
+        width: fit-content
+        justify-content: end;
+        &:last-child {
+            margin-right: 10em;
+        }
+        a {
+            text-decoration: none;
+            margin: 1.5em 2em;
+            padding: 1.5em 3em;
+            border: 1px solid white;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+#my-name {
+    font-size: 7em;
+}
+

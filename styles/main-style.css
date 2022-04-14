@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+* {
+  font-family: 'Open Sans', 'Arial';
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+}
+
+html {
+  height: 100%;
+  background: linear-gradient(55deg, #222A68, #654597);
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+}
+
+#nav-bar {
+  width: 100%;
+  display: inline-block;
+  text-align: end;
+  margin-bottom: 10em;
+}
+
+#nav-bar #nav-items-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+#nav-bar #nav-items-parent:last-child {
+  margin-right: 10em;
+}
+
+#nav-bar #nav-items-parent:hover {
+  background-color: argb(255, 255, 255, 0.5);
+}
+
+#nav-bar #nav-items-parent a {
+  text-decoration: none;
+  margin: 1.5em 2em;
+  padding: 1.5em 3em;
+  border: 1px solid white;
+}
+/*# sourceMappingURL=main-style.css.map */
