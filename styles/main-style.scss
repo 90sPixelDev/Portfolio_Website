@@ -17,7 +17,7 @@ $test: #301b52;
 
 html {
     height: 100%;
-    background: linear-gradient(55deg, $mainBGColor1, $mainBGColor2);
+    // background: linear-gradient(55deg, $mainBGColor1, $mainBGColor2);
 }
 
 .container {
@@ -32,7 +32,7 @@ html {
 
     #nav-items-parent {
         display: flex;
-        width: fit-content
+        width: fit-content;
         justify-content: end;
         &:last-child {
             margin-right: 10em;
