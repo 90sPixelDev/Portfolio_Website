@@ -15,7 +15,7 @@ html {
 }
 
 html body {
-  background: linear-gradient(45deg, #222A68, #654597);
+  background: linear-gradient(135deg, #222A68, #ab81cd);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -71,17 +71,19 @@ html body {
 
 #content #my-name::after {
   content: '|';
-  position: absolute;
   display: inline-block;
-  -webkit-animation: typer 1.5s infinite;
-          animation: typer 1.5s infinite;
+  -webkit-animation: typer 1.85s infinite;
+          animation: typer 1.85s infinite;
 }
 
 @-webkit-keyframes typer {
   0% {
     opacity: 0%;
   }
-  35% {
+  25% {
+    opacity: 100%;
+  }
+  33% {
     opacity: 100%;
   }
   100% {
@@ -93,7 +95,10 @@ html body {
   0% {
     opacity: 0%;
   }
-  35% {
+  25% {
+    opacity: 100%;
+  }
+  33% {
     opacity: 100%;
   }
   100% {

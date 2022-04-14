@@ -2,7 +2,7 @@
 
 // Main Color Components
 $mainBGColor1: #222A68;
-$mainBGColor2: #654597;
+$mainBGColor2: #ab81cd;
 
 $test: #301b52;
 
@@ -20,11 +20,12 @@ html {
     height: 100%;
 
     body {
-        background: linear-gradient(45deg, $mainBGColor1, $mainBGColor2);
+        background: linear-gradient(135deg, $mainBGColor1, $mainBGColor2);
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
 }
+
 
 
 .container {
@@ -68,14 +69,16 @@ html {
         position: relative;
         &::after {
             content: '|';
-            position: absolute;
             display: inline-block;
-            animation: typer 1.5s infinite;
+            animation: typer 1.85s infinite;
             @keyframes typer {
                 0% {
                     opacity: 0%;
                 }
-                35% {
+                25% {
+                    opacity: 100%;
+                }
+                33% {
                     opacity: 100%;
                 }
                 100% {
