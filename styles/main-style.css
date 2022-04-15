@@ -403,18 +403,23 @@ html body {
 }
 
 #skills-section #skill-icons {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-line-pack: start;
       align-content: flex-start;
   -ms-grid-row: 2;
   grid-row: 2;
-  -ms-grid-column: 3;
-  grid-column: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 3em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 #skills-section #skill-icons div {
@@ -431,14 +436,21 @@ html body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #222a68a2;
-  border-radius: 25%;
-  width: 10em;
-  height: 10em;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+#skills-section #skill-icons div:hover {
+  -webkit-transform: scale(2, 2);
+          transform: scale(2, 2);
+  margin: 0 3%;
 }
 
 #skills-section #skill-icons div img {
-  width: 50%;
+  width: 100%;
 }
 
 #skills-section #skill-icons div p {
