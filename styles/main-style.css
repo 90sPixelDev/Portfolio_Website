@@ -424,22 +424,24 @@ html body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #222a68a2;
   border-radius: 25%;
   width: 10em;
   height: 10em;
 }
 
-#skills-section #skill-icons div p {
-  margin-bottom: 1em;
+#skills-section #skill-icons div img {
+  width: 50%;
 }
 
-#html-s {
-  background-image: url("../img/html_logo.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+#skills-section #skill-icons div p {
+  margin-top: .5em;
 }
 /*# sourceMappingURL=main-style.css.map */

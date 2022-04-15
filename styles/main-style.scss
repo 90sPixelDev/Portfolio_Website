@@ -144,11 +144,8 @@ html {
 
             transition: all 1s;
             &:hover {
-                // animation: slow-focus 1s ease-in-out both;
-
                 transform: scale(103%, 103%);
                 background-color: #ab81cd97;
-
             }
         }
     }
@@ -318,23 +315,26 @@ html {
         div {
             display: flex;
             justify-content: center;
-            align-items: flex-end;
+            align-items: center;
+            flex-direction: column;
             background-color: #222a68a2;
             border-radius: 25%;
             // margin: 2em;
             width: 10em;
             height: 10em;
             
-
+            img {
+                width:50%;
+            }
             p {
-                margin-bottom: 1em;
+                 margin-top: .5em;
             }
         }
     }
 }
 
 #html-s {
-    background-image: url('../img/html_logo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background: url('../img/html_logo.png');
+    // background-repeat: no-repeat;
+    // background-size: contain;
 }
