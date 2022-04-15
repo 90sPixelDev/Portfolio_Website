@@ -26,10 +26,23 @@ html body {
 
 .container::before {
   content: '</>';
-  width: 100%;
-  font-size: 100vh;
+  width: 1vh;
+  height: 1vh;
+  font-size: 80vh;
   position: absolute;
-  text-align: center;
+  left: 50%;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
   opacity: 5%;
   z-index: -10;
   -webkit-animation: bg-anim ease-in-out 15s infinite;
@@ -41,7 +54,7 @@ html body {
     -webkit-transform: rotateZ(-15deg);
             transform: rotateZ(-15deg);
   }
-  50% {
+  60% {
     -webkit-transform: rotateZ(15deg);
             transform: rotateZ(15deg);
   }
@@ -56,7 +69,7 @@ html body {
     -webkit-transform: rotateZ(-15deg);
             transform: rotateZ(-15deg);
   }
-  50% {
+  60% {
     -webkit-transform: rotateZ(15deg);
             transform: rotateZ(15deg);
   }
@@ -391,7 +404,7 @@ html body {
       grid-template-columns: 1fr 1fr minmax(0, 1fr);
   -ms-grid-rows: 1fr 2fr;
       grid-template-rows: 1fr 2fr;
-  height: 100vh;
+  height: 50vh;
 }
 
 #skills-section h3 {
@@ -420,9 +433,48 @@ html body {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  gap: 3em;
 }
 
-#skills-section #skill-icons div {
+#skills-section #skill-icons img {
+  width: 100%;
+}
+
+#skills-section #skill-icons p {
+  margin-top: .5em;
+}
+
+.skill-desc {
+  position: absolute;
+  width: 40em;
+  height: 7em;
+  padding: 1em;
+  font-size: .5em;
+  text-align: center;
+  background-color: #222a68a2;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  bottom: 100%;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  opacity: 0%;
+}
+
+.skill-desc::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 46.5%;
+  border: .75rem solid transparent;
+  border-bottom: none;
+  border-top-color: #222a68a2;
+  -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+}
+
+#html-s > div, #css-s > div, #js-s > div, #scss-s > div, #sql-s > div, #github-s > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,24 +488,23 @@ html body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 50%;
   width: 5em;
   height: 5em;
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
-#skills-section #skill-icons div:hover {
+#html-s > div:hover, #css-s > div:hover, #js-s > div:hover, #scss-s > div:hover, #sql-s > div:hover, #github-s > div:hover {
   -webkit-transform: scale(2, 2);
           transform: scale(2, 2);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
   margin: 0 3%;
 }
 
-#skills-section #skill-icons div img {
-  width: 100%;
-}
-
-#skills-section #skill-icons div p {
-  margin-top: .5em;
+#html-s > div:hover .skill-desc, #css-s > div:hover .skill-desc, #js-s > div:hover .skill-desc, #scss-s > div:hover .skill-desc, #sql-s > div:hover .skill-desc, #github-s > div:hover .skill-desc {
+  display: block;
+  opacity: 100%;
+  bottom: 150%;
 }
 /*# sourceMappingURL=main-style.css.map */
