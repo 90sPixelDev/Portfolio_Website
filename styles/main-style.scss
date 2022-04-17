@@ -412,6 +412,7 @@ html {
     #project-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
+        gap: 3.5vw;
     }
 
     #project-section {

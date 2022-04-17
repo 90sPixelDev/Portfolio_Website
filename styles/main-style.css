@@ -400,6 +400,7 @@ html body {
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
+    gap: 3.5vw;
   }
   #project-section h4 {
     font-size: 9vw;
