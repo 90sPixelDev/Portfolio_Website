@@ -20,6 +20,24 @@ html body {
   background-attachment: fixed;
 }
 
+@media all and (min-width: 1008px) {
+  * {
+    font-size: medium;
+  }
+}
+
+@media all and (min-width: 641px) and (max-width: 1007px) {
+  * {
+    font-size: medium;
+  }
+}
+
+@media all and (max-width: 640px) {
+  * {
+    font-size: larger;
+  }
+}
+
 .container {
   width: 100%;
 }
@@ -86,6 +104,9 @@ html body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 20vh;
   width: 100%;
   margin-bottom: 10em;
 }
@@ -102,6 +123,9 @@ html body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  height: 4em;
+  margin-top: 4.5em;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -113,7 +137,8 @@ html body {
 
 #nav-bar #nav-items-parent a {
   text-decoration: none;
-  margin: 4em 2em;
+  text-align: center;
+  margin: 0 2em;
   padding: 1.25em 3em;
   border: 1px solid white;
   color: #e2adf2;
@@ -127,7 +152,7 @@ html body {
 }
 
 #profile-section {
-  height: 80vh;
+  min-height: 80vh;
 }
 
 #profile-section #my-name {
@@ -446,10 +471,14 @@ html body {
 
 .skill-desc {
   position: absolute;
-  width: 40em;
-  height: 7em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 40em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 1em;
-  font-size: .5em;
   text-align: center;
   background-color: #222a68a2;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -458,6 +487,10 @@ html body {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   opacity: 0%;
+}
+
+.skill-desc p {
+  font-size: 10px;
 }
 
 .skill-desc::before {
@@ -497,8 +530,6 @@ html body {
 #html-s > div:hover, #css-s > div:hover, #js-s > div:hover, #scss-s > div:hover, #sql-s > div:hover, #github-s > div:hover {
   -webkit-transform: scale(2, 2);
           transform: scale(2, 2);
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
   margin: 0 3%;
 }
 
