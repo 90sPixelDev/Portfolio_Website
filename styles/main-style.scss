@@ -685,3 +685,42 @@ html {
         bottom: 150%;
     }
 }
+
+#project-section {
+    width: 100%;
+
+    h4 {
+        text-align: center;
+        font-size: 4em;
+    }
+    #project-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        // align-items: center;
+        justify-items: center;
+        gap: 5vh;
+        margin: 5em 5em;
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            background: #644597be;
+            border-radius: 20%;
+            height: 20em;
+            width: 30em;
+
+            justify-content: center;
+            align-items: center;
+
+            img {
+                margin: auto;
+                width: 70%;
+                height: 70%;
+            }
+            p {
+                margin-bottom: 2em;
+            }
+        }
+    }
+}
