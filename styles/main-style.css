@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 * {
   font-family: 'Open Sans', 'sans serif';
   font-size: medium;
@@ -23,24 +22,50 @@ html body {
 }
 
 @media all and (min-width: 1008px) {
+  * {
+    font-size: 16px;
+  }
+  .container {
+    overflow: auto;
+  }
   .container::before {
     top: 50vh;
+    font-size: 60vw;
   }
-  #theme-btn {
+  header {
+    margin: 3em 3em;
+  }
+  #nav-bar {
+    height: 10vh;
+  }
+  #nav-bar > div {
+    margin: auto;
+  }
+  #nav-bar > div #theme-btn {
     width: 5em;
     height: 5em;
-    margin: 4em 10em;
   }
-  #nav-items-parent {
-    height: 4em;
-    margin-top: 4.5em;
+  #nav-bar #nav-items-parent {
+    height: 10vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
-  #nav-items-parent a {
+  #nav-bar #nav-items-parent div {
     margin: 0 2em;
+  }
+  #nav-bar #nav-items-parent div a {
     padding: 1.25em 3em;
   }
   #my-name {
+    margin: 1em 0 1em 0;
     font-size: 8em;
+  }
+  #profile-section {
+    min-height: 90vh;
   }
   #basic-info {
     -webkit-box-pack: space-evenly;
@@ -49,16 +74,27 @@ html body {
   }
   #bio {
     padding: 5em;
-    height: 50vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #bio div {
+    margin: 0 3vw;
+    -webkit-column-gap: 5vw;
+            column-gap: 5vw;
   }
   #bio h2 {
     font-size: 2em;
   }
   #bio p {
-    width: 50em;
+    width: 100%;
+    max-width: 35vw;
+    height: 100%;
+    margin: 3em 3em;
+    font-size: 100%;
   }
   #bio img {
-    width: 10vw;
+    width: 15%;
   }
   #skills-section {
     -ms-grid-rows: 1fr 2fr;
@@ -71,7 +107,7 @@ html body {
     gap: 3em;
   }
   .skill-desc {
-    max-width: 40em;
+    max-width: 15vw;
   }
   .skill-desc::before {
     left: 46.5%;
@@ -87,25 +123,160 @@ html body {
   }
 }
 
+@media all and (min-width: 641px) and (max-width: 1007px) {
+  * {
+    font-size: 2vw;
+  }
+  .container {
+    overflow: auto;
+  }
+  .container::before {
+    top: 25vh;
+  }
+  header {
+    margin: 3em 3em;
+  }
+  #theme-btn {
+    width: 7vw;
+    height: 7vw;
+  }
+  #nav-bar {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #nav-items-parent {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-column-gap: 2vw;
+            column-gap: 2vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #nav-items-parent div a {
+    padding: 1em 1em;
+  }
+  #my-name {
+    font-size: 6.5em;
+    margin-bottom: 2em;
+    margin-top: 10vw;
+  }
+  #basic-info {
+    margin-bottom: 5em;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    row-gap: 3em;
+  }
+  #bio {
+    padding: 3em;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #bio div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #bio div h2 {
+    font-size: 3vw;
+    margin-bottom: 2em;
+  }
+  #bio div p {
+    width: 100%;
+    font-size: 15px;
+  }
+  #bio div img {
+    margin-top: 3em;
+    width: 30vw;
+  }
+  #skills-section {
+    -ms-grid-rows: 0.5fr 2fr;
+        grid-template-rows: 0.5fr 2fr;
+  }
+  #skills-section h3 {
+    font-size: 2.5em;
+  }
+  #skills-section #skill-icons {
+    -webkit-column-gap: 3em;
+            column-gap: 3em;
+    row-gap: 5em;
+  }
+  .skill-desc {
+    max-width: 15vw;
+  }
+  .skill-desc::before {
+    left: 42%;
+  }
+  .skill-desc p {
+    font-size: 7px;
+  }
+  #html-s > div, #css-s > div, #js-s > div, #scss-s > div, #sql-s > div, #github-s > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 @media all and (max-width: 640px) {
   * {
-    font-size: small;
+    font-size: 3vw;
+  }
+  .container {
+    overflow: auto;
   }
   .container::before {
     top: 23vh;
   }
   #theme-btn {
-    width: 3em;
-    height: 3em;
-    margin: 1em 1em;
+    width: 10vw;
+    height: 10vw;
+    margin: 0 1em;
+  }
+  header {
+    margin: 2em 2em;
+  }
+  #nav-bar {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #nav-items-parent {
     height: 2em;
-    margin-top: 1.3em;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-column-gap: 2vw;
+            column-gap: 2vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  #nav-items-parent a {
-    font-size: 11px;
-    margin: 0 1em;
+  #nav-items-parent div a {
+    font-size: 100%;
     padding: .45em 1em;
   }
   #my-name {
@@ -164,7 +335,7 @@ html body {
     row-gap: 5em;
   }
   .skill-desc {
-    max-width: 30vw;
+    max-width: 15vw;
   }
   .skill-desc::before {
     left: 42%;
@@ -242,12 +413,7 @@ html body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  height: 20vh;
+  height: 10vh;
   width: 100%;
 }
 
@@ -261,13 +427,6 @@ html body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-#nav-bar #nav-items-parent:last-child {
-  margin-right: 10em;
 }
 
 #nav-bar #nav-items-parent a {
@@ -285,7 +444,7 @@ html body {
 }
 
 #profile-section {
-  min-height: 80vh;
+  min-height: 90vh;
 }
 
 #profile-section #my-name {
@@ -545,7 +704,7 @@ html body {
 #skills-section {
   display: -ms-grid;
   display: grid;
-  margin: 1em 5em;
+  margin: 1em 10vw;
   -ms-grid-columns: 1fr 1fr minmax(0, 1fr);
       grid-template-columns: 1fr 1fr minmax(0, 1fr);
   height: 50vh;
