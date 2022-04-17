@@ -136,6 +136,33 @@ html {
     #html-s > div, #css-s > div, #js-s > div, #scss-s > div, #sql-s > div, #github-s > div {
         flex-direction: column;
     }
+
+    #project-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 3.5vw;
+    }
+
+    #project-section {
+        h4 {
+        font-size: 4em;
+        margin-bottom: 2em;
+        }
+    }
+
+    .project {
+        height: 18vw;
+        width: 25vw;
+        
+        img {
+            width: 100%;
+            max-height: 70%;
+        }
+        p {
+            font-size: 1vw;
+            margin-bottom: 1vw;
+        }
+    }
 }
 
 // Medium Sized Screens
@@ -248,6 +275,33 @@ html {
         flex-direction: column;
     }
 
+    #project-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 3.5vw;
+    }
+
+    #project-section {
+        h4 {
+        font-size: 3em;
+        margin-bottom: 2em;
+        }
+    }
+
+    .project {
+        height: 18vw;
+        width: 25vw;
+        
+        img {
+            width: 100%;
+            max-height: 70%;
+        }
+        p {
+            font-size: 2vw;
+            margin-bottom: 1vw;
+        }
+    }
+
 }
 
 // Small Sized Screens
@@ -354,6 +408,32 @@ html {
     #html-s > div, #css-s > div, #js-s > div, #scss-s > div, #sql-s > div, #github-s > div {
         flex-direction: column;
     }
+
+    #project-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    #project-section {
+        h4 {
+        font-size: 9vw;
+        }
+    }
+
+    .project {
+        height: 23vw;
+        width: 40vw;
+
+        img {
+            width: 100%;
+            max-height: 70%;
+        }
+        p {
+            font-size: 85%;
+            margin-bottom: 0.25vh;
+        }
+    }
+
 }
 
 
@@ -687,39 +767,29 @@ html {
 }
 
 #project-section {
+    margin-top: 10vw;
     width: 100%;
 
     h4 {
         text-align: center;
-        font-size: 4em;
     }
     #project-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        // align-items: center;
         justify-items: center;
-        gap: 5vh;
-        margin: 5em 5em;
+        margin: 3vh 3vh;
 
         .project {
             display: flex;
             flex-direction: column;
             background: #644597be;
-            border-radius: 20%;
-            height: 20em;
-            width: 30em;
+
 
             justify-content: center;
             align-items: center;
 
             img {
                 margin: auto;
-                width: 70%;
-                height: 70%;
-            }
-            p {
-                margin-bottom: 2em;
+
             }
         }
     }
