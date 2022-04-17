@@ -32,10 +32,10 @@ html body {
     content: '</>';
     width: 1vh;
     height: 1vh;
-    font-size: 80vh;
+    font-size: 50vw;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 50vw;
+    top: 50vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -79,6 +79,400 @@ html body {
       -webkit-transform: rotateZ(-15deg);
               transform: rotateZ(-15deg);
     }
+  }
+  #nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    height: 20vh;
+    width: 100%;
+    margin-bottom: 10em;
+  }
+  #nav-bar #theme-btn {
+    width: 5em;
+    height: 5em;
+    margin: 4em 10em;
+    background-color: transparent;
+    border-radius: 50%;
+  }
+  #nav-bar #nav-items-parent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 4em;
+    margin-top: 4.5em;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  #nav-bar #nav-items-parent:last-child {
+    margin-right: 10em;
+  }
+  #nav-bar #nav-items-parent a {
+    text-decoration: none;
+    text-align: center;
+    margin: 0 2em;
+    padding: 1.25em 3em;
+    border: 1px solid white;
+    color: #e2adf2;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  #nav-bar #nav-items-parent a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  #profile-section {
+    min-height: 80vh;
+  }
+  #profile-section #my-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8em;
+    text-align: center;
+    position: relative;
+  }
+  #profile-section #my-name::after {
+    content: '|';
+    display: inline-block;
+    -webkit-animation: typer 1.6s infinite;
+            animation: typer 1.6s infinite;
+  }
+  @-webkit-keyframes typer {
+    0% {
+      opacity: 0%;
+    }
+    30% {
+      opacity: 100%;
+    }
+    40% {
+      opacity: 100%;
+    }
+    95% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 0%;
+    }
+  }
+  @keyframes typer {
+    0% {
+      opacity: 0%;
+    }
+    30% {
+      opacity: 100%;
+    }
+    40% {
+      opacity: 100%;
+    }
+    95% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 0%;
+    }
+  }
+  #profile-section #basic-info {
+    margin-top: 5em;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #profile-section #basic-info p {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    background-color: #222a68a2;
+    border-radius: 3em;
+    padding: 3em;
+    width: 20em;
+    text-align: center;
+    line-height: 1.8em;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  #profile-section #basic-info p:hover {
+    -webkit-transform: scale(103%, 103%);
+            transform: scale(103%, 103%);
+    background-color: #ab81cd97;
+  }
+  #interests {
+    background-color: #222a68a2;
+    border-radius: 3em;
+    padding: 3em;
+    width: 20em;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  #interests:hover {
+    -webkit-transform: scale(103%, 103%);
+            transform: scale(103%, 103%);
+    background-color: #ab81cd97;
+  }
+  #interests ul li {
+    font-weight: 400;
+    list-style: none;
+    margin: .2em 0;
+  }
+  #interests ul li:first-child {
+    border-top: 1px inset white;
+    margin: 0.5em 0 0 0;
+    padding: 0.5em 0 0 0;
+  }
+  #interests ul li:hover {
+    border-bottom: 1px solid white;
+  }
+  #interests ul li:hover::before {
+    content: '';
+    -webkit-animation: list-focus 1s ease-out both;
+            animation: list-focus 1s ease-out both;
+    display: inline-block;
+  }
+  @-webkit-keyframes list-focus {
+    0% {
+      opacity: 0%;
+      border-top: .4em solid transparent;
+      border-left: .4em solid #e2adf2;
+      border-bottom: .4em solid transparent;
+      -webkit-transform: translateX(-2em);
+              transform: translateX(-2em);
+    }
+    100% {
+      opacity: 100%;
+      border-top: .4em solid transparent;
+      border-left: .4em solid #e2adf2;
+      border-bottom: .4em solid transparent;
+      margin-right: 1em;
+    }
+  }
+  @keyframes list-focus {
+    0% {
+      opacity: 0%;
+      border-top: .4em solid transparent;
+      border-left: .4em solid #e2adf2;
+      border-bottom: .4em solid transparent;
+      -webkit-transform: translateX(-2em);
+              transform: translateX(-2em);
+    }
+    100% {
+      opacity: 100%;
+      border-top: .4em solid transparent;
+      border-left: .4em solid #e2adf2;
+      border-bottom: .4em solid transparent;
+      margin-right: 1em;
+    }
+  }
+  #interests ul li:first-child::after {
+    content: '🐈';
+    margin-left: 40%;
+    opacity: 0%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  #interests ul li:first-child:hover::after {
+    content: '🐈';
+    margin-left: 60%;
+    opacity: 100%;
+  }
+  #interests ul li:nth-child(2)::after {
+    content: '🍅';
+    margin-left: 40%;
+    opacity: 0%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  #interests ul li:nth-child(2):hover::after {
+    content: '🍅';
+    margin-left: 20%;
+    opacity: 100%;
+  }
+  #interests ul li:nth-child(3)::after {
+    content: '🎮';
+    margin-left: 40%;
+    opacity: 0%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  #interests ul li:nth-child(3):hover::after {
+    content: '🎮';
+    margin-left: 20%;
+    opacity: 100%;
+  }
+  #interests ul li:nth-child(4)::after {
+    content: '📖';
+    margin-left: 40%;
+    opacity: 0%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  #interests ul li:nth-child(4):hover::after {
+    content: '📖';
+    margin-left: 20%;
+    opacity: 100%;
+  }
+  #interests ul li:nth-child(5)::after {
+    content: '🎨';
+    margin-left: 40%;
+    opacity: 0%;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  #interests ul li:nth-child(5):hover::after {
+    content: '🎨';
+    margin-left: 20%;
+    opacity: 100%;
+  }
+  #bio {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5em;
+    width: 100%;
+    height: 50vh;
+  }
+  #bio div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+  }
+  #bio div h2 {
+    font-size: 2em;
+  }
+  #bio div p {
+    width: 50em;
+    line-height: 1.7em;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5em;
+    border-radius: 20%;
+  }
+  #bio div img {
+    width: 10vw;
+    -webkit-box-shadow: 0 0 10px #e2adf2;
+            box-shadow: 0 0 10px #e2adf2;
+  }
+  #skills-section {
+    display: -ms-grid;
+    display: grid;
+    margin: 1em 5em;
+    -ms-grid-columns: 1fr 1fr minmax(0, 1fr);
+        grid-template-columns: 1fr 1fr minmax(0, 1fr);
+    -ms-grid-rows: 1fr 2fr;
+        grid-template-rows: 1fr 2fr;
+    height: 50vh;
+  }
+  #skills-section h3 {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    text-align: center;
+    font-size: 4em;
+    margin: 1em;
+  }
+  #skills-section #skill-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -ms-grid-row: 2;
+    grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    gap: 3em;
+  }
+  #skills-section #skill-icons img {
+    width: 100%;
+  }
+  #skills-section #skill-icons p {
+    margin-top: .5em;
+  }
+  .skill-desc {
+    position: absolute;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 40em;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 1em;
+    text-align: center;
+    background-color: #222a68a2;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    bottom: 100%;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    opacity: 0%;
+  }
+  .skill-desc p {
+    font-size: 8px;
+  }
+  .skill-desc::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 46.5%;
+    border: .75rem solid transparent;
+    border-bottom: none;
+    border-top-color: #222a68a2;
+    -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+  }
+  #html-s > div, #css-s > div, #js-s > div, #scss-s > div, #sql-s > div, #github-s > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 5em;
+    height: 5em;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  #html-s > div:hover, #css-s > div:hover, #js-s > div:hover, #scss-s > div:hover, #sql-s > div:hover, #github-s > div:hover {
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+    margin: 0 3%;
+  }
+  #html-s > div:hover .skill-desc, #css-s > div:hover .skill-desc, #js-s > div:hover .skill-desc, #scss-s > div:hover .skill-desc, #sql-s > div:hover .skill-desc, #github-s > div:hover .skill-desc {
+    display: block;
+    opacity: 100%;
+    bottom: 150%;
   }
 }
 
