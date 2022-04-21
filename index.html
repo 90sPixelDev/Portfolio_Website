@@ -5,11 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Lien Font</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="/styles/main-style.css" rel="stylesheet"!>
+    <link href="styles/main-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -20,24 +18,26 @@
                 <div>
                     <input type="button" id="theme-btn" value="WIP">
                 </div>
-                <ul id="nav-items-parent">
-                    <div>
-                        <a href="#skills-section">Skills</a>
-                    </div>
-                    <div>
-                        <a href="#project-section">Projects</a>
-                    </div>
-                    <div>
-                      <a href="#">Resume</a>
-                    </div>
-                    <div>
-                        <a href="#">Contact</a>
-                    </div>
-                </ul>
+                <div class="mobile-menu">
+                    <button id="nav-toggle"></button>
+                    <ul id="nav-items-parent" class="hide-menu">
+                        <li>
+                            <a href="#skills-section" class="nav-item">Skills</a>
+                        </li>
+                        <li>
+                            <a href="#project-section" class="nav-item">Projects</a>
+                        </li>
+                        <li>
+                          <a href="#" class="nav-item">Resume</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-item">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
 
-        <!-- Such wow, much empty. Might need to add bit more things happening here. Also the animated </> has some window sizing problems when reaching the edge-->
         <div id="profile-section">
             <h1 id="my-name">Lien Font( )</h1>
             <div id="basic-info">
@@ -57,7 +57,7 @@
             <div>
                 <h2>Background</h2>
                 <p>I was born in Cuba but came to America at a very early age. I quickly found an interest in the computer at my house and started browsing the internet at the early age of 6. I've always had a natural inclination for creativity and problem solving which led to me getting my bachelor's in 3D Game Art & Design. As time went on I noticed that I kept returning to the development of software and programs which leads to me finding my true passion in programming and development. </p>
-                <img src="../img/lien-profile.jpg" alt="Image is currently misplaced in the void.">
+                <img src="../img/lien-profile.jpg" alt="Profile picture.">
             </div>
         </div>
 
@@ -86,7 +86,6 @@
                     </div>
                 </div>
                 <div id="js-s">
-                    <!-- Need this extra div to scale the items inside without having hover glitch-->
                     <div>
                         <div class="skill-desc">
                             <p>Made a multitude of logics and programs such as a Dress Up Game, a password validator, wip ...</p>
@@ -96,7 +95,6 @@
                     </div>
                 </div>
                 <div id="scss-s">
-                    <!-- Need this extra div to scale the items inside without having hover glitch-->
                     <div>
                         <div class="skill-desc">
                             <p>Used to make portfolio website, wip...</p>
@@ -106,7 +104,6 @@
                     </div>
                 </div>
                 <div id="sql-s">
-                    <!-- Need this extra div to scale the items inside without having hover glitch-->
                     <div>
                         <div class="skill-desc">
                             <p>WIP</p>
@@ -116,7 +113,6 @@
                     </div>
                 </div>
                 <div id="github-s">
-                    <!--Need this extra div to scale the items inside without having hover glitch-->
                     <div>
                         <div class="skill-desc">
                             <p>Used as main version control tool and to keep all my projects available for public view.</p>
@@ -140,6 +136,17 @@
             </div>
         </div>
 
+        <div id="contact-section">
+            <form>
+                
+            </form>
+        </div>
+        <footer>
+            <div class="social-media">
+
+            </div>
+        </footer>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
