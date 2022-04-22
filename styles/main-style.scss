@@ -536,8 +536,7 @@ html {
             right: 0;
             top: 0;
             z-index: 1;
-            text-align: end;
-    
+
             #nav-toggle {
                 width: 9vw;
                 height: 9vw;
@@ -552,7 +551,7 @@ html {
         .hide-menu {
             height: 0;
             overflow: hidden;
-
+            opacity: 0;
             transition: all 1s;
         }
         .show-menu {
@@ -561,40 +560,27 @@ html {
             overflow: visible;
             height: fit-content;
             width: fit-content;
-            font-size: 20px;
-            padding: 1em;
+            opacity: 100%;
             background-color: #e2adf2b8;
-
-            & li:first-child {
-                margin: 0;
-            }
+            transition: all 1s;
             li {
+                display: table;
                 list-style: none;
-                margin: 3em 0;
-
-                .nav-item {
-                    font-size: 1.25em;
-                    padding: .5em 1em;
-                    text-decoration: none;
-                }
-            }
-        }
-        #nav-items-parent {
-    
-            a {
-                text-decoration: none;
-                text-align: center;
+                width: 7em;
+                height: 3em;
+                margin: 1em 1em;
                 border: 1px solid white;
-                color: white;
-                transition: all .5s;
-                &:hover {
+                .nav-item {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-size: 1.1em;
+                    text-decoration: none;
+                    text-align: center;
                     color: white;
-                    background-color: rgba(255, 255, 255, 0.1);
+                    transition: all .5s;
                 }
             }
         }
-
-
     }
 
     #my-name {
@@ -1000,7 +986,6 @@ html {
             right: 0;
             top: 0;
             z-index: 1;
-            text-align: end;
     
             #nav-toggle {
                 width: 9vw;
@@ -1013,47 +998,50 @@ html {
             }
     
         }
+        #nav-items-parent {
+            width: fit-content;
+        }
         .hide-menu {
             height: 0;
             overflow: hidden;
-
+            opacity: 0;
             transition: all 1s;
         }
         .show-menu {
             position: fixed;
+            opacity: 100%;
             right: 0;
             overflow: visible;
             height: fit-content;
             width: fit-content;
-            font-size: 20px;
             padding: 1em;
             background-color: #e2adf2b8;
 
+            transition: all 1s;
             & li:first-child {
                 margin: 0;
             }
+            & li:last-child {
+                margin-bottom: 0;
+            }
             li {
+                width: 7em;
+                height: 3em;
+                border: 1px solid white;
                 list-style: none;
-                margin: 3em 0;
+                margin: 2.5em 0;
+                text-align: center;
+                display: table;
+
 
                 .nav-item {
-                    font-size: 1.25em;
-                    padding: .5em 1em;
+                    display: table-cell;
+                    vertical-align: middle;
                     text-decoration: none;
-                }
-            }
-        }
-        #nav-items-parent {
-    
-            a {
-                text-decoration: none;
-                text-align: center;
-                border: 1px solid white;
-                color: white;
-                transition: all .5s;
-                &:hover {
                     color: white;
-                    background-color: rgba(255, 255, 255, 0.1);
+                    font-size: 1.25em;
+                    transition: all .5s;
+
                 }
             }
         }
