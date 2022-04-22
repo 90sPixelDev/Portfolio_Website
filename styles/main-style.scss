@@ -527,9 +527,9 @@ html {
         #theme-btn {
             background-color: transparent;
             border-radius: 50%;
-            width: 7vw;
-            height: 7vw;
-            margin: 1.5em;
+            width: 7.25vw;
+            height: 7.25vw;
+            margin: 2em;
         }
         .mobile-menu { 
             position: fixed;
@@ -538,8 +538,8 @@ html {
             z-index: 1;
 
             #nav-toggle {
-                width: 9vw;
-                height: 9vw;
+                width: 7vw;
+                height: 7vw;
         
                 margin: 4vw;
                 
@@ -973,6 +973,7 @@ html {
     #nav-bar {
         height: $navBarHeight;
         width: 100%;
+        align-items: center;
     
         #theme-btn {
             background-color: transparent;
@@ -998,9 +999,6 @@ html {
             }
     
         }
-        #nav-items-parent {
-            width: fit-content;
-        }
         .hide-menu {
             height: 0;
             overflow: hidden;
@@ -1014,33 +1012,26 @@ html {
             overflow: visible;
             height: fit-content;
             width: fit-content;
-            padding: 1em;
             background-color: #e2adf2b8;
 
             transition: all 1s;
-            & li:first-child {
-                margin: 0;
-            }
-            & li:last-child {
-                margin-bottom: 0;
-            }
             li {
                 width: 7em;
                 height: 3em;
                 border: 1px solid white;
                 list-style: none;
-                margin: 2.5em 0;
-                text-align: center;
+                margin: 1.5em 1.5em;
                 display: table;
 
 
                 .nav-item {
                     display: table-cell;
                     vertical-align: middle;
+                    text-align: center;
                     text-decoration: none;
                     color: white;
                     font-size: 1.25em;
-                    transition: all .5s;
+                    // transition: all .5s;
 
                 }
             }
