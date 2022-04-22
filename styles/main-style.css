@@ -1530,7 +1530,7 @@ html body {
   .skill-desc::before {
     content: '';
     position: absolute;
-    left: 42%;
+    left: 33%;
     width: 0;
     height: 0;
     top: 100%;
