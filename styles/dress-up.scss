@@ -17,6 +17,13 @@ body {
     place-items: center;
 }
 
+@media all and (max-width: 375px) {
+    .game-container {
+        width: 280px;
+        height: 200px;
+    }
+}
+
 .game-container {
     position: absolute;
     background-color: rgb(195, 170, 140);
