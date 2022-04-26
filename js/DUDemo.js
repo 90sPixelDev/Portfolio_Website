@@ -47,7 +47,7 @@ const brightnessChange = (slider) => {
 const itemSelector = (button) => {
 
     // SETTING UP THE VARIABLES TO USE LATER
-    const url = 'url(/root/img/dress_up_game/';
+    const url = 'url(/img/dress_up_game/';
     let itemList;
     //THIS IS TO HAVE A SEPERATE INDEX FOR EACH ITEM TYPE CHANGE TO PREVENT BUG FROM LOGIC METHOD 1
     let itemTypeIndex;
