@@ -1033,9 +1033,10 @@ html body {
     width: 100%;
     max-height: 70%;
   }
-  #project-section #project-grid .project p {
+  #project-section #project-grid .project a {
+    text-align: center;
     margin-left: 1em;
-    font-size: 2vw;
+    font-size: 1em;
     margin-bottom: 1vw;
   }
   footer {
@@ -1599,10 +1600,11 @@ html body {
     width: 100%;
     max-height: 70%;
   }
-  #project-section #project-grid .project p {
+  #project-section #project-grid .project a {
+    text-align: center;
     margin-left: 1em;
-    font-size: 85%;
-    margin-top: 1vw;
+    font-size: 1em;
+    margin-bottom: 1vw;
   }
   footer {
     margin: 3em 0;

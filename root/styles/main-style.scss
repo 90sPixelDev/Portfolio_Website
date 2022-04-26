@@ -883,9 +883,10 @@ html {
                     max-height: 70%;
     
                 }
-                p {
+                a {
+                    text-align: center;
                     margin-left: 1em;
-                    font-size: 2vw;
+                    font-size: 1em;
                     margin-bottom: 1vw;
                 }
             }
@@ -1356,10 +1357,11 @@ html {
                     width: 100%;
                     max-height: 70%;
                 }
-                p {
+                a {
+                    text-align: center;
                     margin-left: 1em;
-                    font-size: 85%;
-                    margin-top: 1vw;
+                    font-size: 1em;
+                    margin-bottom: 1vw;
                 }
             }
         }
