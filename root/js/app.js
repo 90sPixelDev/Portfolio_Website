@@ -14,7 +14,6 @@ menuBtn.addEventListener('click', ()=> {
     }
 })
 
-
 // This is to check if anything else is pressed while menu is open to close it
 document.addEventListener('click', (e) => {
     const isClickInsideElement = navToggle.contains(e.target);

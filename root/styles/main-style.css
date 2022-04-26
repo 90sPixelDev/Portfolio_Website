@@ -501,10 +501,11 @@ html body {
   }
   #project-section #project-grid .project img {
     margin: auto;
-    width: 100%;
+    width: 70%;
     max-height: 70%;
   }
-  #project-section #project-grid .project p {
+  #project-section #project-grid .project a {
+    text-align: center;
     margin-left: 1em;
     font-size: 1em;
     margin-bottom: 1vw;
