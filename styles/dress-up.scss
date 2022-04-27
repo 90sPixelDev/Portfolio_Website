@@ -16,6 +16,10 @@ body {
     height: 100%;
 }
 
+.widthWarning {
+    display: none;
+}
+
 @media all and (max-width: 375px) and (orientation: portrait) {
     .widthWarning {
         z-index: 3;
@@ -28,6 +32,7 @@ body {
             text-align: center;
             align-self: center;
             justify-self: center;
+            margin: 1em;
         }
     }
     .game-container {
@@ -38,6 +43,9 @@ body {
         
     }
 }
+
+
+
 
 .wrapper {
     position: fixed;
@@ -182,8 +190,8 @@ input[type=range] {
 
 // Next Buttons
 #next-base {
-    grid-area: blank-right;
-    align-self: center;
+    grid-area: head-right;
+    align-self:flex-start;
     margin-left: 2em;
 }
 #next-hair {
@@ -206,8 +214,8 @@ input[type=range] {
 }
 // Previous Buttons
 #prev-base {
-    grid-area: blank-right;
-    align-self: center;
+    grid-area: head-right;
+    align-self:flex-start;
     margin-left: 2em;
 }
 #prev-hair {
@@ -231,27 +239,27 @@ input[type=range] {
 
 /* RADIO BUTTONS TO SELECT WHICH ITEM TO COLOR */
 #base-color {
-    grid-area: blank-right;
-    align-self: center;
-    margin-left: .35em;
+    grid-area: head-right;
+    align-self: flex-start;
+    margin: .35em 0 0 0;
 }
 #hair-color {
     grid-area: head-right;
     align-self: flex-end;
-    margin: 0 0 .35em .5em;
+    margin: 0 0 .35em 0;
 }
 #top-color {
     grid-area: top-right;
     align-self: flex-end;
-    margin: 0 0 .35em .5em;
+    margin: 0 0 .35em 0;
 }
 #bottom-color {
     grid-area: bottom-right;
-    margin: .35em 0 0 .5em;
+    margin: .35em 0 0 0;
 }
 #shoes-color {
     grid-area: feet-right;
-    margin: .35em 0 0 .5em;
+    margin: .35em 0 0 0;
 }
 
 .credit {
