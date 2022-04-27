@@ -2,26 +2,50 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html {
-    /* box-sizing: border-box; */
+html, body {
+    background: linear-gradient(135deg, #222A68, #ab81cd);
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 body {
     background: linear-gradient(135deg, #222A68, #ab81cd);
     width: 100%;
     height: 100%;
-    display: grid;
-    place-items: center;
 }
 
-@media all and (max-width: 375px) {
-    .game-container {
-        width: 280px;
-        height: 200px;
+@media all and (max-width: 375px) and (orientation: portrait) {
+    .widthWarning {
+        z-index: 3;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background: #222A68;
+        p {
+            color: white;
+            text-align: center;
+            align-self: center;
+            justify-self: center;
+        }
     }
+    .game-container {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        display: none;
+        
+    }
+}
+
+.wrapper {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+
 }
 
 .game-container {
@@ -228,4 +252,32 @@ input[type=range] {
 #shoes-color {
     grid-area: feet-right;
     margin: .35em 0 0 .5em;
+}
+
+.credit {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    font-size: 1em;
+
+    p {
+        display: block;
+        align-self: center;
+        text-align: center;
+    }
+    > div {
+        margin: 1em 2em;
+        width: fit-content;
+        ;
+
+        a {
+            // display: block;
+        }
+        img {
+            display: block;
+            width: 3em;
+            height: 3em;
+            margin: auto;
+        }
+    }
 }

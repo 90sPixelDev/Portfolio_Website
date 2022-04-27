@@ -4,13 +4,34 @@
 let currentItem = 0;
 let itemtoColor;
 let colorItem;
+let i;
 
 const character = {
-    base:   0,
-    hair:   0,
-    top:    0,
-    bottom: 0,
-    shoes:  0
+    base:   {
+        index:   1,
+        hue:            0,
+        brightness:     100
+    },
+    hair:   {
+        index:   1,
+        hue:            0,
+        brightness:     100
+    },
+    top:    {
+        index:   1,
+        hue:            0,
+        brightness:     100
+    },
+    bottom: {
+        index:   1,
+        hue:            0,
+        brightness:     100
+    },
+    shoes:  {
+        index:   1,
+        hue:            0,
+        brightness:     100
+    }
 }
 
 // ALL ITEMS IN EACH ITEM TYPE
@@ -22,26 +43,24 @@ const allShoes = ['shoes_1', 'shoes_2', 'shoes_3', 'shoes_4', 'shoes_5'];
 
 const itemType = ['base', 'hair', 'top', 'bottom', 'shoes'];
 
+const hueSlider = document.getElementById('hue');
+const brightnessSlider = document.getElementById('brightness');
+
 const itemTypetoColor = (radio) => {
     let tempItem = radio.id;
     itemtoColor = tempItem.replace('-color', '');
-    console.log(itemtoColor);
+    hueSlider.value = character[itemtoColor].hue;
+    brightnessSlider.value = character[itemtoColor].brightness;
 }
 
-const hueSlider = document.getElementById('hue');
-
-const hueChange = (slider) => {
+const changeColor = () => {
     if (itemtoColor === undefined) return;
     item = document.getElementById(itemtoColor);
-    let hueValue = slider.value;
-    item.style.filter = `hue-rotate(${hueValue}deg)`;
-}
-
-const brightnessChange = (slider) => {
-    if (itemtoColor === undefined) return;
-    item = document.getElementById(itemtoColor);
-    let brightnessValue = slider.value;
-    item.style.filter = `brightness(${brightnessValue}%)`;
+    let hueValue = hueSlider.value;
+    let brightnessValue = brightnessSlider.value;
+    item.style.filter = `hue-rotate(${hueValue}deg) brightness(${brightnessValue}%)`;
+    character[itemtoColor].hue = parseInt(hueValue);
+    character[itemtoColor].brightness = parseInt(brightnessValue);
 }
 
 const itemSelector = (button) => {
@@ -49,60 +68,60 @@ const itemSelector = (button) => {
     // SETTING UP THE VARIABLES TO USE LATER
     const url = 'url(/img/dress_up_game/';
     let itemList;
-    //THIS IS TO HAVE A SEPERATE INDEX FOR EACH ITEM TYPE CHANGE TO PREVENT BUG FROM LOGIC METHOD 1
-    let itemTypeIndex;
+    //THIS IS TO HAVE A SEPERATE index FOR EACH ITEM TYPE CHANGE TO PREVENT BUG FROM LOGIC METHOD 1
+    let itemTypeindex;
 
     // SELECTING WHICH TYPE OF ITEM NEEDS TO BE CHANGED
     //FOR BASES
     if (button.id.includes('base')){
-        //  AUTOMATICALLY SETTING TO CHANGE THE COLOR OF THE CHANGED ITEM
+        // AUTOMATICALLY SETTING TO CHANGE THE COLOR OF THE CHANGED ITEM
         colorItem = document.getElementById('base-color');
-        console.log(colorItem);
         colorItem.checked = true;
         itemTypetoColor(colorItem);
 
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRING FOR THE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.base.index;
+
         document.getElementById('base-color').checked = true;
-        console.log('Pressed Hair');
-        itemTypeIndex = itemType.indexOf('base');
+        itemTypeindex = itemType.indexOf('base');
         itemList = allBases;
             // CHECKING DIRECTION TO SWITCH ITEMS
         if (button.id.includes('next')){
-            console.log('+1 to base');
-            character.base++;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.base === itemList.length ? character.base = 0 : character.base = character.base;
-            console.log(character.base);
+            character.base.index++;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.base.index === itemList.length ? character.base.index = 0 : character.base.index = character.base.index;
         }
         else {
-            character.base--;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.base === -1 ? character.base = itemList.length - 1 : character.base = character.base;
+            character.base.index--;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.base.index === -1 ? character.base.index = itemList.length - 1 : character.base.index = character.base.index;
         }
     }
     //FOR HEADS
     if (button.id.includes('hair')){
         //  AUTOMATICALLY SETTING TO CHANGE THE COLOR OF THE CHANGED ITEM
         colorItem = document.getElementById('hair-color');
-        console.log(colorItem);
         colorItem.checked = true;
         itemTypetoColor(colorItem);
 
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRING FOTHE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.hair.index;
+
         document.getElementById('hair-color').checked = true;
         console.log('Pressed Hair');
-        itemTypeIndex = itemType.indexOf('hair');
+        itemTypeindex = itemType.indexOf('hair');
         itemList = allHairs;
             // CHECKING DIRECTION TO SWITCH ITEMS
         if (button.id.includes('next')){
-            console.log('+1 to Hair');
-            character.hair++;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.hair === itemList.length ? character.hair = 0 : character.hair = character.hair;
-            console.log(character.hair);
+            character.hair.index++;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.hair.index === itemList.length ? character.hair.index = 0 : character.hair.index = character.hair.index;
+            console.log(character.hair.index);
         }
         else {
-            character.hair--;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.hair === -1 ? character.hair = itemList.length - 1 : character.hair = character.hair;
+            character.hair.index--;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.hair.index === -1 ? character.hair.index = itemList.length - 1 : character.hair.index = character.hair.index;
         }
     
     //FOR TOPS
@@ -110,23 +129,25 @@ const itemSelector = (button) => {
     if (button.id.includes('top')){
         //  AUTOMATICALLY SETTING TO CHANGE THE COLOR OF THE CHANGED ITEM
         colorItem = document.getElementById('top-color');
-        console.log(colorItem);
         colorItem.checked = true;
         itemTypetoColor(colorItem);
 
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRINFOTHE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.top.index;
+
         document.getElementById('top-color').checked = true;
-        itemTypeIndex = itemType.indexOf('top');
+        itemTypeindex = itemType.indexOf('top');
         itemList = allTops;
         // CHECKING DIRECTION TO SWITCH ITEMS
         if (button.id.includes('next')){
-            character.top++;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.top === itemList.length ? character.top = 0 : character.top = character.top;
+            character.top.index++;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.top.index === itemList.length ? character.top.index = 0 : character.top.index = character.top.index;
         }
         else {
-            character.top--;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.top === -1 ? character.top = itemList.length - 1 : character.top = character.top;
+            character.top.index--;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.top.index === -1 ? character.top.index = itemList.length - 1 : character.top.index = character.top.index;
         }
     }
 
@@ -134,22 +155,24 @@ const itemSelector = (button) => {
     if (button.id.includes('bottom')){
         //  AUTOMATICALLY SETTING TO CHANGE THE COLOR OF THE CHANGED ITEM
         colorItem = document.getElementById('bottom-color');
-        console.log(colorItem);
         colorItem.checked = true;
         itemTypetoColor(colorItem);
 
-        itemTypeIndex = itemType.indexOf('bottom');
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRINFOTHCURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.top.index;
+
+        itemTypeindex = itemType.indexOf('bottom');
         itemList = allBottoms;
         // CHECKING DIRECTION TO SWITCH ITEMS
         if (button.id.includes('next')){
-            character.bottom++;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.bottom === itemList.length ? character.bottom = 0 : character.bottom = character.bottom;
+            character.bottom.index++;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.bottom.index === itemList.length ? character.bottom.index = 0 : character.bottom.index = character.bottom.index;
         }
         else {
-            character.bottom--;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.bottom === -1 ? character.bottom = itemList.length - 1 : character.bottom = character.bottom;
+            character.bottom.index--;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.bottom.index === -1 ? character.bottom.index = itemList.length - 1 : character.bottom.index = character.bottom.index;
         }
     }
 
@@ -157,29 +180,27 @@ const itemSelector = (button) => {
     if (button.id.includes('shoe')){
         //  AUTOMATICALLY SETTING TO CHANGE THE COLOR OF THE CHANGED ITEM
         colorItem = document.getElementById('shoes-color');
-        console.log(colorItem);
         colorItem.checked = true;
         itemTypetoColor(colorItem);
 
-        itemTypeIndex = itemType.indexOf('shoes');
+        itemTypeindex = itemType.indexOf('shoes');
         itemList = allShoes;
         // CHECKING DIRECTION TO SWITCH ITEMS
         if (button.id.includes('next')){
-            character.shoes++;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.shoes === itemList.length ? character.shoes = 0 : character.shoes = character.shoes;
+            character.shoes.index++;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.shoes.index === itemList.length ? character.shoes.index = 0 : character.shoes.index = character.shoes.index;
         }
         else {
-            character.shoes--;
-            //MAKING SURE INDEX DOES NOT PASS THE ARRAY LENGTH
-            character.shoes === -1 ? character.shoes = itemList.length - 1 : character.shoes = character.shoes;
+            character.shoes.index--;
+            //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
+            character.shoes.index === -1 ? character.shoes.index = itemList.length - 1 : character.shoes.index = character.shoes.index;
         }
     }
 
-    const charaItem = itemType[itemTypeIndex];
-    console.log(charaItem);
+    const charaItem = itemType[itemTypeindex];
     // USING ALL VARIABLES TO SET THE IMAGE OF THE CHARACTER (yes it's a mouthful this line here)
-    document.getElementById(charaItem).style.background = url + charaItem + '/' + itemList[character[charaItem]] + '.png)';
+    document.getElementById(charaItem).style.background = url + charaItem + '/' + itemList[i] + '.png)';
     console.table(character);
 }
 
