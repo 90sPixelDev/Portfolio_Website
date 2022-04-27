@@ -159,7 +159,7 @@ const itemSelector = (button) => {
         itemTypetoColor(colorItem);
 
         // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRINFOTHCURRENT ITEM WITHIN THE ITEMlIST ARRAY
-        i = character.top.index;
+        i = character.bottom.index;
 
         itemTypeindex = itemType.indexOf('bottom');
         itemList = allBottoms;
@@ -183,6 +183,9 @@ const itemSelector = (button) => {
         colorItem.checked = true;
         itemTypetoColor(colorItem);
 
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECTO USE LATER TO SET THE STRINFOTHCURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.shoes.index;
+
         itemTypeindex = itemType.indexOf('shoes');
         itemList = allShoes;
         // CHECKING DIRECTION TO SWITCH ITEMS
@@ -202,6 +205,7 @@ const itemSelector = (button) => {
     // USING ALL VARIABLES TO SET THE IMAGE OF THE CHARACTER (yes it's a mouthful this line here)
     document.getElementById(charaItem).style.background = url + charaItem + '/' + itemList[i] + '.png)';
     console.table(character);
+    console.log(itemList[i]);
 }
 
 // SO I ENDED UP DOING THE ABOVE SECOND METHOD TO MAKE IT CLEANER AND EASIER TO READ AND ALSO GET RID OF BUG FROM FIRST ONE ... BUT HONESTLY I THINK IT TURNED OUT MROE COMPLICATED LMAO
