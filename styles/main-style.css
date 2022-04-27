@@ -923,9 +923,7 @@ html body {
             justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    -webkit-column-gap: 3em;
-            column-gap: 3em;
-    row-gap: 5em;
+    gap: 5em;
   }
   #skills-section #skill-icons img {
     width: 100%;
