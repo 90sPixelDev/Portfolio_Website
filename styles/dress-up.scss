@@ -79,6 +79,9 @@ html {
     }
 }
 @media all and (max-width: 415px) and (orientation: portrait) {
+    body {
+        position: fixed;
+    }
     .widthWarning {
         z-index: 3;
         display: flex;
