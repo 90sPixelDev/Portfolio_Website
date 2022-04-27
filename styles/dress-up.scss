@@ -20,7 +20,7 @@ body {
     display: none;
 }
 
-@media all and (max-width: 375px) and (orientation: portrait) {
+@media all and (max-width: 415px) and (orientation: portrait) {
     .widthWarning {
         z-index: 3;
         display: flex;
