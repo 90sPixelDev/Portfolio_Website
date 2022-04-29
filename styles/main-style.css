@@ -1276,7 +1276,8 @@ html body {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    row-gap: 3em;
+    -webkit-column-gap: 3em;
+            column-gap: 3em;
   }
   #profile-section #basic-info p {
     height: -webkit-min-content;

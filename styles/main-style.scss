@@ -1091,7 +1091,8 @@ html {
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            row-gap: 3em;
+            column-gap: 3em;
+
             p {
                 height:min-content;
                 background-color: #222a68a2;
