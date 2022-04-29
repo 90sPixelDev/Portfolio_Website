@@ -20,37 +20,6 @@ html body {
   display: none;
 }
 
-.credit {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  bottom: 0;
-  font-size: 1em;
-}
-
-.credit p {
-  display: block;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: center;
-}
-
-.credit > div {
-  margin: 1em 2em;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.credit > div img {
-  display: block;
-  width: 3em;
-  height: 3em;
-  margin: auto;
-}
-
 .wrapper {
   position: absolute;
   display: -ms-grid;
@@ -60,9 +29,12 @@ html body {
   height: 100%;
 }
 
-@media all and (max-height: 550px) and (orientation: landscape) {
+@media all and (max-height: 650px) and (orientation: landscape) {
   html {
     height: 700px;
+  }
+  .wrapper {
+    position: relative;
   }
   .game-container {
     position: absolute;
@@ -77,9 +49,12 @@ html body {
             box-shadow: 0px 0px 10px rgba(55, 55, 55, 0.7);
   }
   .credit {
-    position: fixed;
+    position: absolute;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.1);
   }
   .credit p {
     margin-left: 1em;
@@ -384,5 +359,36 @@ input[type=range] {
   -ms-grid-column: 3;
   grid-area: feet-right;
   margin: .35em 0 0 0;
+}
+
+.credit {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 0;
+  font-size: 1em;
+}
+
+.credit p {
+  display: block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.credit > div {
+  margin: 1em 2em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.credit > div img {
+  display: block;
+  width: 3em;
+  height: 3em;
+  margin: auto;
 }
 /*# sourceMappingURL=dress-up.css.map */
