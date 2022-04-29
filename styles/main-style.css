@@ -501,12 +501,11 @@ html body {
   }
   #project-section #project-grid .project img {
     margin: auto;
-    width: 70%;
+    max-width: 70%;
     max-height: 70%;
   }
   #project-section #project-grid .project a {
     text-align: center;
-    margin-left: 1em;
     font-size: 1em;
     margin-bottom: 1vw;
   }
@@ -1032,12 +1031,11 @@ html body {
   }
   #project-section #project-grid .project img {
     margin: auto;
-    width: 100%;
+    max-width: 70%;
     max-height: 70%;
   }
   #project-section #project-grid .project a {
     text-align: center;
-    margin-left: 1em;
     font-size: 1em;
     margin-bottom: 1vw;
   }
@@ -1276,8 +1274,7 @@ html body {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-column-gap: 3em;
-            column-gap: 3em;
+    row-gap: 3em;
   }
   #profile-section #basic-info p {
     height: -webkit-min-content;
@@ -1607,12 +1604,12 @@ html body {
             justify-content: center;
   }
   #project-section #project-grid .project img {
-    width: 100%;
+    margin: auto;
+    max-width: 70%;
     max-height: 70%;
   }
   #project-section #project-grid .project a {
     text-align: center;
-    margin-left: 1em;
     font-size: 1em;
     margin-bottom: 1vw;
   }

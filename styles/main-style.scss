@@ -427,12 +427,11 @@ html {
                 justify-content: center;
                 img {
                     margin: auto;
-                    width: 70%;
+                    max-width: 70%;
                     max-height: 70%;
                 }
                 a {
                     text-align: center;
-                    margin-left: 1em;
                     font-size: 1em;
                     margin-bottom: 1vw;
                 }
@@ -883,13 +882,12 @@ html {
     
                 img {
                     margin: auto;
-                    width: 100%;
+                    max-width: 70%;
                     max-height: 70%;
     
                 }
                 a {
                     text-align: center;
-                    margin-left: 1em;
                     font-size: 1em;
                     margin-bottom: 1vw;
                 }
@@ -1091,7 +1089,7 @@ html {
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            column-gap: 3em;
+            row-gap: 3em;
 
             p {
                 height:min-content;
@@ -1365,12 +1363,12 @@ html {
                 justify-content: center;
 
                 img {
-                    width: 100%;
+                    margin: auto;
+                    max-width: 70%;
                     max-height: 70%;
                 }
                 a {
                     text-align: center;
-                    margin-left: 1em;
                     font-size: 1em;
                     margin-bottom: 1vw;
                 }
