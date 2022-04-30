@@ -2024,8 +2024,8 @@ html body {
     height: 5em;
     padding: 1em;
     background-color: #222A68;
-    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#222A68), to(transparent));
-    background: linear-gradient(to right, transparent, #222A68, transparent);
+    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(30%, #222A68), to(transparent));
+    background: linear-gradient(to right, transparent, #222A68 30% 70%, transparent);
   }
   footer #social-media .sm-parent {
     display: -webkit-box;

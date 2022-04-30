@@ -1715,7 +1715,7 @@ html {
             height: 5em;
             padding: 1em;
             background-color: #222A68;
-            background: linear-gradient(to right, transparent, #222A68, transparent);
+            background: linear-gradient(to right, transparent, #222A68 30% 70%, transparent);
     
             .sm-parent {
                 display: flex;
