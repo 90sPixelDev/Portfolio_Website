@@ -29,6 +29,37 @@ html body {
   height: 100%;
 }
 
+.credit {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 0;
+  font-size: 1em;
+}
+
+.credit p {
+  display: block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.credit > div {
+  margin: 1em 2em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.credit > div img {
+  display: block;
+  width: 3em;
+  height: 3em;
+  margin: auto;
+}
+
 @media all and (max-height: 650px) and (orientation: landscape) {
   html {
     height: 700px;
@@ -360,36 +391,5 @@ input[type=range] {
   -ms-grid-column: 3;
   grid-area: feet-right;
   margin: .35em 0 0 0;
-}
-
-.credit {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  bottom: 0;
-  font-size: 1em;
-}
-
-.credit p {
-  display: block;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: center;
-}
-
-.credit > div {
-  margin: 1em 2em;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.credit > div img {
-  display: block;
-  width: 3em;
-  height: 3em;
-  margin: auto;
 }
 /*# sourceMappingURL=dress-up.css.map */
