@@ -345,11 +345,15 @@ html body {
     padding: 5em;
     border-radius: 20%;
     opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  #bio div .scrolled {
+  #bio div .translateU-animated {
     opacity: 100%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #bio h2 {
     font-size: 2em;
@@ -402,7 +406,7 @@ html body {
   #skills-section .skill-icons p {
     margin-top: .5em;
   }
-  #skills-section .scrolled {
+  #skills-section .fade-animated {
     opacity: 100%;
   }
   .skill-desc {
@@ -519,12 +523,12 @@ html body {
     font-size: 1em;
     margin-bottom: 1vw;
   }
-  #project-section #project-grid .scrolled {
+  #project-section #project-grid .fade-animated {
     opacity: 100%;
   }
   #contact-section {
     background-color: #222A68;
-    height: 50vh;
+    height: 70vh;
     min-height: 495px;
     width: 100%;
     display: -webkit-box;
@@ -537,12 +541,15 @@ html body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin: 20vh 0 10vh 0;
   }
   #contact-section h5 {
     font-size: 2.5em;
     margin: 1em 0;
   }
   #contact-section form {
+    -webkit-transform: scale(2);
+            transform: scale(2);
     opacity: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -551,9 +558,13 @@ html body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 35vh;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    height: 100%;
     min-height: 310px;
     width: 25vw;
+    min-width: 500px;
     padding: 3vh 3vw;
     background-color: rgba(0, 0, 0, 0.15);
     border-radius: .5em;
@@ -605,8 +616,10 @@ html body {
   #contact-section form #submit:hover {
     background-color: rgba(0, 0, 0, 0.5);
   }
-  #contact-section .scrolled {
+  #contact-section .scale-animated {
     opacity: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   footer {
     margin-top: 3em;
@@ -624,6 +637,7 @@ html body {
         -ms-flex-pack: center;
             justify-content: center;
     position: fixed;
+    z-index: 1;
     right: 3vw;
     bottom: 5vh;
     width: 5em;
@@ -640,13 +654,17 @@ html body {
     text-decoration: none;
     font-size: 3vw;
     padding: .5em;
-    background-color: rgba(255, 255, 255, 0.25);
     border-radius: 50%;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: -webkit-gradient(linear, left bottom, left top, from(#222A68), to(#ab81cd));
+    background: linear-gradient(0deg, #222A68, #ab81cd);
     -webkit-transition: all 1s;
     transition: all 1s;
   }
   footer .to-top a:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background: -webkit-gradient(linear, left bottom, left top, from(#ab81cd), to(#222A68));
+    background: linear-gradient(0deg, #ab81cd, #222A68);
   }
   footer #social-media {
     width: 100%;
@@ -665,6 +683,8 @@ html body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-transform: translateX(-20vw);
+            transform: translateX(-20vw);
     opacity: 0;
     gap: 2em;
     -webkit-transition: all 1s;
@@ -681,8 +701,10 @@ html body {
     height: 2.5em;
     width: 2.5em;
   }
-  footer #social-media .scrolled {
+  footer #social-media .translateR-animated {
     opacity: 100%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   .end {
     text-align: center;
@@ -824,7 +846,10 @@ html body {
     margin-top: 10vw;
     text-align: center;
   }
-  #basic-info {
+  #profile-section {
+    height: 90vh;
+  }
+  #profile-section #basic-info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -839,7 +864,7 @@ html body {
         flex-wrap: wrap;
     row-gap: 3em;
   }
-  #basic-info p {
+  #profile-section #basic-info p {
     height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
@@ -852,7 +877,7 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  #basic-info p:hover {
+  #profile-section #basic-info p:hover {
     -webkit-transform: scale(103%, 103%);
             transform: scale(103%, 103%);
     background-color: #ab81cd97;
@@ -1021,12 +1046,16 @@ html body {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 5em;
     border-radius: 20%;
+    -webkit-transform: translateY(10vh);
+            transform: translateY(10vh);
     opacity: 0;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  #bio div .scrolled {
+  #bio div .translateU-animated {
     opacity: 100%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #skills-section {
     display: -ms-grid;
@@ -1074,7 +1103,7 @@ html body {
   #skills-section .skill-icons p {
     margin-top: .5em;
   }
-  #skills-section .scrolled {
+  #skills-section .fade-animated {
     opacity: 100%;
   }
   .skill-desc {
@@ -1170,8 +1199,8 @@ html body {
         -ms-flex-direction: column;
             flex-direction: column;
     background: #222a68a2;
-    height: 18vw;
-    width: 25vw;
+    height: 30vw;
+    width: 45vw;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1189,7 +1218,7 @@ html body {
     font-size: 1em;
     margin-bottom: 1vw;
   }
-  #project-section #project-grid .scrolled {
+  #project-section #project-grid .fade-animated {
     opacity: 100%;
   }
   #contact-section {
@@ -1213,6 +1242,8 @@ html body {
     margin: 1em 0;
   }
   #contact-section form {
+    -webkit-transform: scale(2);
+            transform: scale(2);
     opacity: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1275,8 +1306,10 @@ html body {
   #contact-section form #submit:hover {
     background-color: rgba(0, 0, 0, 0.5);
   }
-  #contact-section .scrolled {
+  #contact-section .scale-animated {
     opacity: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   footer {
     margin-top: 3em;
@@ -1311,6 +1344,10 @@ html body {
     padding: .5em;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 50%;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: -webkit-gradient(linear, left bottom, left top, from(#222A68), to(#ab81cd));
+    background: linear-gradient(0deg, #222A68, #ab81cd);
     -webkit-transition: all 1s;
     transition: all 1s;
   }
@@ -1332,6 +1369,8 @@ html body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-transform: translateX(-20vw);
+            transform: translateX(-20vw);
     opacity: 0;
     gap: 2em;
     -webkit-transition: all 1s;
@@ -1348,8 +1387,10 @@ html body {
     height: 2.5em;
     width: 2.5em;
   }
-  footer #social-media .scrolled {
+  footer #social-media .translateR-animated {
     opacity: 100%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   .end {
     text-align: center;
@@ -1732,12 +1773,16 @@ html body {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 5em;
     border-radius: 20%;
+    -webkit-transform: translateY(10vh);
+            transform: translateY(10vh);
     opacity: 0;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  #bio div .scrolled {
+  #bio div .translateU-animated {
     opacity: 100%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   #skills-section {
     display: -ms-grid;
@@ -1785,7 +1830,7 @@ html body {
   #skills-section .skill-icons p {
     margin-top: .5em;
   }
-  #skills-section .scrolled {
+  #skills-section .fade-animated {
     opacity: 100%;
   }
   .skill-desc {
@@ -1896,7 +1941,7 @@ html body {
     font-size: 1em;
     margin-bottom: 1vw;
   }
-  #project-section #project-grid .scrolled {
+  #project-section #project-grid .fade-animated {
     opacity: 100%;
   }
   #contact-section {
@@ -1922,6 +1967,8 @@ html body {
   }
   #contact-section form {
     opacity: 0;
+    -webkit-transform: scale(2);
+            transform: scale(2);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1980,8 +2027,10 @@ html body {
     -webkit-transition: all .5s;
     transition: all .5s;
   }
-  #contact-section .scrolled {
+  #contact-section .scale-animated {
     opacity: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   footer {
     margin-top: 3em;
@@ -2016,6 +2065,10 @@ html body {
     padding: .5em;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 50%;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: -webkit-gradient(linear, left bottom, left top, from(#222A68), to(#ab81cd));
+    background: linear-gradient(0deg, #222A68, #ab81cd);
     -webkit-transition: all 1s;
     transition: all 1s;
   }
@@ -2037,6 +2090,8 @@ html body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-transform: translateX(-20vw);
+            transform: translateX(-20vw);
     opacity: 0;
     gap: 2em;
     -webkit-transition: all 1s;
@@ -2053,8 +2108,10 @@ html body {
     height: 2.5em;
     width: 2.5em;
   }
-  footer #social-media .scrolled {
+  footer #social-media .translateR-animated {
     opacity: 100%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   .end {
     text-align: center;
