@@ -1427,9 +1427,7 @@ html body {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     padding: 3em;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    min-height: 100vh;
   }
   #bio div {
     display: -webkit-box;

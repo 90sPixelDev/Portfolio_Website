@@ -8,27 +8,27 @@ let i;
 
 const character = {
     base:   {
-        index:   1,
+        index:   0,
         hue:            0,
         brightness:     100
     },
     hair:   {
-        index:   1,
+        index:   0,
         hue:            0,
         brightness:     100
     },
     top:    {
-        index:   1,
+        index:   0,
         hue:            0,
         brightness:     100
     },
     bottom: {
-        index:   1,
+        index:   0,
         hue:            0,
         brightness:     100
     },
     shoes:  {
-        index:   1,
+        index:   0,
         hue:            0,
         brightness:     100
     }
@@ -79,8 +79,7 @@ const itemSelector = (button) => {
         colorItem.checked = true;
         itemTypetoColor(colorItem);
 
-        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRING FOR THE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
-        i = character.base.index;
+
 
         document.getElementById('base-color').checked = true;
         itemTypeindex = itemType.indexOf('base');
@@ -96,6 +95,8 @@ const itemSelector = (button) => {
             //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
             character.base.index === -1 ? character.base.index = itemList.length - 1 : character.base.index = character.base.index;
         }
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRING FOR THE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.base.index;        
     }
     //FOR HEADS
     if (button.id.includes('hair')){
@@ -103,9 +104,6 @@ const itemSelector = (button) => {
         colorItem = document.getElementById('hair-color');
         colorItem.checked = true;
         itemTypetoColor(colorItem);
-
-        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRING FOTHE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
-        i = character.hair.index;
 
         document.getElementById('hair-color').checked = true;
         console.log('Pressed Hair');
@@ -123,17 +121,15 @@ const itemSelector = (button) => {
             //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
             character.hair.index === -1 ? character.hair.index = itemList.length - 1 : character.hair.index = character.hair.index;
         }
-    
-    //FOR TOPS
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRING FOTHE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.hair.index;    
     }
+    //FOR TOPS
     if (button.id.includes('top')){
         //  AUTOMATICALLY SETTING TO CHANGE THE COLOR OF THE CHANGED ITEM
         colorItem = document.getElementById('top-color');
         colorItem.checked = true;
         itemTypetoColor(colorItem);
-
-        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRINFOTHE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
-        i = character.top.index;
 
         document.getElementById('top-color').checked = true;
         itemTypeindex = itemType.indexOf('top');
@@ -149,6 +145,8 @@ const itemSelector = (button) => {
             //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
             character.top.index === -1 ? character.top.index = itemList.length - 1 : character.top.index = character.top.index;
         }
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRINFOTHE CURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.top.index;        
     }
 
     //FOR BOTTOMS
@@ -157,9 +155,6 @@ const itemSelector = (button) => {
         colorItem = document.getElementById('bottom-color');
         colorItem.checked = true;
         itemTypetoColor(colorItem);
-
-        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRINFOTHCURRENT ITEM WITHIN THE ITEMlIST ARRAY
-        i = character.bottom.index;
 
         itemTypeindex = itemType.indexOf('bottom');
         itemList = allBottoms;
@@ -174,6 +169,8 @@ const itemSelector = (button) => {
             //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
             character.bottom.index === -1 ? character.bottom.index = itemList.length - 1 : character.bottom.index = character.bottom.index;
         }
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECT TO USE LATER TO SET THE STRINFOTHCURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.bottom.index;
     }
 
     //FOR SHOES
@@ -183,8 +180,7 @@ const itemSelector = (button) => {
         colorItem.checked = true;
         itemTypetoColor(colorItem);
 
-        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECTO USE LATER TO SET THE STRINFOTHCURRENT ITEM WITHIN THE ITEMlIST ARRAY
-        i = character.shoes.index;
+
 
         itemTypeindex = itemType.indexOf('shoes');
         itemList = allShoes;
@@ -199,6 +195,8 @@ const itemSelector = (button) => {
             //MAKING SURE index DOES NOT PASS THE ARRAY LENGTH
             character.shoes.index === -1 ? character.shoes.index = itemList.length - 1 : character.shoes.index = character.shoes.index;
         }
+        // SETTING THE VARIABLE OF THE INDEX OF THE CURRENT ITEM IN THE CHARACTER OBJECTO USE LATER TO SET THE STRINFOTHCURRENT ITEM WITHIN THE ITEMlIST ARRAY
+        i = character.shoes.index;        
     }
 
     const charaItem = itemType[itemTypeindex];
