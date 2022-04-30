@@ -548,8 +548,8 @@ html body {
     margin: 1em 0;
   }
   #contact-section form {
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
     opacity: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1242,8 +1242,8 @@ html body {
     margin: 1em 0;
   }
   #contact-section form {
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
     opacity: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1953,6 +1953,9 @@ html body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
