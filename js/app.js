@@ -2,6 +2,7 @@ const navParent = document.getElementById('nav-items-parent');
 const menuBtn = document.getElementById('nav-toggle');
 const navToggle = document.getElementById('nav-toggle');
 const myName = document.querySelector('#my-name');
+const toTop = document.querySelector('.to-top');
 const scrollEl = document.querySelectorAll('.anim');
 
 // Opening and closing menu by adding or removing class
@@ -30,9 +31,7 @@ const elementInView = (el, scrollOffset) => {
 	const elementTop = el.getBoundingClientRect().top;
 
 	return (
-		elementTop <=
-		(Window.innerHeight || document.documentElement.clientHeight) -
-			scrollOffset
+		elementTop <= (Window.innerHeight || document.documentElement.clientHeight) - scrollOffset
 	);
 };
 
@@ -59,4 +58,12 @@ const scrollAnimManager = () => {
 
 window.addEventListener('scroll', () => {
 	scrollAnimManager();
+});
+
+const scrollTop = () => {
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+toTop.addEventListener('click', () => {
+	scrollTop();
 });
