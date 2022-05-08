@@ -1009,23 +1009,19 @@ html {
 				display: flex;
 				flex-direction: column;
 				background: #222a68a2;
-				height: 30vw;
-				width: 45vw;
+				height: 18vw;
+				width: 25vw;
 				justify-content: center;
 				opacity: 0;
 				transition: all 1s;
-
+				&:hover {
+					border: 1px solid white;
+					transform: scale(1.1);
+				}
 				img {
 					margin: auto;
-					max-width: 70%;
-					max-height: 70%;
+					width: 100%;
 				}
-				a {
-					text-align: center;
-					font-size: 1em;
-					margin-bottom: 1vw;
-				}
-			}
 			.fade-animated {
 				opacity: 100%;
 			}
@@ -1604,21 +1600,18 @@ html {
 				display: flex;
 				flex-direction: column;
 				background: #222a68a2;
-				height: 25vw;
-				width: 37vw;
+				height: 18vw;
+				width: 25vw;
 				justify-content: center;
 				opacity: 0;
 				transition: all 1s;
-
+				&:hover {
+					border: 1px solid white;
+					transform: scale(1.1);
+				}
 				img {
 					margin: auto;
-					max-width: 70%;
-					max-height: 70%;
-				}
-				a {
-					text-align: center;
-					font-size: 1em;
-					margin-bottom: 1vw;
+					width: 100%;
 				}
 			}
 			.fade-animated {
