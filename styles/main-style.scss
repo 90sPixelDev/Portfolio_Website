@@ -434,15 +434,13 @@ html {
 				justify-content: center;
 				opacity: 0;
 				transition: all 1s;
+				&:hover {
+					border: 1px solid white;
+					transform: scale(1.1);
+				}
 				img {
 					margin: auto;
-					max-width: 70%;
-					max-height: 70%;
-				}
-				a {
-					text-align: center;
-					font-size: 1em;
-					margin-bottom: 1vw;
+					width: 100%;
 				}
 			}
 			.fade-animated {

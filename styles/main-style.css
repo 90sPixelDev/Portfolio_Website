@@ -528,15 +528,14 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
+  #project-section #project-grid .project:hover {
+    border: 1px solid white;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
   #project-section #project-grid .project img {
     margin: auto;
-    max-width: 70%;
-    max-height: 70%;
-  }
-  #project-section #project-grid .project a {
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 1vw;
+    width: 100%;
   }
   #project-section #project-grid .fade-animated {
     opacity: 100%;
