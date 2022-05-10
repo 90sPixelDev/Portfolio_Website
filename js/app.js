@@ -10,6 +10,8 @@ const navToggle = document.getElementById('nav-toggle');
 const myName = document.querySelector('#my-name');
 const toTop = document.querySelector('.to-top');
 const scrollEl = document.querySelectorAll('.anim');
+const emailAfter = document.querySelector('.email-after');
+const infoHolder = document.querySelector('.info-holder');
 
 // Opening and closing menu by adding or removing class
 menuBtn.addEventListener('click', () => {
@@ -24,12 +26,34 @@ menuBtn.addEventListener('click', () => {
 
 // This is to check if anything else is pressed while menu is open to close it
 document.addEventListener('click', (e) => {
-	const isClickInsideElement = navToggle.contains(e.target);
-	if (!isClickInsideElement) {
+	const isClickOutsideMobileMenu = navToggle.contains(e.target);
+	if (!isClickOutsideMobileMenu) {
 		navParent.classList.add('hide-menu');
 		navParent.classList.remove('show-menu');
 	}
+	if (e.target === infoHolder) {
+		emailAfter.classList.remove('email-success');
+	}
 });
+
+window.onload = function () {
+	document.getElementById('contact-form').addEventListener('submit', function (event) {
+		event.preventDefault();
+
+		emailjs.sendForm('service_8dcgfoh', 'template_3vxuz3j', this, 'BGaBY2gWPgF8paWZQ').then(
+			function () {
+				console.log('SUCCESS!');
+				emailAfter.classList.add('email-success');
+			},
+			function (error) {
+				console.log('FAILED...', error);
+			}
+		);
+		this.user_name.value = '';
+		this.user_email.value = '';
+		this.message.value = '';
+	});
+};
 
 let observer = new IntersectionObserver(onChange, options);
 

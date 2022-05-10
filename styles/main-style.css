@@ -21,6 +21,38 @@ html body {
   background-attachment: fixed;
 }
 
+.email-after {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.email-after .info-holder {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+}
+
+.email-after .info-holder p {
+  background-color: rgba(255, 255, 255, 0.25);
+  line-height: 2em;
+  padding: 3vw;
+  border-radius: 5em;
+}
+
+.email-success {
+  display: block;
+}
+
 @media all and (min-width: 1008px) {
   * {
     font-size: 16px;
@@ -575,7 +607,9 @@ html body {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    height: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     min-height: 310px;
     width: 25vw;
     min-width: 500px;
@@ -585,7 +619,7 @@ html body {
     border: 1px solid rgba(255, 255, 255, 0.15);
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.15);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.15);
-    margin-bottom: 3em;
+    margin: auto;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
@@ -1228,8 +1262,8 @@ html body {
         -ms-flex-direction: column;
             flex-direction: column;
     background: #222a68a2;
-    height: 30vw;
-    width: 45vw;
+    height: 18vw;
+    width: 25vw;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1237,20 +1271,19 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
+  #project-section #project-grid .project:hover {
+    border: 1px solid white;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
   #project-section #project-grid .project img {
     margin: auto;
-    max-width: 70%;
-    max-height: 70%;
+    width: 100%;
   }
-  #project-section #project-grid .project a {
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 1vw;
-  }
-  #project-section #project-grid .fade-animated {
+  #project-section #project-grid .project .fade-animated {
     opacity: 100%;
   }
-  #contact-section {
+  #project-section #contact-section {
     background-color: #222a68;
     height: 50vh;
     min-height: 510px;
@@ -1266,11 +1299,11 @@ html body {
         -ms-flex-align: center;
             align-items: center;
   }
-  #contact-section h5 {
+  #project-section #contact-section h5 {
     font-size: 2.5em;
     margin: 1em 0;
   }
-  #contact-section form {
+  #project-section #contact-section form {
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
     opacity: 0;
@@ -1294,10 +1327,10 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  #contact-section form:hover {
+  #project-section #contact-section form:hover {
     background-color: rgba(255, 255, 255, 0.01);
   }
-  #contact-section form input {
+  #project-section #contact-section form input {
     color: white;
     border: rgba(255, 255, 255, 0.5);
     -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
@@ -1306,16 +1339,16 @@ html body {
     border-radius: 0.25em;
     margin-bottom: 0.5em;
   }
-  #contact-section form #name {
+  #project-section #contact-section form #name {
     width: 10em;
   }
-  #contact-section form #email-subject {
+  #project-section #contact-section form #email-subject {
     width: 10em;
   }
-  #contact-section form #email {
+  #project-section #contact-section form #email {
     width: 10em;
   }
-  #contact-section form #message {
+  #project-section #contact-section form #message {
     resize: none;
     min-height: 1.5em;
     height: 10em;
@@ -1327,25 +1360,25 @@ html body {
     border-radius: 0.25em;
     margin-bottom: 0.75em;
   }
-  #contact-section form #submit {
+  #project-section #contact-section form #submit {
     height: 5em;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
-  #contact-section form #submit:hover {
+  #project-section #contact-section form #submit:hover {
     background-color: rgba(0, 0, 0, 0.5);
   }
-  #contact-section .scale-animated {
+  #project-section #contact-section .scale-animated {
     opacity: 100%;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  footer {
+  #project-section footer {
     margin-top: 3em;
     width: 100%;
     height: 8.5em;
   }
-  footer .to-top {
+  #project-section footer .to-top {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1366,7 +1399,7 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  footer .to-top p {
+  #project-section footer .to-top p {
     text-align: center;
     text-decoration: none;
     font-size: 5vw;
@@ -1380,7 +1413,7 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  footer #social-media {
+  #project-section footer #social-media {
     width: 100%;
     height: 5em;
     padding: 1em;
@@ -1388,7 +1421,7 @@ html body {
     background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#222a68), to(transparent));
     background: linear-gradient(to right, transparent, #222a68, transparent);
   }
-  footer #social-media .sm-parent {
+  #project-section footer #social-media .sm-parent {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1405,29 +1438,29 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  footer #social-media .sm-parent #github {
+  #project-section footer #social-media .sm-parent #github {
     background: url("../img/logo/github-social-logo.png") no-repeat center;
     background-size: contain;
     height: 2.5em;
     width: 2.5em;
   }
-  footer #social-media .sm-parent #linkedIn {
+  #project-section footer #social-media .sm-parent #linkedIn {
     background: url("../img/logo/Linkedin-logo-on-transparent-Background-PNG-.png") no-repeat center;
     height: 2.5em;
     width: 2.5em;
   }
-  footer #social-media .translateR-animated {
+  #project-section footer #social-media .translateR-animated {
     opacity: 100%;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  .end {
+  #project-section .end {
     text-align: center;
     margin: 1em 0;
   }
 }
 
-@media all and (max-width: 640px) {
+@media all and (min-width: 641px) and (max-width: 1007px) and (max-width: 640px) {
   * {
     font-size: 3.5vw;
   }
@@ -1966,8 +1999,8 @@ html body {
         -ms-flex-direction: column;
             flex-direction: column;
     background: #222a68a2;
-    height: 25vw;
-    width: 37vw;
+    height: 18vw;
+    width: 25vw;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1975,15 +2008,14 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
+  #project-section #project-grid .project:hover {
+    border: 1px solid white;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
   #project-section #project-grid .project img {
     margin: auto;
-    max-width: 70%;
-    max-height: 70%;
-  }
-  #project-section #project-grid .project a {
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 1vw;
+    width: 100%;
   }
   #project-section #project-grid .fade-animated {
     opacity: 100%;

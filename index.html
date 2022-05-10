@@ -169,17 +169,23 @@
 				</section>
 				<section id="contact-section">
 					<h5>Let's connect!</h5>
-					<form id="email-form" class="anim scale-anim">
-						<label for="name">Name</label>
-						<input type="text" name="name" id="name" required />
-						<label for="email">Email</label>
-						<input type="email" name="email" id="email" required />
-						<label for="email-subject">Email subject</label>
-						<input type="text" name="email-subject" id="email-subject" />
+					<form id="contact-form" class="anim scale-anim">
+						<label for="user_name">Name</label>
+						<input type="text" name="user_name" id="name" required />
+						<label for="user_email">Email</label>
+						<input type="email" name="user_email" id="user_email" required />
 						<label for="message">Message</label>
 						<textarea name="message" id="message" required></textarea>
-						<input type="submit" value="Submit" id="submit" />
+						<input type="submit" value="Send" id="submit" />
 					</form>
+					<article class="email-after">
+						<div class="info-holder">
+							<p>
+								Email submitted succesfully! <br />Lien Font will get back
+								to you shortly.
+							</p>
+						</div>
+					</article>
 				</section>
 			</main>
 			<footer>
@@ -205,6 +211,10 @@
 				<p class="end">Developed and designed with ❤️ by Lien Font &COPY; 2022</p>
 			</footer>
 		</div>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+		></script>
 		<script src="/js/app.js"></script>
 	</body>
 </html>
