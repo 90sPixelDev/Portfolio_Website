@@ -1,3 +1,9 @@
+let options = {
+	root: null,
+	rootMargin: '0px',
+	threshold: 0.5,
+};
+
 const navParent = document.getElementById('nav-items-parent');
 const menuBtn = document.getElementById('nav-toggle');
 const navToggle = document.getElementById('nav-toggle');
@@ -25,45 +31,24 @@ document.addEventListener('click', (e) => {
 	}
 });
 
-// Function to check if a HTML element has been srolled a certain percentage by checking the client's height size and scrolling
-// Passing in the html element, and the amount to scroll
-const elementInView = (el, scrollOffset) => {
-	const elementTop = el.getBoundingClientRect().top;
+let observer = new IntersectionObserver(onChange, options);
 
-	return (
-		elementTop <= (Window.innerHeight || document.documentElement.clientHeight) - scrollOffset
-	);
-};
+scrollEl.forEach((el) => {
+	observer.observe(el);
+});
 
-// Making frunction to assign a class that will make the element fade in
-const displayScrolledElement = (el) => {
-	if (el.classList.contains('fade-anim')) {
-		el.classList.add('fade-animated');
-	} else if (el.classList.contains('scale-anim')) {
-		el.classList.add('scale-animated');
-	} else if (el.classList.contains('translateU-anim')) {
-		el.classList.add('translateU-animated');
-	} else if (el.classList.contains('translateR-anim')) {
-		el.classList.add('translateR-animated');
-	}
-};
-
-const scrollAnimManager = () => {
-	scrollEl.forEach((el) => {
-		if (elementInView(el, 100)) {
-			displayScrolledElement(el);
+function onChange(entries, observer) {
+	entries.forEach((entry) => {
+		if (entry.intersectionRatio > 0) {
+			if (entry.target.classList.contains('fade-anim')) {
+				entry.target.classList.add('fade-animated');
+			} else if (entry.target.classList.contains('scale-anim')) {
+				entry.target.classList.add('scale-animated');
+			} else if (entry.target.classList.contains('translateU-anim')) {
+				entry.target.classList.add('translateU-animated');
+			} else if (entry.target.classList.contains('translateR-anim')) {
+				entry.target.classList.add('translateR-animated');
+			}
 		}
 	});
-};
-
-window.addEventListener('scroll', () => {
-	scrollAnimManager();
-});
-
-const scrollTop = () => {
-	window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-toTop.addEventListener('click', () => {
-	scrollTop();
-});
+}
