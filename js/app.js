@@ -34,13 +34,6 @@ document.addEventListener('click', (e) => {
 	if (e.target === infoHolder) {
 		emailAfter.classList.remove('email-success');
 	}
-	console.log(e.target);
-});
-
-document.addEventListener('mouseover', (e) => {
-	if (e.target === document.querySelector('#interests')) {
-		console.log('Entered Interests!');
-	}
 });
 
 window.onload = function () {
