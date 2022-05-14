@@ -14,14 +14,9 @@ const infoHolder = document.querySelector('.info-holder');
 
 // Opening and closing menu by adding or removing class
 navToggle.addEventListener('click', () => {
-	if (navParent.classList.contains('hide-menu')) {
-		navToggle.classList.add('turn-nav-toggle');
-		navParent.classList.add('show-menu');
-		navParent.classList.remove('hide-menu');
-	} else if (navParent.classList.contains('show-menu')) {
-		navToggle.classList.remove('turn-nav-toggle');
-		navParent.classList.add('hide-menu');
-		navParent.classList.remove('show-menu');
+	if (navParent.classList.contains('nav-menu')) {
+		navToggle.classList.toggle('turn-nav-toggle');
+		navParent.classList.toggle('show-menu');
 	}
 });
 
@@ -29,8 +24,8 @@ navToggle.addEventListener('click', () => {
 document.addEventListener('click', (e) => {
 	const isClickOutsideMobileMenu = navToggle.contains(e.target);
 	if (!isClickOutsideMobileMenu) {
-		navParent.classList.add('hide-menu');
-		navParent.classList.remove('show-menu');
+		navToggle.classList.toggle('turn-nav-toggle');
+		navParent.classList.toggle('show-menu');
 	}
 	if (e.target === infoHolder) {
 		emailAfter.classList.remove('email-success');
