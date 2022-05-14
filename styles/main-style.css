@@ -660,6 +660,7 @@ html body {
         -ms-flex-pack: center;
             justify-content: center;
     align-items: center;
+    height: 100%;
     -webkit-transform: translateX(-20vw);
             transform: translateX(-20vw);
     opacity: 0;

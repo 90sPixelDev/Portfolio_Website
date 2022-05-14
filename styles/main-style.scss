@@ -531,24 +531,12 @@ html {
 					align-items: center;
 					justify-content: center;
 					align-items: center;
+					height: 100%;
 
 					transform: translateX(-20vw);
 					opacity: 0;
 					gap: 2em;
 					transition: all 1s;
-
-					// #github {
-					// 	background: url('../img/logo/github-social-logo.png') no-repeat center;
-					// 	background-size: contain;
-					// 	height: 2.5em;
-					// 	width: 2.5em;
-					// }
-					// #linkedIn {
-					// 	background: url('../img/logo/Linkedin-logo-on-transparent-Background-PNG-.png')
-					// 		no-repeat center;
-					// 	height: 2.5em;
-					// 	width: 2.5em;
-					// }
 				}
 				.translateR-animated {
 					opacity: 100%;
