@@ -666,17 +666,6 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container footer #social-media .sm-parent #github {
-    background: url("../img/logo/github-social-logo.png") no-repeat center;
-    background-size: contain;
-    height: 2.5em;
-    width: 2.5em;
-  }
-  .container footer #social-media .sm-parent #linkedIn {
-    background: url("../img/logo/Linkedin-logo-on-transparent-Background-PNG-.png") no-repeat center;
-    height: 2.5em;
-    width: 2.5em;
-  }
   .container footer #social-media .translateR-animated {
     opacity: 100%;
     -webkit-transform: translateX(0);
