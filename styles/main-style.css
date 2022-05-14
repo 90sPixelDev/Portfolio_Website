@@ -659,6 +659,7 @@ html body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    align-items: center;
     -webkit-transform: translateX(-20vw);
             transform: translateX(-20vw);
     opacity: 0;
