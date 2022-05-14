@@ -5,8 +5,7 @@ let options = {
 };
 
 const navParent = document.getElementById('nav-items-parent');
-const menuBtn = document.getElementById('nav-toggle');
-const navToggle = document.getElementById('nav-toggle');
+const navToggle = document.querySelector('.nav-toggle');
 const myName = document.querySelector('#my-name');
 const toTop = document.querySelector('.to-top');
 const scrollEl = document.querySelectorAll('.anim');
@@ -14,11 +13,13 @@ const emailAfter = document.querySelector('.email-after');
 const infoHolder = document.querySelector('.info-holder');
 
 // Opening and closing menu by adding or removing class
-menuBtn.addEventListener('click', () => {
+navToggle.addEventListener('click', () => {
 	if (navParent.classList.contains('hide-menu')) {
+		navToggle.classList.add('turn-nav-toggle');
 		navParent.classList.add('show-menu');
 		navParent.classList.remove('hide-menu');
 	} else if (navParent.classList.contains('show-menu')) {
+		navToggle.classList.remove('turn-nav-toggle');
 		navParent.classList.add('hide-menu');
 		navParent.classList.remove('show-menu');
 	}

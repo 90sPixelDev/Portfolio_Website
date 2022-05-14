@@ -116,7 +116,7 @@ html {
 			margin: 1.5em;
 		}
 
-		#nav-toggle {
+		.nav-toggle {
 			display: none;
 		}
 
@@ -636,56 +636,19 @@ html {
 		font-size: 2vw;
 	}
 
-	.container {
-		width: 100%;
-		overflow: auto;
-
-		&::before {
-			content: '</>';
-			top: 40vw;
-			width: 1vh;
-			height: 1vh;
-			font-size: 50vw;
-			position: absolute;
-			left: 50vw;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin: 0;
-			padding: 0;
-
-			opacity: 5%;
-			z-index: -10;
-
-			animation: bg-anim ease-in-out 15s infinite;
-
-			@keyframes bg-anim {
-				0% {
-					transform: rotateZ(-15deg);
-				}
-				60% {
-					transform: rotateZ(15deg);
-				}
-
-				100% {
-					transform: rotateZ(-15deg);
-				}
-			}
-		}
+	.container::before {
+		top: 40vw;
+		left: 50vw;
+		margin: 0;
 	}
 
-	#nav-bar {
-		height: $navBarHeight;
-		width: 100%;
-		align-items: center;
-
+	header {
 		#theme-btn {
-			background-color: transparent;
-			border-radius: 50%;
 			width: 7.25vw;
 			height: 7.25vw;
 			margin: 2em;
 		}
+
 		.mobile-menu {
 			position: fixed;
 			right: 0;
@@ -701,495 +664,134 @@ html {
 				background: url('../img/logo/menu-logo.svg') no-repeat center;
 				background-size: contain;
 			}
-		}
-		.hide-menu {
-			height: 0;
-			overflow: hidden;
-			opacity: 0;
-			transition: all 1s;
-		}
-		.show-menu {
-			position: fixed;
-			right: 0;
-			overflow: visible;
-			height: fit-content;
-			width: fit-content;
-			opacity: 100%;
-			background-color: #e2adf2b8;
-			transition: all 1s;
-			li {
-				display: table;
-				list-style: none;
-				width: 7em;
-				height: 3em;
-				margin: 1em 1em;
-				border: 1px solid white;
-				.nav-item {
-					display: table-cell;
-					vertical-align: middle;
-					font-size: 1.1em;
-					text-decoration: none;
-					text-align: center;
-					color: white;
-					transition: all 0.5s;
-				}
-			}
-		}
-	}
-
-	#my-name {
-		font-family: 'Roboto', sans-serif;
-		font-size: 6.5em;
-		margin-bottom: 2em;
-		margin-top: 10vw;
-		text-align: center;
-	}
-
-	#profile-section {
-		height: 100vh - $navBarHeight;
-
-		#basic-info {
-			display: flex;
-			margin-bottom: 5em;
-			justify-content: space-evenly;
-			align-items: center;
-			flex-wrap: wrap;
-			row-gap: 3em;
-
-			p {
-				height: min-content;
-				background-color: #222a68a2;
-				border-radius: 3em;
-				padding: 3em;
-				width: 20em;
-				text-align: center;
-				line-height: 1.8em;
-
+			.hide-menu {
+				height: 0;
+				overflow: hidden;
+				opacity: 0;
 				transition: all 1s;
-				&:hover {
-					transform: scale(103%, 103%);
-					background-color: #ab81cd97;
-				}
 			}
-		}
-	}
-
-	#interests {
-		background-color: #222a68a2;
-		border-radius: 3em;
-		padding: 3em;
-		width: 20em;
-		height: min-content;
-
-		transition: all 1s;
-		&:hover {
-			transform: scale(103%, 103%);
-			background-color: #ab81cd97;
-		}
-		ul {
-			li {
-				font-weight: 400;
-
-				list-style: none;
-				margin: 0.2em 0;
-
-				&:first-child {
-					border-top: 1px inset white;
-					margin: 0.5em 0 0 0;
-					padding: 0.5em 0 0 0;
-				}
-				&:hover {
-					border-bottom: 1px solid white;
-				}
-				&:hover::before {
-					content: '';
-					animation: list-focus 1s ease-out both;
-					display: inline-block;
-
-					@keyframes list-focus {
-						0% {
-							opacity: 0%;
-							border-top: 0.4em solid transparent;
-							border-left: 0.4em solid #e2adf2;
-							border-bottom: 0.4em solid transparent;
-							transform: translateX(-2em);
-						}
-						100% {
-							opacity: 100%;
-							border-top: 0.4em solid transparent;
-							border-left: 0.4em solid #e2adf2;
-							border-bottom: 0.4em solid transparent;
-							margin-right: 1em;
-						}
+			.show-menu {
+				position: fixed;
+				right: 0;
+				overflow: visible;
+				height: fit-content;
+				width: fit-content;
+				opacity: 100%;
+				background-color: #e2adf2b8;
+				transition: all 1s;
+				li {
+					display: table;
+					list-style: none;
+					width: 7em;
+					height: 3em;
+					margin: 1em 1em;
+					border: 1px solid white;
+					.nav-item {
+						display: table-cell;
+						vertical-align: middle;
+						font-size: 1.1em;
 					}
 				}
-				&:first-child::after {
-					content: '🐈';
-					margin-left: 40%;
-					opacity: 0%;
-					transition: all 1s;
-				}
-				&:first-child:hover::after {
-					content: '🐈';
-					margin-left: 60%;
-					opacity: 100%;
-				}
-				&:nth-child(2)::after {
-					content: '🍅';
-					margin-left: 40%;
-					opacity: 0%;
-					transition: all 1s;
-				}
-				&:nth-child(2):hover::after {
-					content: '🍅';
-					margin-left: 20%;
-					opacity: 100%;
-				}
-				&:nth-child(3)::after {
-					content: '🎮';
-					margin-left: 40%;
-					opacity: 0%;
-					transition: all 1s;
-				}
-				&:nth-child(3):hover::after {
-					content: '🎮';
-					margin-left: 20%;
-					opacity: 100%;
-				}
-				&:nth-child(4)::after {
-					content: '📖';
-					margin-left: 40%;
-					opacity: 0%;
-					transition: all 1s;
-				}
-				&:nth-child(4):hover::after {
-					content: '📖';
-					margin-left: 20%;
-					opacity: 100%;
-				}
-				&:nth-child(5)::after {
-					content: '🎨';
-					margin-left: 40%;
-					opacity: 0%;
-					transition: all 1s;
-				}
-				&:nth-child(5):hover::after {
-					content: '🎨';
-					margin-left: 20%;
-					opacity: 100%;
-				}
 			}
 		}
 	}
 
-	#bio {
-		background-color: rgba(0, 0, 0, 0.5);
-		width: 100%;
-		padding: 3em;
-		height: fit-content;
-
-		div {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
-			align-items: center;
-			height: 100%;
-
-			h2 {
-				font-size: 3vw;
-				margin-bottom: 2em;
-			}
-			p {
-				width: 100%;
-				font-size: 15px;
-				line-height: 1.7em;
-				background-color: rgba(255, 255, 255, 0.1);
-				padding: 5em;
-				border-radius: 20%;
-				transform: translateY(10vh);
-				opacity: 0;
-				transition: all 1s;
-			}
-			.translateU-animated {
-				opacity: 100%;
-				transform: translateY(0);
-			}
+	main {
+		#my-name {
+			font-size: 6.5em;
+			margin-bottom: 2em;
+			margin-top: 10vw;
 		}
-	}
 
-	#skills-section {
-		display: grid;
-		margin: 1em 10vw;
-		grid-template-columns: 1fr 1fr minmax(0, 1fr);
-		grid-template-rows: 0.5fr 2fr;
-		height: 50vh;
-
-		h3 {
-			grid-column: 2;
-			text-align: center;
-			margin: 1em;
-			font-size: 2.5em;
+		#profile-section {
+			height: 100vh - $navBarHeight;
 		}
-		.skill-icons {
-			display: flex;
-			align-content: flex-start;
-			grid-row: 2;
-			grid-column: 1 / 4;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-content: center;
-			gap: 5em;
-			opacity: 0;
-			transition: all 1s;
 
-			img {
-				width: 100%;
-			}
-			p {
-				margin-top: 0.5em;
-			}
-		}
-		.fade-animated {
-			opacity: 100%;
-		}
-	}
-	.skill-desc {
-		position: absolute;
-		width: max-content;
-		height: fit-content;
-		padding: 1em;
-		text-align: center;
-		background-color: #222a68be;
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-		bottom: 100%;
-		max-width: 15vw;
-
-		transition: all 0.5s ease-out;
-		opacity: 0%;
-
-		&::before {
-			content: '';
-			left: 42%;
-			position: absolute;
-			width: 0;
-			height: 0;
-			top: 100%;
-
-			border: 0.75rem solid transparent;
-			border-bottom: none;
-
-			border-top-color: #222a68be;
-			filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
-		}
-	}
-
-	.skill-desc p {
-		font-size: 7px;
-	}
-
-	#html-s > div,
-	#css-s > div,
-	#js-s > div,
-	#scss-s > div,
-	#sql-s > div,
-	#github-s > div {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 5em;
-		height: 5em;
-
-		transition: all 0.5s ease-out;
-		&:hover {
-			transform: scale(2, 2);
-			// transform-origin: center center;
-			margin: 0 3%;
-		}
-		&:hover .skill-desc {
-			display: block;
-			opacity: 100%;
-
-			bottom: 150%;
-		}
-	}
-
-	#project-section {
-		margin-top: 7em;
-		h4 {
-			font-size: 2.5em;
-			text-align: center;
-			margin-bottom: 1em;
-		}
-		#project-grid {
-			display: grid;
-			justify-items: center;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: auto;
-			gap: 3.5vw;
-			margin: 0 2em;
-			.project {
-				display: flex;
+		#bio {
+			padding: 3em;
+			div {
 				flex-direction: column;
-				background: #222a68a2;
-				height: 27vw;
-				width: 37vw;
-				justify-content: center;
-				opacity: 0;
-				transition: all 1s;
-				&:hover {
-					border: 1px solid white;
-					transform: scale(1.1);
+				h2 {
+					font-size: 3vw;
+					margin-bottom: 2em;
 				}
-				img {
-					margin: auto;
-					width: 100%;
+				p {
+					font-size: 15px;
+					transform: translateY(10vh);
 				}
 			}
-			.fade-animated {
-				opacity: 100%;
-			}
 		}
-	}
-	#contact-section {
-		margin-top: 3em;
-		background-color: #222a68;
-		height: 50vh;
-		min-height: 630px;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 
-		h5 {
-			font-size: 2.5em;
-			margin: 1em 0;
-		}
-		form {
-			opacity: 0;
-			transform: scale(1.5);
-			display: flex;
-			flex-direction: column;
-			height: 35vh;
-			min-height: 410px;
-			width: 70vw;
-			padding: 3vh 3vw;
-			background-color: rgba(0, 0, 0, 0.15);
-			border-radius: 0.5em;
-			border: 1px solid rgba(255, 255, 255, 0.15);
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.15);
-			margin-bottom: 3em;
-			transition: all 1s;
+		#skills-section {
+			grid-template-rows: 0.5fr 2fr;
 
-			&:hover {
-				background-color: rgba(255, 255, 255, 0.01);
+			h3 {
+				font-size: 2.5em;
 			}
-			input {
-				color: white;
-				border: rgba(255, 255, 255, 0.5);
-				box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
-				background-color: rgba(0, 0, 0, 0.25);
-				border-radius: 0.25em;
-				margin-bottom: 0.5em;
+			.skill-icons {
+				gap: 5em;
 			}
-			#name {
-				width: 10em;
-			}
-			#email-subject {
-				width: 10em;
-			}
-			#email {
-				width: 10em;
-			}
-			#message {
-				resize: none;
-				min-height: 1.5em;
-				height: 10em;
-				color: white;
-				border: rgba(255, 255, 255, 0.5);
-				box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
-				background-color: rgba(0, 0, 0, 0.25);
-				border-radius: 0.25em;
-				margin-bottom: 0.75em;
-			}
-			#submit {
-				height: 3vh;
-				transition: all 0.5s;
+			.skill-desc {
+				max-width: 15vw;
+				&::before {
+					left: 42%;
+					.skill-desc p {
+						font-size: 7px;
+					}
+				}
 			}
 		}
-		.scale-animated {
-			opacity: 100%;
-			transform: scale(1);
-		}
-	}
-	footer {
-		margin-top: 3em;
-		width: 100%;
-		height: 8.5em;
 
-		.to-top {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: fixed;
-			right: 3vw;
-			bottom: 3vh;
-			width: 5em;
-			height: 5em;
-			border-radius: 50%;
-			box-shadow: 0 0 10px rgba (0, 0, 0, 0.5);
-			transition: all 1s;
-			p {
+		#project-section {
+			margin-top: 7em;
+			h4 {
+				font-size: 2.5em;
 				text-align: center;
-				text-decoration: none;
-				font-size: 5vw;
-				padding: 0.5em;
-				background-color: rgba(255, 255, 255, 0.25);
-				border-radius: 50%;
-				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-				background: linear-gradient(0deg, $mainBGColor1, $mainBGColor2);
-				transition: all 1s;
+				margin-bottom: 1em;
+			}
+			#project-grid {
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto;
+				gap: 3.5vw;
+				margin: 0 2em;
+				.project {
+					height: 27vw;
+					width: 37vw;
+				}
 			}
 		}
-		#social-media {
-			width: 100%;
-			height: 5em;
-			padding: 1em;
-			background-color: #222a68;
-			background: linear-gradient(to right, transparent, #222a68, transparent);
 
-			.sm-parent {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				transform: translateX(-20vw);
+		#contact-section {
+			margin-top: 3em;
+			height: 50vh;
+			min-height: 630px;
+
+			form {
 				opacity: 0;
-				gap: 2em;
-				transition: all 1s;
+				height: 35vh;
+				min-height: 410px;
+				width: 70vw;
 
-				#github {
-					background: url('../img/logo/github-social-logo.png') no-repeat center;
-					background-size: contain;
-					height: 2.5em;
-					width: 2.5em;
+				input {
+					margin-bottom: 0.5em;
 				}
-				#linkedIn {
-					background: url('../img/logo/Linkedin-logo-on-transparent-Background-PNG-.png')
-						no-repeat center;
-					height: 2.5em;
-					width: 2.5em;
+				#message {
+					margin-bottom: 0.75em;
 				}
-			}
-			.translateR-animated {
-				opacity: 100%;
-				transform: translateX(0);
+				#submit {
+					height: 3vh;
+				}
 			}
 		}
 	}
 
-	.end {
-		text-align: center;
-		margin: 1em 0;
+	footer {
+		.to-top {
+			bottom: 3vh;
+			P {
+				font-size: 5vw;
+			}
+		}
 	}
 }
 // Small Sized Screens
@@ -1254,7 +856,7 @@ html {
 			top: 0;
 			z-index: 1;
 
-			#nav-toggle {
+			.nav-toggle {
 				width: 9vw;
 				height: 9vw;
 
@@ -1781,4 +1383,25 @@ html {
 		text-align: center;
 		margin: 1em 0;
 	}
+}
+
+.container::before {
+	z-index: -1;
+}
+
+form {
+	opacity: 0;
+}
+
+footer .to-top p {
+	background-color: rgba(255, 255, 255, 0.25);
+}
+
+#social-media {
+	background-color: #222a68;
+	background: linear-gradient(to right, transparent, #222a68, transparent);
+}
+
+.turn-nav-toggle {
+	transform: rotateX(-90deg);
 }
