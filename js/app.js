@@ -23,12 +23,23 @@ navToggle.addEventListener('click', () => {
 // This is to check if anything else is pressed while menu is open to close it
 document.addEventListener('click', (e) => {
 	const isClickOutsideMobileMenu = navToggle.contains(e.target);
-	if (!isClickOutsideMobileMenu) {
+	if (
+		!isClickOutsideMobileMenu &&
+		screen.width < 1007 &&
+		navToggle.classList.contains('turn-nav-toggle')
+	) {
 		navToggle.classList.toggle('turn-nav-toggle');
 		navParent.classList.toggle('show-menu');
 	}
 	if (e.target === infoHolder) {
 		emailAfter.classList.remove('email-success');
+	}
+	console.log(e.target);
+});
+
+document.addEventListener('mouseover', (e) => {
+	if (e.target === document.querySelector('#interests')) {
+		console.log('Entered Interests!');
 	}
 });
 

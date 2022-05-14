@@ -61,6 +61,7 @@ html {
 	}
 
 	.container {
+		position: absolute;
 		width: 100%;
 		overflow: auto;
 
@@ -76,6 +77,7 @@ html {
 			padding: 0;
 			opacity: 5%;
 
+			z-index: -2;
 			animation: bg-anim ease-in-out 15s infinite;
 
 			@keyframes bg-anim {
@@ -106,6 +108,9 @@ html {
 
 				#nav-toggle {
 					display: none;
+				}
+				.turn-nav-toggle {
+					transform: rotate(-90deg);
 				}
 
 				.mobile-menu #nav-items-parent li {
@@ -471,6 +476,9 @@ html {
 						margin-bottom: 1em;
 					}
 					#submit {
+						margin: auto;
+						height: 3em;
+						width: 10em;
 						transition: all 0.5s;
 					}
 				}
@@ -491,24 +499,23 @@ html {
 				align-items: center;
 				justify-content: center;
 				position: fixed;
+				right: 3vw;
+				bottom: 5vh;
 				z-index: 1;
 				right: 3vw;
 				width: 5em;
 				height: 5em;
 				border-radius: 50%;
 				box-shadow: 0 0 10px rgba (0, 0, 0, 0.5);
+				background: linear-gradient(0deg, $mainBGColor1, $mainBGColor2);
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 				transition: all 1s;
 				p {
+					font-size: 50px;
 					text-align: center;
 					text-decoration: none;
 					padding: 0.5em;
 					border-radius: 50%;
-					box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-					background: linear-gradient(0deg, $mainBGColor1, $mainBGColor2);
-					transition: all 1s;
-					&:hover {
-						background: linear-gradient(0deg, $mainBGColor2, $mainBGColor1);
-					}
 				}
 			}
 
@@ -546,10 +553,10 @@ html {
 					transform: translateX(0);
 				}
 			}
-		}
-		.end {
-			text-align: center;
-			margin: 1em 0;
+			.end {
+				text-align: center;
+				margin: 1em 0;
+			}
 		}
 	}
 }
@@ -569,12 +576,16 @@ html {
 		}
 
 		header {
-			margin: 3em 3em;
+			// margin: 3em 3em;
+
 			#nav-bar {
 				display: flex;
 				justify-content: space-between;
 
 				#theme-btn {
+					position: absolute;
+					top: 0;
+					z-index: 3;
 					width: 5em;
 					height: 5em;
 				}
@@ -584,13 +595,16 @@ html {
 				}
 
 				.mobile-menu {
+					top: 0;
+					z-index: 2;
 					width: 100%;
+					position: fixed;
+					background-color: #222a68;
 
 					#nav-items-parent {
 						display: flex;
 						justify-content: flex-end;
 						gap: 5em;
-						width: 100%;
 						li {
 							margin: 3em 0;
 
@@ -598,6 +612,9 @@ html {
 								font-size: 1em;
 								padding: 0.5em 1em;
 								text-decoration: none;
+							}
+							&:last-child {
+								margin-right: 5vw;
 							}
 						}
 						a {
@@ -707,7 +724,6 @@ html {
 						margin-bottom: 1em;
 					}
 					#submit {
-						height: 5em;
 						&:hover {
 							background-color: rgba(0, 0, 0, 0.5);
 						}
@@ -717,59 +733,8 @@ html {
 		}
 
 		footer {
-			margin-top: 3em;
-			width: 100%;
-			height: 8.5em;
-			.to-top {
-				right: 3vw;
-				bottom: 5vh;
-				width: 5em;
-				height: 5em;
-				border-radius: 50%;
-				font-size: larger;
-				transition: all 1s;
-				p {
-					font-size: 3vw;
-					padding: 0.5em;
-					border-radius: 50%;
-					&:hover {
-						background: linear-gradient(0deg, $mainBGColor2, $mainBGColor1);
-					}
-				}
-			}
-			#social-media {
-				width: 100%;
-				height: 5em;
-				padding: 1em;
-				// background-color: #222A68;
-				background: linear-gradient(90deg, transparent, #222a68, transparent);
-
-				.sm-parent {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					transform: translateX(-20vw);
-					opacity: 0;
-					gap: 2em;
-					transition: all 1s;
-
-					#github {
-						background: url('../img/logo/github-social-logo.png') no-repeat center;
-						background-size: contain;
-						height: 2.5em;
-						width: 2.5em;
-					}
-					#linkedIn {
-						background: url('../img/logo/Linkedin-logo-on-transparent-Background-PNG-.png')
-							no-repeat center;
-						height: 2.5em;
-						width: 2.5em;
-					}
-				}
-				.translateR-animated {
-					opacity: 100%;
-					transform: translateX(0);
-				}
+			.to-top:hover {
+				background: linear-gradient(0deg, $mainBGColor2, $mainBGColor1);
 			}
 		}
 	}
@@ -924,7 +889,6 @@ html {
 				min-height: 630px;
 
 				form {
-					opacity: 0;
 					height: 35vh;
 					min-height: 410px;
 					width: 70vw;
@@ -935,18 +899,6 @@ html {
 					#message {
 						margin-bottom: 0.75em;
 					}
-					#submit {
-						height: 3vh;
-					}
-				}
-			}
-		}
-
-		footer {
-			.to-top {
-				bottom: 3vh;
-				P {
-					font-size: 5vw;
 				}
 			}
 		}
@@ -1118,7 +1070,9 @@ html {
 				height: 50vh;
 				min-height: 630px;
 				form {
-					height: fit-content;
+					height: 35vh;
+					min-height: 300px;
+					height: 50vh;
 					width: 70vw;
 					input {
 						margin-bottom: 0.5em;
@@ -1126,20 +1080,5 @@ html {
 				}
 			}
 		}
-
-		footer {
-			.to-top {
-				right: 3vw;
-				bottom: 3vh;
-				p {
-					font-size: 5vw;
-					background-color: rgba(255, 255, 255, 0.25);
-				}
-			}
-		}
 	}
-}
-
-.turn-nav-toggle {
-	transform: rotate(-90deg);
 }
