@@ -17,6 +17,7 @@ const scrollEl = document.querySelectorAll('.anim');
 const emailAfter = document.querySelector('.email-after');
 const infoHolder = document.querySelector('.info-holder');
 const navItem = document.querySelectorAll('.nav-item');
+const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 
 // Opening and closing menu by adding or removing class
@@ -60,6 +61,7 @@ window.onload = function () {
 		this.user_email.value = '';
 		this.message.value = '';
 	});
+	sectionInfo.textContent = 'Top';
 };
 
 navItem.forEach((el) => {
@@ -92,7 +94,6 @@ const fixTitle = (text) => {
 };
 
 function onSection(entries, observeTitle) {
-	const sectionInfo = document.querySelector('.section-info');
 	entries.forEach((el) => {
 		const text = el.target.id;
 		const newText = fixTitle(text);
