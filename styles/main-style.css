@@ -431,7 +431,7 @@ html body {
   }
   .container main #skills-section .skill-desc {
     position: absolute;
-    max-width: 15vw;
+    max-width: 20vw;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -444,6 +444,9 @@ html body {
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
     opacity: 0%;
+  }
+  .container main #skills-section .skill-desc p {
+    font-size: xx-small;
   }
   .container main #skills-section .skill-desc::before {
     content: '';
@@ -977,12 +980,12 @@ html body {
     gap: 5em;
   }
   .container main #skills-section .skill-desc {
-    max-width: 15vw;
+    width: 25vw;
   }
   .container main #skills-section .skill-desc::before {
     left: 42%;
   }
-  .container main #skills-section .skill-desc::before .skill-desc p {
+  .container main #skills-section .skill-desc p {
     font-size: 7px;
   }
   .container main #projects-section {
@@ -1156,11 +1159,14 @@ html body {
             column-gap: 10vw;
     row-gap: 5vh;
   }
+  .container main #skills-section .skill-desc {
+    width: 25vw;
+  }
   .container main #skills-section .skill-desc::before {
     left: 33%;
   }
   .container main #skills-section .skill-desc p {
-    font-size: 10px;
+    font-size: 9px;
   }
   .container main #projects-section {
     margin-top: 7em;

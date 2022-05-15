@@ -341,7 +341,7 @@ html {
 				}
 				.skill-desc {
 					position: absolute;
-					max-width: 15vw;
+					max-width: 20vw;
 					height: fit-content;
 					padding: 1em;
 					text-align: center;
@@ -351,6 +351,9 @@ html {
 
 					transition: all 0.5s ease-out;
 					opacity: 0%;
+					p {
+						font-size: xx-small;
+					}
 
 					&::before {
 						content: '';
@@ -857,12 +860,12 @@ html {
 					gap: 5em;
 				}
 				.skill-desc {
-					max-width: 15vw;
+					width: 25vw;
 					&::before {
 						left: 42%;
-						.skill-desc p {
-							font-size: 7px;
-						}
+					}
+					p {
+						font-size: 7px;
 					}
 				}
 			}
@@ -1042,11 +1045,12 @@ html {
 					row-gap: 5vh;
 				}
 				.skill-desc {
+					width: 25vw;
 					&::before {
 						left: 33%;
 					}
 					p {
-						font-size: 10px;
+						font-size: 9px;
 					}
 				}
 			}

@@ -1,3 +1,5 @@
+'use strict';
+
 let options = {
 	root: null,
 	rootMargin: '0px',
