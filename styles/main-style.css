@@ -121,6 +121,9 @@ html body {
     border-radius: 50%;
     margin: 1.5em;
   }
+  .container header #nav-bar .section-top-info {
+    display: none;
+  }
   .container header #nav-bar #nav-toggle {
     display: none;
   }
@@ -130,6 +133,10 @@ html body {
   }
   .container header #nav-bar .mobile-menu #nav-items-parent li {
     list-style: none;
+  }
+  .container header #nav-bar .mobile-menu #nav-items-parent li .nav-item {
+    background-color: transparent;
+    border: 1px solid #fff;
   }
   .container main #profile-section {
     min-height: 90vh;
@@ -482,15 +489,15 @@ html body {
     -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
             filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
   }
-  .container main #project-section h4 {
+  .container main #projects-section h4 {
     text-align: center;
   }
-  .container main #project-section #project-grid {
+  .container main #projects-section #project-grid {
     display: -ms-grid;
     display: grid;
     justify-items: center;
   }
-  .container main #project-section #project-grid .project {
+  .container main #projects-section #project-grid .project {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -508,16 +515,16 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container main #project-section #project-grid .project:hover {
+  .container main #projects-section #project-grid .project:hover {
     border: 1px solid white;
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
   }
-  .container main #project-section #project-grid .project img {
+  .container main #projects-section #project-grid .project img {
     margin: auto;
     width: 100%;
   }
-  .container main #project-section #project-grid .fade-animated {
+  .container main #projects-section #project-grid .fade-animated {
     opacity: 100%;
   }
   .container main #contact-section {
@@ -706,6 +713,15 @@ html body {
     width: 5em;
     height: 5em;
   }
+  .container header #nav-bar .section-top-info {
+    display: block;
+    border-left: 1px rgba(255, 255, 255, 0.25) solid;
+    border-right: 1px rgba(255, 255, 255, 0.25) solid;
+    padding: 1.5em 1em;
+    position: absolute;
+    top: 1.5em;
+    left: 8em;
+  }
   .container header #nav-bar .nav-toggle {
     display: none;
   }
@@ -714,6 +730,8 @@ html body {
     z-index: 2;
     width: 100%;
     position: fixed;
+    -webkit-box-shadow: 0 0 3em rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 3em rgba(0, 0, 0, 0.5);
     background-color: #222a68;
   }
   .container header #nav-bar .mobile-menu #nav-items-parent {
@@ -726,12 +744,18 @@ html body {
     gap: 5em;
   }
   .container header #nav-bar .mobile-menu #nav-items-parent li {
-    margin: 3em 0;
+    margin: 2.5em 0;
   }
   .container header #nav-bar .mobile-menu #nav-items-parent li .nav-item {
     font-size: 1em;
-    padding: 0.5em 1em;
+    width: 6em;
+    height: 2.5em;
     text-decoration: none;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+  }
+  .container header #nav-bar .mobile-menu #nav-items-parent li .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.25);
   }
   .container header #nav-bar .mobile-menu #nav-items-parent li:last-child {
     margin-right: 5vw;
@@ -781,6 +805,7 @@ html body {
     font-size: 2em;
   }
   .container main #skills-section {
+    min-height: 70vh;
     -ms-grid-rows: 1fr 2fr;
         grid-template-rows: 1fr 2fr;
   }
@@ -805,16 +830,17 @@ html body {
   .container main #skills-section .skill-desc p {
     font-size: 8px;
   }
-  .container main #project-section {
+  .container main #projects-section {
+    min-height: 70vh;
     margin-top: 10vw;
     width: 100%;
   }
-  .container main #project-section h4 {
+  .container main #projects-section h4 {
     text-align: center;
     font-size: 4em;
     margin-bottom: 2em;
   }
-  .container main #project-section #project-grid {
+  .container main #projects-section #project-grid {
     -ms-grid-rows: auto;
         grid-template-rows: auto;
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -913,13 +939,14 @@ html body {
     transition: all 1s;
   }
   .container header .mobile-menu .show-menu li {
-    border: 1px solid white;
     width: 7em;
     height: 3em;
     margin: 1em 1em;
   }
   .container header .mobile-menu .show-menu li .nav-item {
     font-size: 1.1em;
+    width: 6em;
+    height: 2.5em;
   }
   .container main #profile-section {
     height: 90vh;
@@ -971,15 +998,15 @@ html body {
   .container main #skills-section .skill-desc::before .skill-desc p {
     font-size: 7px;
   }
-  .container main #project-section {
+  .container main #projects-section {
     margin-top: 7em;
   }
-  .container main #project-section h4 {
+  .container main #projects-section h4 {
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 1em;
   }
-  .container main #project-section #project-grid {
+  .container main #projects-section #project-grid {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto;
@@ -987,7 +1014,7 @@ html body {
     gap: 3.5vw;
     margin: 0 2em;
   }
-  .container main #project-section #project-grid .project {
+  .container main #projects-section #project-grid .project {
     height: 27vw;
     width: 37vw;
   }
@@ -1083,13 +1110,14 @@ html body {
     transition: all 1s;
   }
   .container header #nav-bar .mobile-menu .show-menu li {
-    border: 1px solid white;
     width: 7em;
     height: 3em;
     margin: 1em 1em;
   }
   .container header #nav-bar .mobile-menu .show-menu li .nav-item {
     font-size: 1.1em;
+    width: 6em;
+    height: 2.5em;
   }
   .container main #profile-section {
     min-height: 90vh;
@@ -1147,14 +1175,14 @@ html body {
   .container main #skills-section .skill-desc p {
     font-size: 10px;
   }
-  .container main #project-section {
+  .container main #projects-section {
     margin-top: 7em;
   }
-  .container main #project-section h4 {
+  .container main #projects-section h4 {
     font-size: 2.5em;
     margin-bottom: 1em;
   }
-  .container main #project-section #project-grid {
+  .container main #projects-section #project-grid {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto;
@@ -1162,7 +1190,7 @@ html body {
     gap: 3.5vw;
     margin: 0 2em;
   }
-  .container main #project-section #project-grid .project {
+  .container main #projects-section #project-grid .project {
     height: 27vw;
     width: 37.5vw;
   }

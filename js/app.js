@@ -3,6 +3,11 @@ let options = {
 	rootMargin: '0px',
 	threshold: 0.5,
 };
+let sectionOptions = {
+	root: null,
+	rootMargin: '0px',
+	threshold: 0.9,
+};
 
 const navParent = document.getElementById('nav-items-parent');
 const navToggle = document.querySelector('.nav-toggle');
@@ -11,6 +16,8 @@ const toTop = document.querySelector('.to-top');
 const scrollEl = document.querySelectorAll('.anim');
 const emailAfter = document.querySelector('.email-after');
 const infoHolder = document.querySelector('.info-holder');
+const navItem = document.querySelectorAll('.nav-item');
+const sectionTitle = document.querySelectorAll('.section');
 
 // Opening and closing menu by adding or removing class
 navToggle.addEventListener('click', () => {
@@ -55,11 +62,44 @@ window.onload = function () {
 	});
 };
 
+navItem.forEach((el) => {
+	el.addEventListener('click', (e) => {
+		console.log(e.target);
+		const area = e.target.textContent;
+		console.log(area);
+		const areaFix = '#' + area + '-section';
+		console.log(areaFix.toLowerCase());
+		document.querySelector(areaFix.toLowerCase()).scrollIntoView({
+			behavior: 'smooth',
+		});
+	});
+});
+
 let observer = new IntersectionObserver(onChange, options);
+let observeTitle = new IntersectionObserver(onSection, sectionOptions);
 
 scrollEl.forEach((el) => {
 	observer.observe(el);
 });
+
+sectionTitle.forEach((el) => {
+	observeTitle.observe(el);
+});
+
+const fixTitle = (text) => {
+	const newText = text.replace('-section', '');
+	return newText;
+};
+
+function onSection(entries, observeTitle) {
+	const sectionInfo = document.querySelector('.section-info');
+	entries.forEach((el) => {
+		const text = el.target.id;
+		const newText = fixTitle(text);
+		const capFirstLetter = newText[0].toUpperCase() + newText.slice(1);
+		sectionInfo.textContent = capFirstLetter;
+	});
+}
 
 function onChange(entries, observer) {
 	entries.forEach((entry) => {

@@ -105,6 +105,9 @@ html {
 					border-radius: 50%;
 					margin: 1.5em;
 				}
+				.section-top-info {
+					display: none;
+				}
 
 				#nav-toggle {
 					display: none;
@@ -115,6 +118,10 @@ html {
 
 				.mobile-menu #nav-items-parent li {
 					list-style: none;
+					.nav-item {
+						background-color: transparent;
+						border: 1px solid #fff;
+					}
 				}
 			}
 		}
@@ -390,7 +397,7 @@ html {
 				}
 			}
 
-			#project-section {
+			#projects-section {
 				h4 {
 					text-align: center;
 				}
@@ -566,8 +573,6 @@ html {
 		}
 
 		header {
-			// margin: 3em 3em;
-
 			#nav-bar {
 				display: flex;
 				justify-content: space-between;
@@ -579,6 +584,15 @@ html {
 					width: 5em;
 					height: 5em;
 				}
+				.section-top-info {
+					display: block;
+					border-left: 1px rgba(255, 255, 255, 0.25) solid;
+					border-right: 1px rgba(255, 255, 255, 0.25) solid;
+					padding: 1.5em 1em;
+					position: absolute;
+					top: 1.5em;
+					left: 8em;
+				}
 
 				.nav-toggle {
 					display: none;
@@ -589,6 +603,7 @@ html {
 					z-index: 2;
 					width: 100%;
 					position: fixed;
+					box-shadow: 0 0 3em rgba(0, 0, 0, 0.5);
 					background-color: #222a68;
 
 					#nav-items-parent {
@@ -596,12 +611,17 @@ html {
 						justify-content: flex-end;
 						gap: 5em;
 						li {
-							margin: 3em 0;
+							margin: 2.5em 0;
 
 							.nav-item {
 								font-size: 1em;
-								padding: 0.5em 1em;
+								width: 6em;
+								height: 2.5em;
 								text-decoration: none;
+								transition: all 0.25s;
+								&:hover {
+									background-color: rgba(255, 255, 255, 0.25);
+								}
 							}
 							&:last-child {
 								margin-right: 5vw;
@@ -656,6 +676,7 @@ html {
 			}
 
 			#skills-section {
+				min-height: 70vh;
 				grid-template-rows: 1fr 2fr;
 
 				h3 {
@@ -678,7 +699,8 @@ html {
 				}
 			}
 
-			#project-section {
+			#projects-section {
+				min-height: 70vh;
 				margin-top: 10vw;
 				width: 100%;
 
@@ -794,12 +816,14 @@ html {
 
 					transition: all 1s;
 					li {
-						border: 1px solid white;
 						width: 7em;
 						height: 3em;
 						margin: 1em 1em;
 						.nav-item {
 							font-size: 1.1em;
+							width: 6em;
+							height: 2.5em;
+							// padding: 0.5em 1em;
 						}
 					}
 				}
@@ -854,7 +878,7 @@ html {
 				}
 			}
 
-			#project-section {
+			#projects-section {
 				margin-top: 7em;
 				h4 {
 					font-size: 2.5em;
@@ -969,12 +993,13 @@ html {
 
 						transition: all 1s;
 						li {
-							border: 1px solid white;
 							width: 7em;
 							height: 3em;
 							margin: 1em 1em;
 							.nav-item {
 								font-size: 1.1em;
+								width: 6em;
+								height: 2.5em;
 							}
 						}
 					}
@@ -1037,7 +1062,7 @@ html {
 				}
 			}
 
-			#project-section {
+			#projects-section {
 				margin-top: 7em;
 				h4 {
 					font-size: 2.5em;
