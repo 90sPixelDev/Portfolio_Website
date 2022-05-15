@@ -635,13 +635,6 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container footer .to-top p {
-    font-size: 50px;
-    text-align: center;
-    text-decoration: none;
-    padding: 0.5em;
-    border-radius: 50%;
-  }
   .container footer #social-media {
     width: 100%;
     height: 5em;
