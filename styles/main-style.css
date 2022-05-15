@@ -7,6 +7,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: white;
+  font-size: 16px;
   cursor: default;
 }
 
@@ -21,40 +22,7 @@ html body {
   background-attachment: fixed;
 }
 
-.email-after {
-  display: none;
-  position: fixed;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.email-after .info-holder {
-  display: -ms-grid;
-  display: grid;
-  height: 100%;
-  place-items: center;
-  text-align: center;
-}
-
-.email-after .info-holder p {
-  background-color: rgba(255, 255, 255, 0.25);
-  line-height: 2em;
-  padding: 3vw;
-  border-radius: 5em;
-}
-
-.email-success {
-  display: block;
-}
-
 @media all {
-  * {
-    font-size: 16px;
-  }
   .container {
     position: absolute;
     width: 100%;
@@ -608,6 +576,32 @@ html body {
     opacity: 100%;
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+  .container main #contact-section .email-after {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .container main #contact-section .email-after .info-holder {
+    display: -ms-grid;
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+  }
+  .container main #contact-section .email-after .info-holder p {
+    background-color: rgba(255, 255, 255, 0.25);
+    line-height: 2em;
+    padding: 3vw;
+    border-radius: 5em;
+  }
+  .container main #contact-section .email-success {
+    display: block;
   }
   .container footer {
     margin-top: 3em;

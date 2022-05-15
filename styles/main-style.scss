@@ -14,6 +14,7 @@ $navBarHeight: 10vh;
 	padding: 0;
 	box-sizing: border-box;
 	color: white;
+	font-size: 16px;
 	cursor: default;
 }
 
@@ -28,38 +29,8 @@ html {
 	}
 }
 
-.email-after {
-	display: none;
-	position: fixed;
-	z-index: 3;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: rgba(0, 0, 0, 0.5);
-	.info-holder {
-		display: grid;
-		height: 100%;
-		place-items: center;
-		text-align: center;
-		p {
-			background-color: rgba($color: #fff, $alpha: 0.25);
-			line-height: 2em;
-			padding: 3vw;
-			border-radius: 5em;
-		}
-	}
-}
-.email-success {
-	display: block;
-}
-
 // MAIN LAYOUT / STYLE
 @media all {
-	* {
-		font-size: 16px;
-	}
-
 	.container {
 		position: absolute;
 		width: 100%;
@@ -492,6 +463,31 @@ html {
 				.scale-animated {
 					opacity: 100%;
 					transform: scale(1);
+				}
+				.email-after {
+					display: none;
+					position: fixed;
+					z-index: 3;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					background-color: rgba(0, 0, 0, 0.5);
+					.info-holder {
+						display: grid;
+						height: 100%;
+						place-items: center;
+						text-align: center;
+						p {
+							background-color: rgba($color: #fff, $alpha: 0.25);
+							line-height: 2em;
+							padding: 3vw;
+							border-radius: 5em;
+						}
+					}
+				}
+				.email-success {
+					display: block;
 				}
 			}
 		}
