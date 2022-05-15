@@ -66,14 +66,15 @@ window.onload = function () {
 
 navItem.forEach((el) => {
 	el.addEventListener('click', (e) => {
-		console.log(e.target);
-		const area = e.target.textContent;
-		console.log(area);
-		const areaFix = '#' + area + '-section';
-		console.log(areaFix.toLowerCase());
-		document.querySelector(areaFix.toLowerCase()).scrollIntoView({
-			behavior: 'smooth',
-		});
+		if (e.target.innerText === 'Resume') return;
+		else {
+			const area = e.target.textContent;
+			// console.log(area);
+			const areaFix = '#' + area + '-section';
+			document.querySelector(areaFix.toLowerCase()).scrollIntoView({
+				behavior: 'smooth',
+			});
+		}
 	});
 });
 
