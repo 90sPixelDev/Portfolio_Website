@@ -184,16 +184,22 @@ html {
 								@keyframes list-focus {
 									0% {
 										opacity: 0%;
-										border-top: 0.4em solid transparent;
-										border-left: 0.4em solid #e2adf2;
-										border-bottom: 0.4em solid transparent;
+										border-top: 0.4em solid
+											transparent;
+										border-left: 0.4em solid
+											#e2adf2;
+										border-bottom: 0.4em solid
+											transparent;
 										transform: translateX(-2em);
 									}
 									100% {
 										opacity: 100%;
-										border-top: 0.4em solid transparent;
-										border-left: 0.4em solid #e2adf2;
-										border-bottom: 0.4em solid transparent;
+										border-top: 0.4em solid
+											transparent;
+										border-left: 0.4em solid
+											#e2adf2;
+										border-bottom: 0.4em solid
+											transparent;
 										margin-right: 1em;
 									}
 								}
@@ -366,7 +372,9 @@ html {
 						border-bottom: none;
 
 						border-top-color: #222a68be;
-						filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+						filter: drop-shadow(
+							0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1)
+						);
 					}
 				}
 			}
@@ -482,7 +490,10 @@ html {
 						place-items: center;
 						text-align: center;
 						p {
-							background-color: rgba($color: #fff, $alpha: 0.25);
+							background-color: rgba(
+								$color: #fff,
+								$alpha: 0.25
+							);
 							line-height: 2em;
 							padding: 3vw;
 							border-radius: 5em;
@@ -513,7 +524,11 @@ html {
 				height: 5em;
 				border-radius: 50%;
 				box-shadow: 0 0 10px rgba (0, 0, 0, 0.5);
-				background: linear-gradient(0deg, $mainBGColor1, $mainBGColor2);
+				background: linear-gradient(
+					0deg,
+					$mainBGColor1,
+					$mainBGColor2
+				);
 				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 				transition: all 1s;
 			}
@@ -523,7 +538,12 @@ html {
 				height: 5em;
 				padding: 1em;
 				background-color: #222a68;
-				background: linear-gradient(to right, transparent, #222a68, transparent);
+				background: linear-gradient(
+					to right,
+					transparent,
+					#222a68,
+					transparent
+				);
 
 				.sm-parent {
 					display: flex;
@@ -570,7 +590,7 @@ html {
 				justify-content: space-between;
 
 				#theme-btn {
-					position: absolute;
+					position: fixed;
 					top: 0;
 					z-index: 3;
 					width: 5em;
@@ -612,7 +632,12 @@ html {
 								text-decoration: none;
 								transition: all 0.25s;
 								&:hover {
-									background-color: rgba(255, 255, 255, 0.25);
+									background-color: rgba(
+										255,
+										255,
+										255,
+										0.25
+									);
 								}
 							}
 							&:last-child {
@@ -627,7 +652,12 @@ html {
 							transition: all 0.5s;
 							&:hover {
 								color: white;
-								background-color: rgba(255, 255, 255, 0.1);
+								background-color: rgba(
+									255,
+									255,
+									255,
+									0.1
+								);
 							}
 						}
 					}
@@ -738,7 +768,11 @@ html {
 
 		footer {
 			.to-top:hover {
-				background: linear-gradient(0deg, $mainBGColor2, $mainBGColor1);
+				background: linear-gradient(
+					0deg,
+					$mainBGColor2,
+					$mainBGColor1
+				);
 			}
 		}
 	}
@@ -773,7 +807,8 @@ html {
 
 					margin: 4vw;
 
-					background: url('../img/logo/menu-logo.svg') no-repeat center;
+					background: url('../img/logo/menu-logo.svg') no-repeat
+						center;
 					background-size: contain;
 					transition: all 0.5s;
 				}
@@ -950,7 +985,8 @@ html {
 
 						margin: 4vw;
 
-						background: url('../img/logo/menu-logo.svg') no-repeat center;
+						background: url('../img/logo/menu-logo.svg')
+							no-repeat center;
 						background-size: contain;
 						transition: all 0.5s;
 					}

@@ -221,34 +221,34 @@ html body {
   @-webkit-keyframes list-focus {
     0% {
       opacity: 0%;
-      border-top: 0.4em solid transparent;
-      border-left: 0.4em solid #e2adf2;
-      border-bottom: 0.4em solid transparent;
+      border-top: 0.4em solid transparent;
+      border-left: 0.4em solid #e2adf2;
+      border-bottom: 0.4em solid transparent;
       -webkit-transform: translateX(-2em);
               transform: translateX(-2em);
     }
     100% {
       opacity: 100%;
-      border-top: 0.4em solid transparent;
-      border-left: 0.4em solid #e2adf2;
-      border-bottom: 0.4em solid transparent;
+      border-top: 0.4em solid transparent;
+      border-left: 0.4em solid #e2adf2;
+      border-bottom: 0.4em solid transparent;
       margin-right: 1em;
     }
   }
   @keyframes list-focus {
     0% {
       opacity: 0%;
-      border-top: 0.4em solid transparent;
-      border-left: 0.4em solid #e2adf2;
-      border-bottom: 0.4em solid transparent;
+      border-top: 0.4em solid transparent;
+      border-left: 0.4em solid #e2adf2;
+      border-bottom: 0.4em solid transparent;
       -webkit-transform: translateX(-2em);
               transform: translateX(-2em);
     }
     100% {
       opacity: 100%;
-      border-top: 0.4em solid transparent;
-      border-left: 0.4em solid #e2adf2;
-      border-bottom: 0.4em solid transparent;
+      border-top: 0.4em solid transparent;
+      border-left: 0.4em solid #e2adf2;
+      border-bottom: 0.4em solid transparent;
       margin-right: 1em;
     }
   }
@@ -697,7 +697,7 @@ html body {
             justify-content: space-between;
   }
   .container header #nav-bar #theme-btn {
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 3;
     width: 5em;
