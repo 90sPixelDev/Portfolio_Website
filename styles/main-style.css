@@ -390,6 +390,8 @@ html body {
   .container main #skills-section #js-s > div,
   .container main #skills-section #scss-s > div,
   .container main #skills-section #sql-s > div,
+  .container main #skills-section #react-s > div,
+  .container main #skills-section #tailwind-s > div,
   .container main #skills-section #github-s > div {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -414,6 +416,8 @@ html body {
   .container main #skills-section #js-s > div:hover,
   .container main #skills-section #scss-s > div:hover,
   .container main #skills-section #sql-s > div:hover,
+  .container main #skills-section #react-s > div:hover,
+  .container main #skills-section #tailwind-s > div:hover,
   .container main #skills-section #github-s > div:hover {
     -webkit-transform: scale(2, 2);
             transform: scale(2, 2);
@@ -424,6 +428,8 @@ html body {
   .container main #skills-section #js-s > div:hover .skill-desc,
   .container main #skills-section #scss-s > div:hover .skill-desc,
   .container main #skills-section #sql-s > div:hover .skill-desc,
+  .container main #skills-section #react-s > div:hover .skill-desc,
+  .container main #skills-section #tailwind-s > div:hover .skill-desc,
   .container main #skills-section #github-s > div:hover .skill-desc {
     display: block;
     opacity: 100%;
@@ -901,6 +907,7 @@ html body {
   .container header .mobile-menu .nav-menu {
     position: fixed;
     height: 0;
+    width: 20vw;
     overflow: hidden;
     -webkit-transition: all 1s;
     transition: all 1s;
@@ -910,10 +917,13 @@ html body {
   }
   .container header .mobile-menu .nav-menu li {
     display: table;
+    opacity: 0;
     list-style: none;
     text-align: center;
     overflow: hidden;
     height: 0;
+    -webkit-transition: opacity 1s height 1s;
+    transition: opacity 1s height 1s;
   }
   .container header .mobile-menu .nav-menu li .nav-item {
     display: table-cell;
@@ -929,6 +939,7 @@ html body {
     transition: all 1s;
   }
   .container header .mobile-menu .show-menu li {
+    opacity: 100%;
     width: 7em;
     height: 3em;
     margin: 1em 1em;
