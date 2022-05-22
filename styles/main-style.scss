@@ -828,7 +828,7 @@ html {
 					transition: all 1s;
 					li {
 						display: table;
-						opacity: 0;
+						opacity: 100%;
 
 						list-style: none;
 						text-align: center;
@@ -854,9 +854,6 @@ html {
 					opacity: 100%;
 
 					transition: all 1s;
-					li {
-						opacity: 100%;
-					}
 				}
 			}
 		}
@@ -1005,7 +1002,7 @@ html {
 
 						transition: all 1s;
 						li {
-							opacity: 0;
+							opacity: 100%;
 							display: table;
 							list-style: none;
 							text-align: center;
@@ -1027,10 +1024,6 @@ html {
 						right: 0;
 						height: 60vw;
 						opacity: 100%;
-
-						li {
-							opacity: 100%;
-						}
 					}
 				}
 			}

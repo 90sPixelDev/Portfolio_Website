@@ -918,7 +918,7 @@ html body {
   }
   .container header .mobile-menu .nav-menu li {
     display: table;
-    opacity: 0;
+    opacity: 100%;
     list-style: none;
     text-align: center;
     overflow: hidden;
@@ -942,9 +942,6 @@ html body {
     opacity: 100%;
     -webkit-transition: all 1s;
     transition: all 1s;
-  }
-  .container header .mobile-menu .show-menu li {
-    opacity: 100%;
   }
   .container main #profile-section {
     height: 90vh;
@@ -1088,7 +1085,7 @@ html body {
     transition: all 1s;
   }
   .container header #nav-bar .mobile-menu .nav-menu li {
-    opacity: 0;
+    opacity: 100%;
     display: table;
     list-style: none;
     text-align: center;
@@ -1108,9 +1105,6 @@ html body {
   .container header #nav-bar .mobile-menu .show-menu {
     right: 0;
     height: 60vw;
-    opacity: 100%;
-  }
-  .container header #nav-bar .mobile-menu .show-menu li {
     opacity: 100%;
   }
   .container main #profile-section {
