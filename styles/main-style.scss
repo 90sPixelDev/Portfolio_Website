@@ -424,6 +424,7 @@ html {
 					margin: 1em 0;
 				}
 				form {
+					opacity: 0;
 					transform: scale(1.5);
 					display: flex;
 					flex-direction: column;
@@ -747,7 +748,6 @@ html {
 				min-height: 495px;
 				margin: 20vh 0 10vh 0;
 				form {
-					opacity: 0;
 					justify-content: space-evenly;
 					height: fit-content;
 					min-height: 310px;
@@ -815,6 +815,7 @@ html {
 					transition: all 0.5s;
 				}
 				.nav-menu {
+					right: 0;
 					position: fixed;
 					height: 0;
 					width: 20vw;
@@ -832,14 +833,18 @@ html {
 						list-style: none;
 						text-align: center;
 						overflow: hidden;
-						height: 0;
+						width: 7em;
+						height: 3em;
+						margin: 1em 1em;
 
-						transition: opacity 1s height 1s;
+						transition: all 1s;
 						.nav-item {
 							display: table-cell;
 							vertical-align: middle;
 							text-decoration: none;
-							font-size: 0;
+							font-size: 1.1em;
+							width: 6em;
+							height: 2.5em;
 						}
 					}
 				}
@@ -851,15 +856,6 @@ html {
 					transition: all 1s;
 					li {
 						opacity: 100%;
-
-						width: 7em;
-						height: 3em;
-						margin: 1em 1em;
-						.nav-item {
-							font-size: 1.1em;
-							width: 6em;
-							height: 2.5em;
-						}
 					}
 				}
 			}
@@ -938,7 +934,6 @@ html {
 				min-height: 630px;
 
 				form {
-					opacity: 0;
 					height: 35vh;
 					min-height: 410px;
 					width: 70vw;
@@ -1001,25 +996,30 @@ html {
 					}
 					.nav-menu {
 						position: fixed;
+						right: 0;
 						height: 0;
 						overflow: hidden;
-						transition: all 1s;
 						opacity: 0;
 
 						background-color: #e2adf2b8;
 
 						transition: all 1s;
 						li {
+							opacity: 0;
 							display: table;
 							list-style: none;
 							text-align: center;
 							overflow: hidden;
-							height: 0;
+							width: 7em;
+							height: 3em;
+							margin: 1em 1em;
 							.nav-item {
 								display: table-cell;
 								vertical-align: middle;
 								text-decoration: none;
-								font-size: 0;
+								font-size: 1.1em;
+								width: 6em;
+								height: 2.5em;
 							}
 						}
 					}
@@ -1028,16 +1028,8 @@ html {
 						height: 60vw;
 						opacity: 100%;
 
-						transition: all 1s;
 						li {
-							width: 7em;
-							height: 3em;
-							margin: 1em 1em;
-							.nav-item {
-								font-size: 1.1em;
-								width: 6em;
-								height: 2.5em;
-							}
+							opacity: 100%;
 						}
 					}
 				}

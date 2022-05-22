@@ -523,6 +523,7 @@ html body {
     margin: 1em 0;
   }
   .container main #contact-section form {
+    opacity: 0;
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
     display: -webkit-box;
@@ -850,7 +851,6 @@ html body {
     margin: 20vh 0 10vh 0;
   }
   .container main #contact-section form {
-    opacity: 0;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
@@ -905,6 +905,7 @@ html body {
     transition: all 0.5s;
   }
   .container header .mobile-menu .nav-menu {
+    right: 0;
     position: fixed;
     height: 0;
     width: 20vw;
@@ -921,15 +922,19 @@ html body {
     list-style: none;
     text-align: center;
     overflow: hidden;
-    height: 0;
-    -webkit-transition: opacity 1s height 1s;
-    transition: opacity 1s height 1s;
+    width: 7em;
+    height: 3em;
+    margin: 1em 1em;
+    -webkit-transition: all 1s;
+    transition: all 1s;
   }
   .container header .mobile-menu .nav-menu li .nav-item {
     display: table-cell;
     vertical-align: middle;
     text-decoration: none;
-    font-size: 0;
+    font-size: 1.1em;
+    width: 6em;
+    height: 2.5em;
   }
   .container header .mobile-menu .show-menu {
     right: 0;
@@ -940,14 +945,6 @@ html body {
   }
   .container header .mobile-menu .show-menu li {
     opacity: 100%;
-    width: 7em;
-    height: 3em;
-    margin: 1em 1em;
-  }
-  .container header .mobile-menu .show-menu li .nav-item {
-    font-size: 1.1em;
-    width: 6em;
-    height: 2.5em;
   }
   .container main #profile-section {
     height: 90vh;
@@ -1082,43 +1079,39 @@ html body {
   }
   .container header #nav-bar .mobile-menu .nav-menu {
     position: fixed;
+    right: 0;
     height: 0;
     overflow: hidden;
-    -webkit-transition: all 1s;
-    transition: all 1s;
     opacity: 0;
     background-color: #e2adf2b8;
+    -webkit-transition: all 1s;
     transition: all 1s;
   }
   .container header #nav-bar .mobile-menu .nav-menu li {
+    opacity: 0;
     display: table;
     list-style: none;
     text-align: center;
     overflow: hidden;
-    height: 0;
+    width: 7em;
+    height: 3em;
+    margin: 1em 1em;
   }
   .container header #nav-bar .mobile-menu .nav-menu li .nav-item {
     display: table-cell;
     vertical-align: middle;
     text-decoration: none;
-    font-size: 0;
+    font-size: 1.1em;
+    width: 6em;
+    height: 2.5em;
   }
   .container header #nav-bar .mobile-menu .show-menu {
     right: 0;
     height: 60vw;
     opacity: 100%;
-    -webkit-transition: all 1s;
-    transition: all 1s;
   }
   .container header #nav-bar .mobile-menu .show-menu li {
-    width: 7em;
-    height: 3em;
-    margin: 1em 1em;
-  }
-  .container header #nav-bar .mobile-menu .show-menu li .nav-item {
-    font-size: 1.1em;
-    width: 6em;
-    height: 2.5em;
+    opacity: 100%;
   }
   .container main #profile-section {
     min-height: 90vh;
