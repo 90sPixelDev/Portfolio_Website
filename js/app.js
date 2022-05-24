@@ -12,18 +12,21 @@ const navItem = document.querySelectorAll('.nav-item');
 const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 const skillList = document.querySelectorAll('.skill-list li');
+const projectGrid = document.querySelector('#project-grid');
 
 const projects = [
 	{
 		title: 'Free The Games',
 		url: '/projects/Free_the_Games/home.html',
-		classes: 'free-the-games projects anim fade-anim',
+		img: "url('../img/video-game-list-thumbnail.jpg') no-repeat",
+		classes: ['free-the-games', 'project', 'anim', 'fade-anim'],
 		skills: ['javascript', 'api', 'sass'],
 	},
 	{
 		title: 'Dress Up Game',
 		url: '/dress_up_game.html',
-		classes: 'dress-up-game projects anim fade-anim',
+		img: "url('../img/dress_up_game/dress_up_pic.jpg')  no-repeat",
+		classes: ['dress-up-game', 'project', 'anim', 'fade-anim'],
 		skills: ['javascript'],
 	},
 ];
@@ -53,6 +56,38 @@ document.addEventListener('click', (e) => {
 });
 
 // PROJECT/SKILL SECTION
+
+// CReating the Project Parent Element
+projects.forEach((project) => {
+	const projParent = document.createElement('div');
+	projParent.classList.add('project-parent');
+	projectGrid.append(projParent);
+
+	const proj = document.createElement('a');
+
+	project.classes.forEach((classInProj) => {
+		proj.classList.add(classInProj);
+	});
+	proj.href = project.url;
+	proj.target = '_blank';
+	proj.rel = 'noopener noreferrer';
+
+	console.log(proj.style.background);
+	projParent.append(proj);
+
+	const projTitle = document.createElement('p');
+	projTitle.textContent = project.title;
+	projTitle.classList.add('project-title');
+
+	proj.append(projTitle);
+});
+
+// Creating the Project Item Element
+// const createProjectItem = (projectParent) => {
+// 	const proj = document.createElement('a');
+// 	proj.classList.add(project)
+// }
+
 skillList.forEach((skill) => {
 	skill.addEventListener('click', () => {
 		skill.style.backgroundColor = 'black';

@@ -518,7 +518,7 @@ html body {
         -ms-flex-pack: end;
             justify-content: end;
     background-color: #222a68;
-    opacity: 0;
+    opacity: 100%;
     background-size: contain;
     background-position: center;
     border-radius: 1em;
