@@ -469,10 +469,34 @@ html body {
   .container main #projects-section h4 {
     text-align: center;
   }
+  .container main #projects-section .filter-area {
+    margin: 0 10vw;
+    padding: 1em;
+  }
+  .container main #projects-section .filter-area p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .container main #projects-section .filter-area .skill-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 2em;
+    list-style: none;
+  }
+  .container main #projects-section .filter-area .skill-list li {
+    padding: 0.5em 1em;
+    background-color: #222a687c;
+    border-radius: 1em;
+  }
   .container main #projects-section #project-grid {
     display: -ms-grid;
     display: grid;
     justify-items: center;
+    background-color: #222a687c;
+    border-radius: 1em;
+    padding: 2em 1em;
   }
   .container main #projects-section #project-grid .free-the-games {
     background: url("../img/video-game-list-thumbnail.jpg") no-repeat;

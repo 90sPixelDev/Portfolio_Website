@@ -1,16 +1,6 @@
 'use strict';
 
-let options = {
-	root: null,
-	rootMargin: '0px',
-	threshold: 0.5,
-};
-let sectionOptions = {
-	root: null,
-	rootMargin: '0px',
-	threshold: 0.9,
-};
-
+// VARIABLES
 const navParent = document.getElementById('nav-items-parent');
 const navToggle = document.querySelector('.nav-toggle');
 const myName = document.querySelector('#my-name');
@@ -21,6 +11,22 @@ const infoHolder = document.querySelector('.info-holder');
 const navItem = document.querySelectorAll('.nav-item');
 const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
+const skillList = document.querySelectorAll('.skill-list li');
+
+const projects = [
+	{
+		title: 'Free The Games',
+		url: '/projects/Free_the_Games/home.html',
+		classes: 'free-the-games projects anim fade-anim',
+		skills: ['javascript', 'api', 'sass'],
+	},
+	{
+		title: 'Dress Up Game',
+		url: '/dress_up_game.html',
+		classes: 'dress-up-game projects anim fade-anim',
+		skills: ['javascript'],
+	},
+];
 
 // Opening and closing menu by adding or removing class
 navToggle.addEventListener('click', () => {
@@ -46,24 +52,55 @@ document.addEventListener('click', (e) => {
 	}
 });
 
-window.onload = function () {
-	document.getElementById('contact-form').addEventListener('submit', function (event) {
-		event.preventDefault();
-
-		emailjs.sendForm('service_8dcgfoh', 'template_3vxuz3j', this, 'BGaBY2gWPgF8paWZQ').then(
-			function () {
-				console.log('SUCCESS!');
-				emailAfter.classList.add('email-success');
-			},
-			function (error) {
-				console.log('FAILED...', error);
-			}
-		);
-		this.user_name.value = '';
-		this.user_email.value = '';
-		this.message.value = '';
+// PROJECT/SKILL SECTION
+skillList.forEach((skill) => {
+	skill.addEventListener('click', () => {
+		skill.style.backgroundColor = 'black';
 	});
+});
+
+const skillSelected = (skill) => {};
+
+// FORM SECTION
+window.onload = function () {
+	document
+		.getElementById('contact-form')
+		.addEventListener('submit', function (event) {
+			event.preventDefault();
+
+			emailjs
+				.sendForm(
+					'service_8dcgfoh',
+					'template_3vxuz3j',
+					this,
+					'BGaBY2gWPgF8paWZQ'
+				)
+				.then(
+					function () {
+						console.log('SUCCESS!');
+						emailAfter.classList.add('email-success');
+					},
+					function (error) {
+						console.log('FAILED...', error);
+					}
+				);
+			this.user_name.value = '';
+			this.user_email.value = '';
+			this.message.value = '';
+		});
 	sectionInfo.textContent = 'Top';
+};
+
+// ANIMATIONS ON SCROLL SECTION
+let options = {
+	root: null,
+	rootMargin: '0px',
+	threshold: 0.5,
+};
+let sectionOptions = {
+	root: null,
+	rootMargin: '0px',
+	threshold: 0.9,
 };
 
 navItem.forEach((el) => {
