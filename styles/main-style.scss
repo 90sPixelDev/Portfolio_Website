@@ -388,22 +388,31 @@ html {
 				#project-grid {
 					display: grid;
 					justify-items: center;
+					.free-the-games {
+						background: url('../img/video-game-list-thumbnail.jpg')
+							no-repeat;
+					}
+					.dress-up-game {
+						background: url('../img/dress_up_game/dress_up_pic.jpg')
+							no-repeat;
+					}
 					.project {
 						display: flex;
 						flex-direction: column;
-						background: #222a68a2;
 						height: 18vw;
 						width: 25vw;
-						justify-content: center;
+						justify-content: end;
+						background-color: #222a68;
 						opacity: 0;
+						background-size: contain;
+						background-position: center;
+						border-radius: 1em;
+
 						transition: all 1s;
-						&:hover {
-							border: 1px solid white;
-							transform: scale(1.1);
-						}
-						img {
-							margin: auto;
-							width: 100%;
+
+						.project-title {
+							text-align: center;
+							padding: 0.5rem 0;
 						}
 					}
 					.fade-animated {
@@ -740,6 +749,37 @@ html {
 					grid-template-columns: 1fr 1fr 1fr;
 					gap: 3.5vw;
 					margin: 3vh 3vh;
+
+					.project-parent {
+						border-radius: 1em;
+						transition: all 1s;
+
+						&:hover {
+							border: 1px solid white;
+							transform: scale(1.1);
+
+							a {
+								background-color: transparent;
+								background-blend-mode: none;
+								.project-title {
+									opacity: 100%;
+								}
+							}
+						}
+						.project {
+							background-color: white;
+							background-blend-mode: luminosity;
+							justify-content: center;
+							.project-title {
+								opacity: 0;
+								text-align: center;
+								background-color: rgba(0, 0, 0, 0.5);
+								padding: 0.5rem 0;
+
+								transition: all 0.5s;
+							}
+						}
+					}
 				}
 			}
 
