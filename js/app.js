@@ -20,16 +20,23 @@ let skillsSelected = [];
 
 const projects = [
 	{
+		title: 'Mini Expense Tracker',
+		url: 'https://lienfont-react-expense-tracker.vercel.app',
+		// img: "url('../img/dress_up_game/dress_up_pic.jpg')  no-repeat",
+		class: 'mini-expense-tracker',
+		skills: ['javascript', 'react', 'tailwind'],
+	},
+	{
 		title: 'Free The Games',
 		url: '/projects/Free_the_Games/home.html',
-		img: "url('../img/video-game-list-thumbnail.jpg') no-repeat",
+		// img: "url('../img/video-game-list-thumbnail.jpg') no-repeat",
 		class: 'free-the-games',
 		skills: ['javascript', 'api', 'sass'],
 	},
 	{
 		title: 'Dress Up Game',
 		url: '/dress_up_game.html',
-		img: "url('../img/dress_up_game/dress_up_pic.jpg')  no-repeat",
+		// img: "url('../img/dress_up_game/dress_up_pic.jpg')  no-repeat",
 		class: 'dress-up-game',
 		skills: ['javascript'],
 	},

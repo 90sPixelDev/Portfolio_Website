@@ -548,10 +548,13 @@ html body {
     transition: all 1s;
   }
   .container main #projects-section #project-grid .free-the-games {
-    background: url("../img/video-game-list-thumbnail.jpg") no-repeat;
+    background: url("../img/projects/video-game-list-thumbnail.jpg") no-repeat;
   }
   .container main #projects-section #project-grid .dress-up-game {
-    background: url("../img/dress_up_game/dress_up_pic.jpg") no-repeat;
+    background: url("../img/projects/dress-up-thumbnail.jpg") no-repeat;
+  }
+  .container main #projects-section #project-grid .mini-expense-tracker {
+    background: url("../img/projects/mini-expense-tracker-thumbnail.jpg") no-repeat;
   }
   .container main #projects-section #project-grid .project {
     display: -webkit-box;
@@ -575,6 +578,7 @@ html body {
     transition: all 1s;
   }
   .container main #projects-section #project-grid .project .project-title {
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 0.5rem 0;
   }

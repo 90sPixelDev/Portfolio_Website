@@ -436,11 +436,15 @@ html {
 
 					transition: all 1s;
 					.free-the-games {
-						background: url('../img/video-game-list-thumbnail.jpg')
+						background: url('../img/projects/video-game-list-thumbnail.jpg')
 							no-repeat;
 					}
 					.dress-up-game {
-						background: url('../img/dress_up_game/dress_up_pic.jpg')
+						background: url('../img/projects/dress-up-thumbnail.jpg')
+							no-repeat;
+					}
+					.mini-expense-tracker {
+						background: url('../img/projects/mini-expense-tracker-thumbnail.jpg')
 							no-repeat;
 					}
 					.project {
@@ -458,6 +462,7 @@ html {
 						transition: all 1s;
 
 						.project-title {
+							background-color: rgba(0, 0, 0, 0.5);
 							text-align: center;
 							padding: 0.5rem 0;
 						}
