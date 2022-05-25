@@ -755,7 +755,7 @@ html body {
     transition: all 1s;
   }
   .container footer #social-media .sm-parent i {
-    margin-left: 1em;
+    margin-left: 0.5em;
   }
   .container footer #social-media .translateR-animated {
     opacity: 100%;
