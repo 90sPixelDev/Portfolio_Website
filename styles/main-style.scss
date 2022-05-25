@@ -396,7 +396,11 @@ html {
 					}
 					.skill-list {
 						display: flex;
-						gap: 2em;
+						flex-wrap: wrap;
+						height: fit-content;
+						width: 100%;
+						justify-content: center;
+						gap: 1em;
 						list-style: none;
 						li {
 							padding: 0.5em 1em;
@@ -995,6 +999,7 @@ html {
 			}
 
 			#projects-section {
+				min-height: 70vh;
 				margin-top: 7em;
 				h4 {
 					font-size: 2.5em;
@@ -1174,6 +1179,7 @@ html {
 			}
 
 			#projects-section {
+				min-height: 70vh;
 				margin-top: 7em;
 				h4 {
 					font-size: 2.5em;

@@ -15,7 +15,7 @@ const skillList = document.querySelectorAll('.skill-list li');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('#project-grid');
 
-const skills = ['react', 'api', 'javascript', 'sass', 'tailwind'];
+const skills = ['react', 'api', 'javascript', 'sass', 'tailwind', 'nodejs'];
 let skillsSelected = [];
 
 const projects = [

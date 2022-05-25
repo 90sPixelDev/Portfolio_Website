@@ -482,7 +482,16 @@ html body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 2em;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 1em;
     list-style: none;
   }
   .container main #projects-section .filter-area .skill-list li {
@@ -1099,6 +1108,7 @@ html body {
     font-size: 7px;
   }
   .container main #projects-section {
+    min-height: 70vh;
     margin-top: 7em;
   }
   .container main #projects-section h4 {
@@ -1272,6 +1282,7 @@ html body {
     font-size: 9px;
   }
   .container main #projects-section {
+    min-height: 70vh;
     margin-top: 7em;
   }
   .container main #projects-section h4 {
