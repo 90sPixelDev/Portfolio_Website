@@ -754,6 +754,9 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
+  .container footer #social-media .sm-parent i {
+    margin-left: 1em;
+  }
   .container footer #social-media .translateR-animated {
     opacity: 100%;
     -webkit-transform: translateX(0);
