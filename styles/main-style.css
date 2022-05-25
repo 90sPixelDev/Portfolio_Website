@@ -572,6 +572,11 @@ html body {
   .container main #projects-section #project-grid .fade-animated {
     opacity: 100%;
   }
+  .container main #projects-section .project-disclaimer {
+    text-align: center;
+    margin: 1em 5em;
+    color: rgba(255, 255, 255, 0.5);
+  }
   .container main #contact-section {
     background-color: #222a68;
     width: 100%;
