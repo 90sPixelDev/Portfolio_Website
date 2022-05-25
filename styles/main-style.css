@@ -489,14 +489,54 @@ html body {
     padding: 0.5em 1em;
     background-color: #222a687c;
     border-radius: 1em;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+  }
+  .container main #projects-section .filter-area .skill-list .skill-selected {
+    background-color: #222a68;
+    -webkit-animation: skillSelected 0.5s forwards;
+            animation: skillSelected 0.5s forwards;
+  }
+  @-webkit-keyframes skillSelected {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes skillSelected {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
   }
   .container main #projects-section #project-grid {
     display: -ms-grid;
     display: grid;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
     justify-items: center;
     background-color: #222a687c;
     border-radius: 1em;
     padding: 2em 1em;
+    -webkit-transition: all 1s;
+    transition: all 1s;
   }
   .container main #projects-section #project-grid .free-the-games {
     background: url("../img/video-game-list-thumbnail.jpg") no-repeat;

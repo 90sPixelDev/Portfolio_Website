@@ -402,15 +402,35 @@ html {
 							padding: 0.5em 1em;
 							background-color: #222a687c;
 							border-radius: 1em;
+
+							transition: all 0.25s;
+						}
+						.skill-selected {
+							background-color: #222a68;
+							animation: skillSelected 0.5s forwards;
+						}
+						@keyframes skillSelected {
+							0% {
+								transform: scale(1);
+							}
+							50% {
+								transform: scale(1.1);
+							}
+							100% {
+								transform: scale(1);
+							}
 						}
 					}
 				}
 				#project-grid {
 					display: grid;
+					max-height: fit-content;
 					justify-items: center;
 					background-color: #222a687c;
 					border-radius: 1em;
 					padding: 2em 1em;
+
+					transition: all 1s;
 					.free-the-games {
 						background: url('../img/video-game-list-thumbnail.jpg')
 							no-repeat;

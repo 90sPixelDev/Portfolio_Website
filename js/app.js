@@ -12,21 +12,30 @@ const navItem = document.querySelectorAll('.nav-item');
 const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 const skillList = document.querySelectorAll('.skill-list li');
+const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('#project-grid');
+
+const skills = {
+	react: false,
+	api: false,
+	javascript: false,
+	sass: false,
+	tailwind: false,
+};
 
 const projects = [
 	{
 		title: 'Free The Games',
 		url: '/projects/Free_the_Games/home.html',
 		img: "url('../img/video-game-list-thumbnail.jpg') no-repeat",
-		classes: ['free-the-games', 'project', 'anim', 'fade-anim'],
+		class: 'free-the-games',
 		skills: ['javascript', 'api', 'sass'],
 	},
 	{
 		title: 'Dress Up Game',
 		url: '/dress_up_game.html',
 		img: "url('../img/dress_up_game/dress_up_pic.jpg')  no-repeat",
-		classes: ['dress-up-game', 'project', 'anim', 'fade-anim'],
+		class: 'dress-up-game',
 		skills: ['javascript'],
 	},
 ];
@@ -56,23 +65,30 @@ document.addEventListener('click', (e) => {
 });
 
 // PROJECT/SKILL SECTION
+document.addEventListener('DOMContentLoaded', () => {
+	projects.forEach((project) => {
+		createProject(project);
+	});
+});
 
-// CReating the Project Parent Element
-projects.forEach((project) => {
+let currentProjectList = [];
+
+const createProject = (project) => {
 	const projParent = document.createElement('div');
 	projParent.classList.add('project-parent');
 	projectGrid.append(projParent);
 
 	const proj = document.createElement('a');
 
-	project.classes.forEach((classInProj) => {
-		proj.classList.add(classInProj);
-	});
+	proj.classList.add(project.class);
+	proj.classList.add('project');
+	proj.classList.add('anim');
+	proj.classList.add('fade-anim');
+
 	proj.href = project.url;
 	proj.target = '_blank';
 	proj.rel = 'noopener noreferrer';
 
-	console.log(proj.style.background);
 	projParent.append(proj);
 
 	const projTitle = document.createElement('p');
@@ -80,21 +96,80 @@ projects.forEach((project) => {
 	projTitle.classList.add('project-title');
 
 	proj.append(projTitle);
+};
+
+const noSkillSelected = () => {
+	const areFalse = Object.values(skills).every((value) => value === false);
+	return areFalse;
+};
+
+const createProjectElements = () => {
+	projectGrid.textContent = '';
+	noSkillSelected();
+	if (!currentProjectList[0] && noSkillSelected()) {
+		projects.forEach((project) => {
+			createProject(project);
+		});
+	} else {
+		currentProjectList.forEach((project) => {
+			createProject(project);
+		});
+	}
+};
+
+// Creating the Project Elements
+const createFilteredProjects = () => {
+	currentProjectList = [];
+	for (const skill in skills) {
+		if (Object.hasOwnProperty.call(skills, skill)) {
+			const currSkillVal = skills[skill];
+
+			const selectedSkill = currSkillVal && skill;
+			projects.forEach((project) => {
+				if (
+					!currentProjectList.includes(project) &&
+					project.skills.includes(selectedSkill)
+				) {
+					currentProjectList.push(project);
+				}
+			});
+		}
+	}
+	createProjectElements(currentProjectList);
+};
+
+const filterManager = (e) => {
+	const skill = e.target.textContent;
+
+	if (!skills[skill]) {
+		skills[skill] = true;
+		e.target.classList.add('skill-selected');
+	} else {
+		skills[skill] = false;
+		e.target.classList.remove('skill-selected');
+	}
+
+	createFilteredProjects();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+	projectListCreation();
 });
 
-// Creating the Project Item Element
-// const createProjectItem = (projectParent) => {
-// 	const proj = document.createElement('a');
-// 	proj.classList.add(project)
-// }
+const projectListCreation = () => {
+	const skillsSet = Object.entries(skills);
 
-skillList.forEach((skill) => {
-	skill.addEventListener('click', () => {
-		skill.style.backgroundColor = 'black';
+	skillsSet.forEach((skill) => {
+		const skillEl = document.createElement('li');
+		skillEl.textContent = skill[0];
+
+		skillsParent.append(skillEl);
+
+		skillEl.addEventListener('click', (e) => {
+			filterManager(e);
+		});
 	});
-});
-
-const skillSelected = (skill) => {};
+};
 
 // FORM SECTION
 window.onload = function () {
