@@ -15,13 +15,8 @@ const skillList = document.querySelectorAll('.skill-list li');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('#project-grid');
 
-const skills = {
-	react: false,
-	api: false,
-	javascript: false,
-	sass: false,
-	tailwind: false,
-};
+const skills = ['react', 'api', 'javascript', 'sass', 'tailwind'];
+let skillsSelected = [];
 
 const projects = [
 	{
@@ -72,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let currentProjectList = [];
+let currentSelectedSKills = [];
 
 const createProject = (project) => {
 	const projParent = document.createElement('div');
@@ -98,14 +94,14 @@ const createProject = (project) => {
 	proj.append(projTitle);
 };
 
+// CREATE ALL PROJECTS WHEN NO SKILLS SELECTED
 const noSkillSelected = () => {
-	const areFalse = Object.values(skills).every((value) => value === false);
-	return areFalse;
+	if (skillsSelected.length === 0) return true;
+	else return false;
 };
 
 const createProjectElements = () => {
 	projectGrid.textContent = '';
-	noSkillSelected();
 	if (!currentProjectList[0] && noSkillSelected()) {
 		projects.forEach((project) => {
 			createProject(project);
@@ -117,25 +113,32 @@ const createProjectElements = () => {
 	}
 };
 
-// Creating the Project Elements
-const createFilteredProjects = () => {
+// Creating the Project Elements based on skill selection
+const createFilteredProjects = (skillsSelected) => {
 	currentProjectList = [];
-	for (const skill in skills) {
-		if (Object.hasOwnProperty.call(skills, skill)) {
-			const currSkillVal = skills[skill];
 
-			const selectedSkill = currSkillVal && skill;
-			projects.forEach((project) => {
-				if (
-					!currentProjectList.includes(project) &&
-					project.skills.includes(selectedSkill)
-				) {
-					currentProjectList.push(project);
-				}
-			});
+	projects.forEach((project) => {
+		const containsAllSkills = skillsSelected.every((skill) => {
+			return project.skills.includes(skill.textContent);
+		});
+		console.log(containsAllSkills);
+
+		if (!currentProjectList.includes(project) && containsAllSkills) {
+			currentProjectList.push(project);
+			console.log(
+				`${project} contains all selected skills: ${containsAllSkills}`
+			);
 		}
-	}
+	});
+
 	createProjectElements(currentProjectList);
+};
+
+// removing a skill from the selected skill list
+const removeSkill = (skillToRemove) => {
+	skillsSelected.filter((skill) => {
+		skill !== skillToRemove.textContent;
+	});
 };
 
 const filterManager = (e) => {
@@ -143,25 +146,27 @@ const filterManager = (e) => {
 
 	if (!skills[skill]) {
 		skills[skill] = true;
+		skillsSelected.push(e.target);
 		e.target.classList.add('skill-selected');
 	} else {
 		skills[skill] = false;
+		skillsSelected = skillsSelected.filter((skill) => {
+			return e.target !== skill;
+		});
 		e.target.classList.remove('skill-selected');
 	}
 
-	createFilteredProjects();
+	createFilteredProjects(skillsSelected);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-	projectListCreation();
+	skillsListCreation();
 });
 
-const projectListCreation = () => {
-	const skillsSet = Object.entries(skills);
-
-	skillsSet.forEach((skill) => {
+const skillsListCreation = () => {
+	skills.forEach((skill) => {
 		const skillEl = document.createElement('li');
-		skillEl.textContent = skill[0];
+		skillEl.textContent = skill;
 
 		skillsParent.append(skillEl);
 
