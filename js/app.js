@@ -14,6 +14,9 @@ const sectionTitle = document.querySelectorAll('.section');
 const skillList = document.querySelectorAll('.skill-list li');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('#project-grid');
+const themeBtn = document.querySelector('.theme-btn');
+const r = document.querySelector(':root');
+const themeSymbole = document.querySelector('.sun-and-moon');
 
 const skills = ['react', 'api', 'javascript', 'sass', 'tailwind', 'nodejs'];
 let skillsSelected = [];
@@ -38,6 +41,32 @@ const projects = [
 		skills: ['javascript'],
 	},
 ];
+
+if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'light');
+
+themeBtn.addEventListener('click', () => {
+	if (localStorage.getItem('theme') === 'light') {
+		localStorage.setItem('theme', 'dark');
+		console.log('Theme: dark');
+		themeSymbole.classList.add('dark-theme');
+		changeTheme();
+	} else {
+		localStorage.setItem('theme', 'light');
+		console.log('Theme: light');
+		themeSymbole.classList.remove('dark-theme');
+		changeTheme();
+	}
+});
+
+const changeTheme = () => {
+	if (localStorage.getItem('theme') === 'dark') {
+		r.style.setProperty('--mainBGColor1', '#131738');
+		r.style.setProperty('--mainBGColor2', '#542878');
+	} else {
+		r.style.setProperty('--mainBGColor1', '#222a68');
+		r.style.setProperty('--mainBGColor2', '#ab81cd');
+	}
+};
 
 // Opening and closing menu by adding or removing class
 navToggle.addEventListener('click', () => {
@@ -65,6 +94,7 @@ document.addEventListener('click', (e) => {
 
 // PROJECT/SKILL SECTION
 document.addEventListener('DOMContentLoaded', () => {
+	changeTheme();
 	projects.forEach((project) => {
 		createProject(project);
 	});

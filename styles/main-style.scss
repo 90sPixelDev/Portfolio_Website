@@ -1,7 +1,8 @@
 // Main Color Components
-$mainBGColor1: #222a68;
-$mainBGColor2: #ab81cd;
-
+:root {
+	--mainBGColor1: #222a68; //#222a68
+	--mainBGColor2: #ab81cd; //#ab81cd
+}
 $test: #301b52;
 
 // Main variables
@@ -23,7 +24,11 @@ html {
 
 	body {
 		width: 100%;
-		background: linear-gradient(135deg, $mainBGColor1, $mainBGColor2);
+		background: linear-gradient(
+			135deg,
+			var(--mainBGColor1),
+			var(--mainBGColor2)
+		);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
@@ -71,10 +76,45 @@ html {
 				width: 100%;
 				align-items: center;
 
-				#theme-btn {
+				.theme-btn {
 					background-color: transparent;
 					border-radius: 50%;
-					margin: 1.5em;
+					margin: 2.25em;
+					padding: 0.25em;
+
+					touch-action: manipulation;
+					-webkit-tap-highlight-color: transparent;
+					outline-offset: 5px;
+
+					& > svg {
+						inline-size: 100%;
+						block-size: 100%;
+						stroke-linecap: round;
+					}
+
+					.light-theme {
+						border: solid 1px #fff;
+						#sun-beams {
+							transition: all 0.25s;
+							stroke: white;
+						}
+						#black-circle {
+							transition: all 0.25s;
+							cy: 0;
+							cx: 24;
+						}
+					}
+					.dark-theme {
+						#sun-beams {
+							transition: all 0.25s;
+							stroke: transparent;
+						}
+						#black-circle {
+							transition: all 0.25s;
+							cy: 10;
+							cx: 14;
+						}
+					}
 				}
 				.section-top-info {
 					display: none;
@@ -595,8 +635,8 @@ html {
 				box-shadow: 0 0 10px rgba (0, 0, 0, 0.5);
 				background: linear-gradient(
 					0deg,
-					$mainBGColor1,
-					$mainBGColor2
+					var(--mainBGColor1),
+					var(--mainBGColor2)
 				);
 				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 				transition: all 1s;
@@ -661,12 +701,12 @@ html {
 				display: flex;
 				justify-content: space-between;
 
-				#theme-btn {
+				.theme-btn {
 					position: fixed;
 					top: 0;
 					z-index: 3;
-					width: 5em;
-					height: 5em;
+					width: 3em;
+					height: 3em;
 				}
 				.section-top-info {
 					display: block;
@@ -675,7 +715,7 @@ html {
 					padding: 1.5em 1em;
 					position: absolute;
 					top: 1.5em;
-					left: 8em;
+					left: 7.5em;
 				}
 
 				.nav-toggle {
@@ -872,8 +912,8 @@ html {
 			.to-top:hover {
 				background: linear-gradient(
 					0deg,
-					$mainBGColor2,
-					$mainBGColor1
+					var(--mainBGColor2),
+					var(--mainBGColor1)
 				);
 			}
 		}
@@ -892,7 +932,7 @@ html {
 			margin: 0;
 		}
 		header {
-			#theme-btn {
+			.theme-btn {
 				width: 7.25vw;
 				height: 7.25vw;
 			}
@@ -1068,8 +1108,7 @@ html {
 				width: 100%;
 				align-items: center;
 
-				#theme-btn {
-					background-color: transparent;
+				.theme-btn {
 					border-radius: 50%;
 					width: 9vw;
 					height: 9vw;
