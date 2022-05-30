@@ -320,6 +320,7 @@ html {
 			}
 
 			.bio-section {
+				transition: all 1s;
 				background-color: rgba(0, 0, 0, 0.5);
 				width: 100%;
 
@@ -483,6 +484,10 @@ html {
 							color: #d8defd;
 
 							transition: all 0.25s;
+						}
+						.skill {
+							transition: all 0.5s;
+							box-shadow: 0 3px 10px #0000007c;
 						}
 						.skill-selected {
 							background-color: #222a68;
@@ -681,17 +686,19 @@ html {
 				transition: all 1s;
 			}
 
-			#social-media {
+			.social-media {
 				width: 100%;
 				height: 5em;
 				padding: 1em;
-				background-color: #222a68;
-				background: linear-gradient(
-					to right,
-					transparent,
-					#222a68,
-					transparent
-				);
+				&.dark-sm {
+					transition: all 0.5s;
+					background: linear-gradient(
+						to right,
+						transparent,
+						#222a68,
+						transparent
+					);
+				}
 
 				.sm-parent {
 					display: flex;
@@ -704,6 +711,10 @@ html {
 					opacity: 0;
 					gap: 2em;
 					transition: all 1s;
+					.dark-a {
+						transition: all 1s;
+						color: #d8defd;
+					}
 					i {
 						margin-left: 0.5em;
 					}
@@ -714,8 +725,12 @@ html {
 				}
 			}
 			.end {
+				transition: all 1s;
 				text-align: center;
 				margin: 1em 0;
+			}
+			.end-color {
+				color: #d8defd;
 			}
 		}
 	}
@@ -893,8 +908,9 @@ html {
 
 					.project {
 						transition: all 0.5s;
-						// justify-content: center;
 						background-color: transparent;
+						max-height: 252px;
+						max-width: 350px;
 						.project-title {
 							opacity: 0;
 							transform: translateY(-200%);
@@ -972,6 +988,13 @@ html {
 				);
 			}
 		}
+	}
+}
+
+// MAKING PROJECT GRID CONTAINER EXPAND TO 4 ITEMS ON THE BIGGEST SCREENS!
+@media all and (min-width: 1800px) {
+	.container main #projects-section .project-grid {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
 
@@ -1341,7 +1364,6 @@ html {
 @media all {
 	// BG COLOR
 	.bg-light {
-		height: 100%;
 		background: linear-gradient(135deg, #d09dfa, #5266fa);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
@@ -1389,180 +1411,177 @@ html {
 	}
 
 	// MAIN SECTION
-	.container main {
-		#profile-section {
-			.light-my-name {
-				transition: all 0.5s;
-				color: white;
-				text-shadow: 1px 3px 0 #1d288186;
-			}
-			#basic-info {
-				.light-objective {
+	.container {
+		main {
+			#profile-section {
+				.light-my-name {
 					transition: all 0.5s;
-					background-color: #4252c798;
 					color: white;
-
-					&:hover {
-						background-color: #5266fa;
-						// color: black;
-					}
+					text-shadow: 1px 3px 0 #1d288186;
 				}
-				.light-interests {
-					transition: all 0.5s;
-					background-color: #4252c798;
-					color: white;
+				#basic-info {
+					.light-objective {
+						transition: all 0.5s;
+						background-color: #4252c798;
+						color: white;
 
-					&:hover {
-						background-color: #5266fa;
-						// color: black;
-					}
-				}
-			}
-		}
-		.bio-section {
-			&.light-bio-section {
-				transition: all 0.5s;
-
-				background-color: #4b5de387;
-			}
-			div {
-				.light-background {
-					transition: all 0.5s;
-
-					color: white;
-				}
-				.light-bg-para {
-					transition: all 0.5s;
-
-					background-color: transparent;
-					color: white;
-
-					overflow: hidden;
-
-					// animation: line-anim 1s forwards;
-					@keyframes line-anim {
-						0% {
-							width: 0;
-						}
-						100% {
-							width: 100%;
+						&:hover {
+							background-color: #5266fa;
+							box-shadow: 0 3px 10px #17259179;
 						}
 					}
-					&::before {
-						content: '';
-						position: absolute;
-						z-index: -1;
-						top: 0;
-						left: 50%;
-						margin: -50% -50%;
-						background-color: rgba(255, 255, 255, 0.1);
-						width: 100%;
-						height: 300;
-						border-radius: 5em;
+					.light-interests {
+						transition: all 0.5s;
+						background-color: #4252c798;
+						color: white;
 
-						animation: height-anim 2s forwards;
-						@keyframes height-anim {
+						&:hover {
+							background-color: #5266fa;
+							box-shadow: 0 3px 10px #17259179;
+						}
+					}
+				}
+			}
+			.bio-section {
+				&.light-bio-section {
+					transition: all 0.5s;
+					box-shadow: 0 3px 10px #17259179, 0 -3px 10px #17259179;
+
+					background-color: #4b5de387;
+				}
+				div {
+					.light-background {
+						transition: all 0.5s;
+						color: white;
+					}
+					.light-bg-para {
+						transition: all 0.5s;
+						box-shadow: 0 3px 10px #17259179;
+
+						background-color: rgba(255, 255, 255, 0.15);
+						color: white;
+					}
+				}
+			}
+			#skills-section {
+				.light-skills {
+					transition: all 0.5s;
+					text-shadow: 1px 1px 0 #222;
+					color: white;
+				}
+				.skill-icons .light-skill-div {
+					.skill-desc {
+						transition: all 0.5s;
+
+						background-color: #5266fab7;
+						&::before {
+							border-top-color: #5266fab7;
+						}
+						p {
+							color: white;
+							text-shadow: none;
+						}
+					}
+
+					img {
+						filter: drop-shadow(1px 2px 2px #222);
+					}
+					.skill-title {
+						color: white;
+						text-shadow: 1px 1px black;
+					}
+				}
+			}
+			#projects-section {
+				.light-project-text {
+					transition: all 0.5s;
+					color: white;
+					text-shadow: 1px 1px 0 #222;
+				}
+				.filter-area {
+					&.light-filter-area {
+						transition: all 0.5s;
+						p {
+							color: white;
+							text-shadow: 1px 1px 0 #222;
+						}
+					}
+					.skill-list {
+						.light-skill-list {
+							transition: all 0.5s;
+							color: white;
+							background-color: #5266fa8e;
+						}
+						.light-skill-selected {
+							transition: all 0.5s;
+							text-shadow: 1px 2px 0 #222;
+							background-color: #d09dfa8f;
+							box-shadow: 0 3px 10px #17259179;
+
+							animation: lightSkillSelected 0.5s forwards;
+						}
+						@keyframes lightSkillSelected {
 							0% {
-								filter: brightness(0.75);
-								height: 0;
+								transform: scale(1);
+							}
+							50% {
+								transform: scale(1.1);
 							}
 							100% {
-								filter: brightness(1);
-								height: 300%;
+								transform: scale(1);
 							}
 						}
 					}
 				}
-			}
-		}
-		#skills-section {
-			.light-skills {
-				transition: all 0.5s;
-				text-shadow: 1px 1px 0 #222;
-				color: white;
-			}
-			.skill-icons .light-skill-div {
-				.skill-desc {
+				.light-project-grid {
 					transition: all 0.5s;
-
-					background-color: #5266fab7;
-					&::before {
-						border-top-color: #5266fab7;
-					}
-					p {
-						color: white;
-						text-shadow: none;
-					}
+					box-shadow: 0 3px 10px #17259179;
+					background-color: #5266fa8e;
 				}
-
-				img {
-					filter: drop-shadow(1px 2px 2px #222);
+			}
+			#contact-section {
+				&.light-contact-section {
+					transition: all 0.5s;
+					background-color: #5266fa;
+					box-shadow: 0 3px 10px #17259179, 0 -3px 10px #17259179;
 				}
-				.skill-title {
+				.light-contact-title {
+					transition: all 0.5s;
 					color: white;
-					text-shadow: 1px 1px black;
+					text-shadow: 1px 2px 0 #222;
+				}
+				#contact-form {
+					&.light-form {
+						color: white;
+					}
 				}
 			}
 		}
-		#projects-section {
-			.light-project-text {
-				transition: all 0.5s;
-				color: white;
-				text-shadow: 1px 1px 0 #222;
-			}
-			.filter-area {
-				&.light-filter-area {
-					transition: all 0.5s;
-					p {
-						color: white;
-						text-shadow: 1px 1px 0 #222;
-					}
+		footer {
+			.light-to-top {
+				background: linear-gradient(bottom, #d09dfa, #5266fa);
+				&:hover {
+					background: linear-gradient(top, #d09dfa, #5266fa);
 				}
+			}
+			.light-social-media {
+				transition: all 1s;
 
-				.skill-list {
-					.light-skill-list {
-						transition: all 0.5s;
-						color: white;
-						background-color: #5266fa8e;
-					}
-					.light-skill-selected {
-						transition: all 0.5s;
-						text-shadow: 1px 2px 0 #222;
-						background-color: #d09dfa8f;
-						animation: lightSkillSelected 0.5s forwards;
-					}
-					@keyframes lightSkillSelected {
-						0% {
-							transform: scale(1);
-						}
-						50% {
-							transform: scale(1.1);
-						}
-						100% {
-							transform: scale(1);
-						}
-					}
-				}
-			}
-			.light-project-grid {
-				transition: all 0.5s;
-				background-color: #5266fa8e;
-			}
-		}
-		#contact-section {
-			&.light-contact-section {
-				transition: all 0.5s;
-				background-color: #5266fa;
-			}
-			.light-contact-title {
-				transition: all 0.5s;
-				color: white;
-				text-shadow: 1px 2px 0 #222;
-			}
-			#contact-form {
-				&.light-form {
+				background: linear-gradient(
+					to right,
+					transparent,
+					#5266fa,
+					transparent
+				);
+				filter: drop-shadow(0 3px 5px #162172);
+				ul a {
 					color: white;
 				}
+			}
+			.light-credit {
+				transition: all 1s;
+				color: white;
+				text-shadow: 1px 1px #222;
 			}
 		}
 	}

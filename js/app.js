@@ -4,7 +4,6 @@
 const navParent = document.getElementById('nav-items-parent');
 const navToggle = document.querySelector('.nav-toggle');
 const myName = document.querySelector('.my-name');
-const toTop = document.querySelector('.to-top');
 const scrollEl = document.querySelectorAll('.anim');
 const emailAfter = document.querySelector('.email-after');
 const infoHolder = document.querySelector('.info-holder');
@@ -35,6 +34,10 @@ let skillList;
 const contactSection = document.querySelector('#contact-section');
 const contactTitle = document.querySelector('.contact-title');
 const formElement = document.querySelector('form');
+const toTop = document.querySelector('.to-top');
+const socialMedia = document.querySelector('.social-media');
+const socialMediaLink = document.querySelectorAll('.social-media a');
+const footerEnd = document.querySelector('.end');
 
 const skills = ['react', 'api', 'javascript', 'sass', 'tailwind', 'nodejs'];
 let skillsSelected = [];
@@ -112,6 +115,7 @@ const changeTheme = () => {
 				el.classList.add('light-skill-selected');
 				el.classList.remove('skill-selected');
 			}
+			el.classList.remove('skill');
 			el.classList.add('light-skill-list');
 		});
 		projectGrid.classList.add('light-project-grid');
@@ -120,6 +124,16 @@ const changeTheme = () => {
 		contactSection.classList.add('light-contact-section');
 		contactTitle.classList.add('light-contact-title');
 		formElement.classList.add('light-form');
+
+		// FOOTER SECTION
+		toTop.classList.add('light-to-top');
+		socialMedia.classList.add('light-social-media');
+		socialMedia.classList.remove('dark-sm');
+		socialMediaLink.forEach((el) => {
+			el.classList.remove('dark-a');
+		});
+		footerEnd.classList.add('light-credit');
+		footerEnd.classList.remove('end-color');
 	} else {
 		// THEME BTN
 		themeBtn.classList.remove('light-theme-btn');
@@ -159,6 +173,7 @@ const changeTheme = () => {
 				el.classList.add('skill-selected');
 				el.classList.remove('light-skill-selected');
 			}
+			el.classList.add('skill');
 			el.classList.remove('light-skill-list');
 		});
 		projectGrid.classList.remove('light-project-grid');
@@ -167,6 +182,16 @@ const changeTheme = () => {
 		contactTitle.classList.remove('light-contact-title');
 		contactSection.classList.remove('light-contact-section');
 		formElement.classList.remove('light-form');
+
+		// FOOTER SECTION
+		toTop.classList.remove('light-to-top');
+		socialMedia.classList.remove('light-social-media');
+		socialMedia.classList.add('dark-sm');
+		socialMediaLink.forEach((el) => {
+			el.classList.add('dark-a');
+		});
+		footerEnd.classList.remove('light-credit');
+		footerEnd.classList.add('end-color');
 	}
 };
 
@@ -277,9 +302,12 @@ const removeSkill = (skillToRemove) => {
 const filterManager = (e) => {
 	const skill = e.target.textContent;
 	let skillClass;
-	localStorage.getItem('theme') === 'dark'
-		? (skillClass = 'skill-selected')
-		: (skillClass = 'light-skill-selected');
+	if (localStorage.getItem('theme') === 'dark') {
+		skillClass = 'skill-selected';
+	} else {
+		skillClass = 'light-skill-selected';
+		e.target.classList.remove('skill');
+	}
 
 	if (!skills[skill]) {
 		skills[skill] = true;
@@ -301,6 +329,9 @@ const skillsListCreation = () => {
 	skills.forEach((skill) => {
 		const skillEl = document.createElement('li');
 		skillEl.textContent = skill;
+		if (localStorage.getItem('theme') === 'dark') {
+			skillEl.classList.add('skill');
+		}
 
 		skillsParent.append(skillEl);
 

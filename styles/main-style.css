@@ -364,6 +364,8 @@ html body {
     opacity: 100%;
   }
   .container main .bio-section {
+    -webkit-transition: all 1s;
+    transition: all 1s;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
   }
@@ -570,6 +572,12 @@ html body {
     color: #d8defd;
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
+  }
+  .container main #projects-section .filter-area .skill-list .skill {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-box-shadow: 0 3px 10px #0000007c;
+            box-shadow: 0 3px 10px #0000007c;
   }
   .container main #projects-section .filter-area .skill-list .skill-selected {
     background-color: #222a68;
@@ -806,15 +814,18 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container footer #social-media {
+  .container footer .social-media {
     width: 100%;
     height: 5em;
     padding: 1em;
-    background-color: #222a68;
+  }
+  .container footer .social-media.dark-sm {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#222a68), to(transparent));
     background: linear-gradient(to right, transparent, #222a68, transparent);
   }
-  .container footer #social-media .sm-parent {
+  .container footer .social-media .sm-parent {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -833,17 +844,27 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container footer #social-media .sm-parent i {
+  .container footer .social-media .sm-parent .dark-a {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    color: #d8defd;
+  }
+  .container footer .social-media .sm-parent i {
     margin-left: 0.5em;
   }
-  .container footer #social-media .translateR-animated {
+  .container footer .social-media .translateR-animated {
     opacity: 100%;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
   .container footer .end {
+    -webkit-transition: all 1s;
+    transition: all 1s;
     text-align: center;
     margin: 1em 0;
+  }
+  .container footer .end-color {
+    color: #d8defd;
   }
 }
 
@@ -1015,6 +1036,8 @@ html body {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     background-color: transparent;
+    max-height: 252px;
+    max-width: 350px;
   }
   .container main #projects-section .project-grid .project .project-title {
     opacity: 0;
@@ -1089,6 +1112,13 @@ html body {
   .container footer .to-top:hover {
     background: -webkit-gradient(linear, left bottom, left top, from(var(--mainBGColor2)), to(var(--mainBGColor1)));
     background: linear-gradient(0deg, var(--mainBGColor2), var(--mainBGColor1));
+  }
+}
+
+@media all and (min-width: 1800px) {
+  .container main #projects-section .project-grid {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -1435,7 +1465,6 @@ html body {
 
 @media all {
   .bg-light {
-    height: 100%;
     background: linear-gradient(135deg, #d09dfa, #5266fa);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1481,6 +1510,8 @@ html body {
   }
   .container main #profile-section #basic-info .light-objective:hover {
     background-color: #5266fa;
+    -webkit-box-shadow: 0 3px 10px #17259179;
+            box-shadow: 0 3px 10px #17259179;
   }
   .container main #profile-section #basic-info .light-interests {
     -webkit-transition: all 0.5s;
@@ -1490,10 +1521,14 @@ html body {
   }
   .container main #profile-section #basic-info .light-interests:hover {
     background-color: #5266fa;
+    -webkit-box-shadow: 0 3px 10px #17259179;
+            box-shadow: 0 3px 10px #17259179;
   }
   .container main .bio-section.light-bio-section {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    -webkit-box-shadow: 0 3px 10px #17259179, 0 -3px 10px #17259179;
+            box-shadow: 0 3px 10px #17259179, 0 -3px 10px #17259179;
     background-color: #4b5de387;
   }
   .container main .bio-section div .light-background {
@@ -1504,63 +1539,10 @@ html body {
   .container main .bio-section div .light-bg-para {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    background-color: transparent;
+    -webkit-box-shadow: 0 3px 10px #17259179;
+            box-shadow: 0 3px 10px #17259179;
+    background-color: rgba(255, 255, 255, 0.15);
     color: white;
-    overflow: hidden;
-  }
-  @-webkit-keyframes line-anim {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  @keyframes line-anim {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-  .container main .bio-section div .light-bg-para::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 50%;
-    margin: -50% -50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 100%;
-    height: 300;
-    border-radius: 5em;
-    -webkit-animation: height-anim 2s forwards;
-            animation: height-anim 2s forwards;
-  }
-  @-webkit-keyframes height-anim {
-    0% {
-      -webkit-filter: brightness(0.75);
-              filter: brightness(0.75);
-      height: 0;
-    }
-    100% {
-      -webkit-filter: brightness(1);
-              filter: brightness(1);
-      height: 300%;
-    }
-  }
-  @keyframes height-anim {
-    0% {
-      -webkit-filter: brightness(0.75);
-              filter: brightness(0.75);
-      height: 0;
-    }
-    100% {
-      -webkit-filter: brightness(1);
-              filter: brightness(1);
-      height: 300%;
-    }
   }
   .container main #skills-section .light-skills {
     -webkit-transition: all 0.5s;
@@ -1613,6 +1595,8 @@ html body {
     transition: all 0.5s;
     text-shadow: 1px 2px 0 #222;
     background-color: #d09dfa8f;
+    -webkit-box-shadow: 0 3px 10px #17259179;
+            box-shadow: 0 3px 10px #17259179;
     -webkit-animation: lightSkillSelected 0.5s forwards;
             animation: lightSkillSelected 0.5s forwards;
   }
@@ -1647,12 +1631,16 @@ html body {
   .container main #projects-section .light-project-grid {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    -webkit-box-shadow: 0 3px 10px #17259179;
+            box-shadow: 0 3px 10px #17259179;
     background-color: #5266fa8e;
   }
   .container main #contact-section.light-contact-section {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     background-color: #5266fa;
+    -webkit-box-shadow: 0 3px 10px #17259179, 0 -3px 10px #17259179;
+            box-shadow: 0 3px 10px #17259179, 0 -3px 10px #17259179;
   }
   .container main #contact-section .light-contact-title {
     -webkit-transition: all 0.5s;
@@ -1662,6 +1650,31 @@ html body {
   }
   .container main #contact-section #contact-form.light-form {
     color: white;
+  }
+  .container footer .light-to-top {
+    background: -webkit-gradient(linear, left bottom, left top, from(#d09dfa), to(#5266fa));
+    background: linear-gradient(bottom, #d09dfa, #5266fa);
+  }
+  .container footer .light-to-top:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#d09dfa), to(#5266fa));
+    background: linear-gradient(top, #d09dfa, #5266fa);
+  }
+  .container footer .light-social-media {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#5266fa), to(transparent));
+    background: linear-gradient(to right, transparent, #5266fa, transparent);
+    -webkit-filter: drop-shadow(0 3px 5px #162172);
+            filter: drop-shadow(0 3px 5px #162172);
+  }
+  .container footer .light-social-media ul a {
+    color: white;
+  }
+  .container footer .light-credit {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    color: white;
+    text-shadow: 1px 1px #222;
   }
 }
 /*# sourceMappingURL=main-style.css.map */
