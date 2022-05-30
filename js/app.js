@@ -11,7 +11,6 @@ const infoHolder = document.querySelector('.info-holder');
 const navItem = document.querySelectorAll('.nav-item');
 const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
-const skillList = document.querySelectorAll('.skill-list li');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('#project-grid');
 const themeBtn = document.querySelector('.theme-btn');
@@ -27,6 +26,11 @@ const interests = document.querySelector('.interests');
 const background = document.querySelector('.background');
 const bgPara = document.querySelector('.bg-para');
 const bioSection = document.querySelector('.bio-section');
+const skillsEl = document.querySelector('.skills');
+const skillDiv = document.querySelectorAll('.skill-div');
+const projectText = document.querySelector('.project-text');
+const filterArea = document.querySelector('.filter-area');
+let skillList;
 
 const skills = ['react', 'api', 'javascript', 'sass', 'tailwind', 'nodejs'];
 let skillsSelected = [];
@@ -87,6 +91,19 @@ const changeTheme = () => {
 		bioSection.classList.add('light-bio-section');
 		background.classList.add('light-background');
 		bgPara.classList.add('light-bg-para');
+
+		// SKILLS SECTION
+		skillsEl.classList.add('light-skills');
+		skillDiv.forEach((el) => {
+			el.classList.add('light-skill-div');
+		});
+
+		// PROJECT SECTION
+		projectText.classList.add('light-project-text');
+		filterArea.classList.add('light-filter-area');
+		skillList.forEach((el) => {
+			el.classList.add('light-skill-list');
+		});
 	} else {
 		// THEME BTN
 		themeSymbole.classList.remove('light-theme');
@@ -109,6 +126,19 @@ const changeTheme = () => {
 		bioSection.classList.remove('light-bio-section');
 		background.classList.remove('light-background');
 		bgPara.classList.remove('light-bg-para');
+
+		// SKILLS SECTION
+		skillsEl.classList.remove('light-skills');
+		skillDiv.forEach((el) => {
+			el.classList.remove('light-skill-div');
+		});
+
+		// PROJECT SECTION
+		projectText.classList.remove('light-project-text');
+		filterArea.classList.remove('light-filter-area');
+		skillList.forEach((el) => {
+			el.classList.remove('light-skill-list');
+		});
 	}
 };
 
@@ -138,10 +168,12 @@ document.addEventListener('click', (e) => {
 
 // PROJECT/SKILL SECTION
 document.addEventListener('DOMContentLoaded', () => {
-	changeTheme();
 	projects.forEach((project) => {
 		createProject(project);
 	});
+	skillsListCreation();
+	skillList = skillsParent.querySelectorAll('li');
+	changeTheme();
 });
 
 let currentProjectList = [];
@@ -199,13 +231,8 @@ const createFilteredProjects = (skillsSelected) => {
 		const containsAllSkills = skillsSelected.every((skill) => {
 			return project.skills.includes(skill.textContent);
 		});
-		console.log(containsAllSkills);
-
 		if (!currentProjectList.includes(project) && containsAllSkills) {
 			currentProjectList.push(project);
-			console.log(
-				`${project} contains all selected skills: ${containsAllSkills}`
-			);
 		}
 	});
 
@@ -221,25 +248,26 @@ const removeSkill = (skillToRemove) => {
 
 const filterManager = (e) => {
 	const skill = e.target.textContent;
+	const skillClass =
+		localStorage.getItem('theme') === 'dark'
+			? 'skill-selected'
+			: 'light-skill-selected';
 
 	if (!skills[skill]) {
 		skills[skill] = true;
 		skillsSelected.push(e.target);
-		e.target.classList.add('skill-selected');
+
+		e.target.classList.add(skillClass);
 	} else {
 		skills[skill] = false;
 		skillsSelected = skillsSelected.filter((skill) => {
 			return e.target !== skill;
 		});
-		e.target.classList.remove('skill-selected');
+		e.target.classList.remove(skillClass);
 	}
 
 	createFilteredProjects(skillsSelected);
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-	skillsListCreation();
-});
 
 const skillsListCreation = () => {
 	skills.forEach((skill) => {

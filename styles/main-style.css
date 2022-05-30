@@ -52,7 +52,7 @@ html body {
         -ms-flex-pack: center;
             justify-content: center;
     padding: 0;
-    opacity: 5%;
+    opacity: 15%;
     z-index: -2;
     -webkit-animation: bg-anim ease-in-out 15s infinite;
             animation: bg-anim ease-in-out 15s infinite;
@@ -144,7 +144,7 @@ html body {
     min-height: 90vh;
   }
   .container main #profile-section .my-name {
-    color: #c1c7e3;
+    color: white;
     font-family: 'Roboto', sans-serif;
     text-align: center;
   }
@@ -371,9 +371,13 @@ html body {
             align-items: center;
     height: 100%;
   }
-  .container main .bio-section div p {
+  .container main .bio-section div .background {
+    color: #d8defd;
+  }
+  .container main .bio-section div .bg-para {
     line-height: 1.7em;
     background-color: rgba(255, 255, 255, 0.1);
+    color: #d8defd;
     padding: 5em;
     border-radius: 20%;
     opacity: 0;
@@ -392,6 +396,9 @@ html body {
     -ms-grid-columns: 1fr 1fr minmax(0, 1fr);
         grid-template-columns: 1fr 1fr minmax(0, 1fr);
     height: 50vh;
+  }
+  .container main #skills-section .skills {
+    color: #d8defd;
   }
   .container main #skills-section h3 {
     -ms-grid-column: 2;
@@ -419,11 +426,18 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
+  .container main #skills-section .skill-icons .skill-desc p {
+    text-shadow: none;
+  }
   .container main #skills-section .skill-icons img {
     width: 100%;
+    -webkit-filter: drop-shadow(1px 1px 0 #222);
+            filter: drop-shadow(1px 1px 0 #222);
   }
   .container main #skills-section .skill-icons p {
     margin-top: 0.5em;
+    color: #d8defd;
+    text-shadow: 1px 1px #222;
   }
   .container main #skills-section .fade-animated {
     opacity: 100%;
@@ -509,8 +523,11 @@ html body {
     -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
             filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
   }
-  .container main #projects-section h4 {
+  .container main #projects-section .project-text {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     text-align: center;
+    color: #d8defd;
   }
   .container main #projects-section .filter-area {
     margin: 0 10vw;
@@ -520,6 +537,7 @@ html body {
     font-size: 18px;
     text-align: center;
     margin-bottom: 1em;
+    color: #d8defd;
   }
   .container main #projects-section .filter-area .skill-list {
     display: -webkit-box;
@@ -541,6 +559,7 @@ html body {
     padding: 0.5em 1em;
     background-color: #222a687c;
     border-radius: 1em;
+    color: #d8defd;
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
   }
@@ -1411,31 +1430,167 @@ html body {
     border: 1px solid white;
   }
   .container main #profile-section .light-my-name {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     color: white;
-    text-shadow: 1px 3px 0 #0a1252;
+    text-shadow: 1px 3px 0 #1d288186;
   }
   .container main #profile-section #basic-info .light-objective {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     background-color: #4252c798;
     color: white;
   }
   .container main #profile-section #basic-info .light-objective:hover {
-    background-color: #4b5de3;
+    background-color: #d09dfa87;
   }
   .container main #profile-section #basic-info .light-interests {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     background-color: #4252c798;
     color: white;
   }
   .container main #profile-section #basic-info .light-interests:hover {
-    background-color: #4b5de3;
+    background-color: #d09dfa87;
   }
   .container main .bio-section.light-bio-section {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     background-color: #4b5de387;
   }
-  .container main .bio-section .light-background {
+  .container main .bio-section div .light-background {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     color: white;
   }
-  .container main .bio-section .light-bg-para {
+  .container main .bio-section div .light-bg-para {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: transparent;
     color: white;
+    overflow: hidden;
+  }
+  @-webkit-keyframes line-anim {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes line-anim {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  .container main .bio-section div .light-bg-para::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    margin: -50% -50%;
+    background-color: rgba(255, 255, 255, 0.07);
+    width: 100%;
+    height: 100%;
+    border-radius: 5em;
+    -webkit-animation: height-anim 1s forwards;
+            animation: height-anim 1s forwards;
+  }
+  @-webkit-keyframes height-anim {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  @keyframes height-anim {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  .container main #skills-section .light-skills {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    text-shadow: 1px 1px 0 #222;
+    color: white;
+  }
+  .container main #skills-section .skill-icons .light-skill-div .skill-desc {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: #5266fa;
+  }
+  .container main #skills-section .skill-icons .light-skill-div .skill-desc::before {
+    border-top-color: #5266fa;
+  }
+  .container main #skills-section .skill-icons .light-skill-div .skill-desc p {
+    color: white;
+    text-shadow: none;
+  }
+  .container main #skills-section .skill-icons .light-skill-div img {
+    -webkit-filter: drop-shadow(1px 2px 2px #222);
+            filter: drop-shadow(1px 2px 2px #222);
+  }
+  .container main #skills-section .skill-icons .light-skill-div .skill-title {
+    color: white;
+    text-shadow: 1px 1px black;
+  }
+  .container main #projects-section .light-project-text {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    color: white;
+    text-shadow: 1px 1px 0 #222;
+  }
+  .container main #projects-section .filter-area.light-filter-area p {
+    color: white;
+    text-shadow: 1px 1px 0 #222;
+  }
+  .container main #projects-section .filter-area .skill-list .light-skill-list {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    color: white;
+    background-color: #5266fa;
+  }
+  .container main #projects-section .filter-area .skill-list .light-skill-selected {
+    text-shadow: 1px 2px 0 #222;
+    background-color: #d09dfa;
+    -webkit-animation: lightSkillSelected 0.5s forwards;
+            animation: lightSkillSelected 0.5s forwards;
+  }
+  @-webkit-keyframes lightSkillSelected {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes lightSkillSelected {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
   }
 }
 /*# sourceMappingURL=main-style.css.map */
