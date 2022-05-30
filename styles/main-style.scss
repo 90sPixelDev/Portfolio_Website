@@ -83,29 +83,37 @@ html {
 				align-items: center;
 
 				.theme-btn {
-					background-color: transparent;
+					background-color: rgba(255, 255, 255, 0.25);
+					border: none;
+					border-bottom: solid 1px #fff;
 					border-radius: 50%;
 					margin: 2.25em;
-					padding: 0.25em;
+					padding: 0.5em;
 
 					touch-action: manipulation;
 					-webkit-tap-highlight-color: transparent;
 					outline-offset: 5px;
-
 					& > svg {
 						inline-size: 100%;
 						block-size: 100%;
 						stroke-linecap: round;
 					}
 
-					#sun-beams {
-						transition: all 0.5s;
-						stroke: transparent;
-					}
-					#black-circle {
-						transition: all 0.5s;
-						cy: 10;
-						cx: 14;
+					.sun-and-moon {
+						circle {
+							transition: all 0.5s;
+							fill: black;
+						}
+						#sun-beams {
+							transition: all 0.5s;
+							stroke: transparent;
+						}
+						#black-circle {
+							transition: all 0.5s;
+							radius: 5;
+							cy: 9;
+							cx: 15;
+						}
 					}
 				}
 				.section-top-info {
@@ -493,7 +501,7 @@ html {
 						}
 					}
 				}
-				#project-grid {
+				.project-grid {
 					display: grid;
 					max-height: fit-content;
 					justify-items: center;
@@ -529,6 +537,7 @@ html {
 						transition: all 1s;
 
 						.project-title {
+							color: #fff;
 							background-color: rgba(0, 0, 0, 0.5);
 							text-align: center;
 							padding: 0.5rem 0;
@@ -552,12 +561,15 @@ html {
 				flex-direction: column;
 				align-items: center;
 
-				h5 {
+				.contact-title {
+					transition: all 0.5s;
 					font-size: 2.5em;
 					margin: 1em 0;
+					color: #d8defd;
 				}
 				form {
 					opacity: 0;
+					color: #d8defd;
 					transform: scale(1.5);
 					display: flex;
 					flex-direction: column;
@@ -872,42 +884,56 @@ html {
 					font-size: 4em;
 					margin-bottom: 2em;
 				}
-				#project-grid {
+				.project-grid {
 					grid-template-rows: auto;
 
 					grid-template-columns: 1fr 1fr 1fr;
 					gap: 3.5vw;
 					margin: 3vh 3vh;
 
+					.project {
+						transition: all 0.5s;
+						// justify-content: center;
+						background-color: transparent;
+						.project-title {
+							opacity: 0;
+							transform: translateY(-200%);
+							text-align: center;
+							background-color: rgba(255, 255, 255, 0.5);
+							padding: 0.5rem 0;
+
+							transition: all 0.5s;
+						}
+					}
 					.project-parent {
+						transition: all 0.5s;
 						border-radius: 1em;
-						transition: all 1s;
+						filter: saturate(0) brightness(0.75);
 
 						&:hover {
-							border: 1px solid white;
 							transform: scale(1.1);
-
-							a {
-								background-color: transparent;
-								background-blend-mode: none;
+							background-color: #fff;
+							filter: brightness(1) saturate(1);
+							transform-origin: center;
+							.project {
+								background-position: top;
+								filter: drop-shadow(0 5px 5px #222);
+								box-shadow: inset 1px 1px 0 #222,
+									inset -1px 0 1px #222;
 								.project-title {
+									transform: translateY(-10%);
+									filter: drop-shadow(
+										0 0 0 transparent
+									);
+									color: black;
 									opacity: 100%;
+									background-color: transparent;
 								}
 							}
 						}
-						.project {
-							background-color: white;
-							background-blend-mode: luminosity;
-							justify-content: center;
-							.project-title {
-								opacity: 0;
-								text-align: center;
-								background-color: rgba(0, 0, 0, 0.5);
-								padding: 0.5rem 0;
-
-								transition: all 0.5s;
-							}
-						}
+					}
+					.project-parent-hide {
+						display: none;
 					}
 				}
 			}
@@ -1097,7 +1123,7 @@ html {
 					text-align: center;
 					margin-bottom: 1em;
 				}
-				#project-grid {
+				.project-grid {
 					grid-template-columns: 1fr 1fr;
 					grid-template-rows: auto;
 					gap: 3.5vw;
@@ -1281,7 +1307,7 @@ html {
 					font-size: 2.5em;
 					margin-bottom: 1em;
 				}
-				#project-grid {
+				.project-grid {
 					grid-template-columns: 1fr 1fr;
 					grid-template-rows: auto;
 					gap: 3.5vw;
@@ -1332,15 +1358,26 @@ html {
 
 	// THE SUN/MOON SYMBOL CHANGES
 	.container header #nav-bar {
-		.theme-btn .light-theme {
-			#sun-beams {
-				transition: all 0.5s ease-out;
-				stroke: white;
+		.theme-btn {
+			&.light-theme-btn {
+				background-color: rgba(255, 255, 255, 0.25);
 			}
-			#black-circle {
-				transition: all 0.5s ease-in-out;
-				cy: -15;
-				cx: 24;
+			.light-sun-and-moon {
+				circle {
+					fill: yellow;
+				}
+			}
+
+			.light-theme {
+				#sun-beams {
+					transition: all 0.5s ease-out;
+					stroke: yellow;
+				}
+				#black-circle {
+					transition: all 0.5s ease-in-out;
+					cy: -15;
+					cx: 24;
+				}
 			}
 		}
 		// THE NAV ITEMS TEXT
@@ -1414,21 +1451,23 @@ html {
 						content: '';
 						position: absolute;
 						z-index: -1;
-						top: 50%;
+						top: 0;
 						left: 50%;
 						margin: -50% -50%;
-						background-color: rgba(255, 255, 255, 0.07);
+						background-color: rgba(255, 255, 255, 0.1);
 						width: 100%;
-						height: 100%;
+						height: 300;
 						border-radius: 5em;
 
-						animation: height-anim 1s forwards;
+						animation: height-anim 2s forwards;
 						@keyframes height-anim {
 							0% {
+								filter: brightness(0.75);
 								height: 0;
 							}
 							100% {
-								height: 100%;
+								filter: brightness(1);
+								height: 300%;
 							}
 						}
 					}
@@ -1445,9 +1484,9 @@ html {
 				.skill-desc {
 					transition: all 0.5s;
 
-					background-color: #5266fa;
+					background-color: #5266fab7;
 					&::before {
-						border-top-color: #5266fa;
+						border-top-color: #5266fab7;
 					}
 					p {
 						color: white;
@@ -1472,6 +1511,7 @@ html {
 			}
 			.filter-area {
 				&.light-filter-area {
+					transition: all 0.5s;
 					p {
 						color: white;
 						text-shadow: 1px 1px 0 #222;
@@ -1482,11 +1522,12 @@ html {
 					.light-skill-list {
 						transition: all 0.5s;
 						color: white;
-						background-color: #5266fa;
+						background-color: #5266fa8e;
 					}
 					.light-skill-selected {
+						transition: all 0.5s;
 						text-shadow: 1px 2px 0 #222;
-						background-color: #d09dfa;
+						background-color: #d09dfa8f;
 						animation: lightSkillSelected 0.5s forwards;
 					}
 					@keyframes lightSkillSelected {
@@ -1500,6 +1541,26 @@ html {
 							transform: scale(1);
 						}
 					}
+				}
+			}
+			.light-project-grid {
+				transition: all 0.5s;
+				background-color: #5266fa8e;
+			}
+		}
+		#contact-section {
+			&.light-contact-section {
+				transition: all 0.5s;
+				background-color: #5266fa;
+			}
+			.light-contact-title {
+				transition: all 0.5s;
+				color: white;
+				text-shadow: 1px 2px 0 #222;
+			}
+			#contact-form {
+				&.light-form {
+					color: white;
 				}
 			}
 		}

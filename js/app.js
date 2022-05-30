@@ -12,13 +12,14 @@ const navItem = document.querySelectorAll('.nav-item');
 const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 const skillsParent = document.querySelector('.skill-list');
-const projectGrid = document.querySelector('#project-grid');
-const themeBtn = document.querySelector('.theme-btn');
+const projectGrid = document.querySelector('.project-grid');
 const r = document.querySelector(':root');
-const themeSymbole = document.querySelector('.sun-and-moon');
 
 // SELECTORS FOR DOM ELEMENTS TO CHANGE THEME
 const bg = document.querySelector('body');
+const themeBtn = document.querySelector('.theme-btn');
+const themeSymbol = document.querySelector('.sun-and-moon');
+const sunAndMoon = document.querySelector('.sun-and-moon');
 const mobileMenu = document.querySelector('.mobile-menu');
 const sectionTop = document.querySelector('.section-top-info');
 const objective = document.querySelector('.objective');
@@ -31,6 +32,9 @@ const skillDiv = document.querySelectorAll('.skill-div');
 const projectText = document.querySelector('.project-text');
 const filterArea = document.querySelector('.filter-area');
 let skillList;
+const contactSection = document.querySelector('#contact-section');
+const contactTitle = document.querySelector('.contact-title');
+const formElement = document.querySelector('form');
 
 const skills = ['react', 'api', 'javascript', 'sass', 'tailwind', 'nodejs'];
 let skillsSelected = [];
@@ -71,7 +75,9 @@ themeBtn.addEventListener('click', () => {
 const changeTheme = () => {
 	if (localStorage.getItem('theme') === 'light') {
 		// THEME BTN
-		themeSymbole.classList.add('light-theme');
+		themeBtn.classList.add('light-theme-btn');
+		themeSymbol.classList.add('light-theme');
+		sunAndMoon.classList.add('light-sun-and-moon');
 		bg.classList.add('bg-light');
 
 		// HEADER SECTION
@@ -96,6 +102,8 @@ const changeTheme = () => {
 		skillsEl.classList.add('light-skills');
 		skillDiv.forEach((el) => {
 			el.classList.add('light-skill-div');
+			if (el.matches('.skill-selected'))
+				console.log('selected skill!');
 		});
 
 		// PROJECT SECTION
@@ -104,9 +112,17 @@ const changeTheme = () => {
 		skillList.forEach((el) => {
 			el.classList.add('light-skill-list');
 		});
+		projectGrid.classList.add('light-project-grid');
+
+		// CONTACT SECTION
+		contactSection.classList.add('light-contact-section');
+		contactTitle.classList.add('light-contact-title');
+		formElement.classList.add('light-form');
 	} else {
 		// THEME BTN
-		themeSymbole.classList.remove('light-theme');
+		themeBtn.classList.remove('light-theme-btn');
+		themeSymbol.classList.remove('light-theme');
+		sunAndMoon.classList.remove('light-sun-and-moon');
 		bg.classList.remove('bg-light');
 
 		// HEADER SECTION
@@ -139,6 +155,12 @@ const changeTheme = () => {
 		skillList.forEach((el) => {
 			el.classList.remove('light-skill-list');
 		});
+		projectGrid.classList.remove('light-project-grid');
+
+		// CONTACT SECTION
+		contactTitle.classList.remove('light-contact-title');
+		contactSection.classList.remove('light-contact-section');
+		formElement.classList.remove('light-form');
 	}
 };
 
