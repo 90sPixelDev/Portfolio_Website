@@ -11,7 +11,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: white;
   font-size: 16px;
   cursor: default;
 }
@@ -22,12 +21,16 @@ html {
 
 html body {
   width: 100%;
-  background: linear-gradient(135deg, var(--mainBGColor1), var(--mainBGColor2));
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 @media all {
+  .bg-dark {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    background: linear-gradient(135deg, var(--mainBGColor1), var(--mainBGColor2));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
   .container {
     position: absolute;
     width: 100%;
@@ -104,33 +107,23 @@ html body {
     block-size: 100%;
     stroke-linecap: round;
   }
-  .container header #nav-bar .theme-btn .light-theme {
-    border: solid 1px #fff;
-  }
-  .container header #nav-bar .theme-btn .light-theme #sun-beams {
-    -webkit-transition: all 0.25s;
-    transition: all 0.25s;
-    stroke: white;
-  }
-  .container header #nav-bar .theme-btn .light-theme #black-circle {
-    -webkit-transition: all 0.25s;
-    transition: all 0.25s;
-    cy: 0;
-    cx: 24;
-  }
-  .container header #nav-bar .theme-btn .dark-theme #sun-beams {
-    -webkit-transition: all 0.25s;
-    transition: all 0.25s;
+  .container header #nav-bar .theme-btn #sun-beams {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     stroke: transparent;
   }
-  .container header #nav-bar .theme-btn .dark-theme #black-circle {
-    -webkit-transition: all 0.25s;
-    transition: all 0.25s;
+  .container header #nav-bar .theme-btn #black-circle {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     cy: 10;
     cx: 14;
   }
   .container header #nav-bar .section-top-info {
     display: none;
+    color: #d8defd;
+  }
+  .container header #nav-bar .section-top-info .section-info {
+    color: #d8defd;
   }
   .container header #nav-bar #nav-toggle {
     display: none;
@@ -143,17 +136,19 @@ html body {
     list-style: none;
   }
   .container header #nav-bar .mobile-menu #nav-items-parent li .nav-item {
+    color: #d8defd;
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #4b64e3;
   }
   .container main #profile-section {
     min-height: 90vh;
   }
-  .container main #profile-section #my-name {
+  .container main #profile-section .my-name {
+    color: #c1c7e3;
     font-family: 'Roboto', sans-serif;
     text-align: center;
   }
-  .container main #profile-section #my-name::after {
+  .container main #profile-section .my-name::after {
     content: '|';
     display: inline-block;
     -webkit-animation: typer 1.6s infinite;
@@ -223,7 +218,14 @@ html body {
             transform: scale(103%, 103%);
     background-color: #ab81cd97;
   }
-  .container main #profile-section #interests {
+  .container main #profile-section .objective {
+    color: #d8defd;
+  }
+  .container main #profile-section .objective:hover {
+    color: white;
+  }
+  .container main #profile-section .interests {
+    color: #d8defd;
     background-color: #222a68a2;
     border-radius: 3em;
     padding: 3em;
@@ -234,25 +236,26 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container main #profile-section #interests:hover {
+  .container main #profile-section .interests:hover {
+    color: white;
     -webkit-transform: scale(103%, 103%);
             transform: scale(103%, 103%);
     background-color: #ab81cd97;
   }
-  .container main #profile-section #interests ul li {
+  .container main #profile-section .interests ul li {
     font-weight: 400;
     list-style: none;
     margin: 0.2em 0;
   }
-  .container main #profile-section #interests ul li:first-child {
+  .container main #profile-section .interests ul li:first-child {
     border-top: 1px inset white;
     margin: 0.5em 0 0 0;
     padding: 0.5em 0 0 0;
   }
-  .container main #profile-section #interests ul li:hover {
+  .container main #profile-section .interests ul li:hover {
     border-bottom: 1px solid white;
   }
-  .container main #profile-section #interests ul li:hover::before {
+  .container main #profile-section .interests ul li:hover::before {
     content: '';
     -webkit-animation: list-focus 1s ease-out both;
             animation: list-focus 1s ease-out both;
@@ -292,71 +295,71 @@ html body {
       margin-right: 1em;
     }
   }
-  .container main #profile-section #interests ul li:first-child::after {
+  .container main #profile-section .interests ul li:first-child::after {
     content: '🐈';
     margin-left: 40%;
     opacity: 0%;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container main #profile-section #interests ul li:first-child:hover::after {
+  .container main #profile-section .interests ul li:first-child:hover::after {
     content: '🐈';
     margin-left: 60%;
     opacity: 100%;
   }
-  .container main #profile-section #interests ul li:nth-child(2)::after {
+  .container main #profile-section .interests ul li:nth-child(2)::after {
     content: '🍅';
     margin-left: 40%;
     opacity: 0%;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container main #profile-section #interests ul li:nth-child(2):hover::after {
+  .container main #profile-section .interests ul li:nth-child(2):hover::after {
     content: '🍅';
     margin-left: 20%;
     opacity: 100%;
   }
-  .container main #profile-section #interests ul li:nth-child(3)::after {
+  .container main #profile-section .interests ul li:nth-child(3)::after {
     content: '🎮';
     margin-left: 40%;
     opacity: 0%;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container main #profile-section #interests ul li:nth-child(3):hover::after {
+  .container main #profile-section .interests ul li:nth-child(3):hover::after {
     content: '🎮';
     margin-left: 20%;
     opacity: 100%;
   }
-  .container main #profile-section #interests ul li:nth-child(4)::after {
+  .container main #profile-section .interests ul li:nth-child(4)::after {
     content: '📖';
     margin-left: 40%;
     opacity: 0%;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container main #profile-section #interests ul li:nth-child(4):hover::after {
+  .container main #profile-section .interests ul li:nth-child(4):hover::after {
     content: '📖';
     margin-left: 20%;
     opacity: 100%;
   }
-  .container main #profile-section #interests ul li:nth-child(5)::after {
+  .container main #profile-section .interests ul li:nth-child(5)::after {
     content: '🎨';
     margin-left: 40%;
     opacity: 0%;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container main #profile-section #interests ul li:nth-child(5):hover::after {
+  .container main #profile-section .interests ul li:nth-child(5):hover::after {
     content: '🎨';
     margin-left: 20%;
     opacity: 100%;
   }
-  .container main #bio-section {
+  .container main .bio-section {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
   }
-  .container main #bio-section div {
+  .container main .bio-section div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -368,7 +371,7 @@ html body {
             align-items: center;
     height: 100%;
   }
-  .container main #bio-section div p {
+  .container main .bio-section div p {
     line-height: 1.7em;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 5em;
@@ -377,7 +380,7 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container main #bio-section div .translateU-animated {
+  .container main .bio-section div .translateU-animated {
     opacity: 100%;
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -852,6 +855,8 @@ html body {
     display: none;
   }
   .container header #nav-bar .mobile-menu {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
     top: 0;
     z-index: 2;
     width: 100%;
@@ -898,7 +903,7 @@ html body {
     color: white;
     background-color: rgba(255, 255, 255, 0.1);
   }
-  .container main #profile-section #my-name {
+  .container main #profile-section .my-name {
     margin: 1em 0 1em 0;
     font-size: 8em;
   }
@@ -907,18 +912,18 @@ html body {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
-  .container main #bio-section {
+  .container main .bio-section {
     padding: 5em;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
-  .container main #bio-section div {
+  .container main .bio-section div {
     margin: 0 3vw;
     -webkit-column-gap: 5vw;
             column-gap: 5vw;
   }
-  .container main #bio-section div p {
+  .container main .bio-section div p {
     width: 100%;
     max-width: 50vw;
     height: 100%;
@@ -927,7 +932,7 @@ html body {
     -webkit-transform: translateY(100px);
             transform: translateY(100px);
   }
-  .container main #bio-section h2 {
+  .container main .bio-section h2 {
     font-size: 2em;
   }
   .container main #skills-section {
@@ -1037,6 +1042,11 @@ html body {
   }
 }
 
+.container header #nav-bar .light-mobile-menu {
+  background-color: #4251c7;
+  border-bottom: 1px solid #3643a3;
+}
+
 @media all and (min-width: 641px) and (max-width: 1007px) {
   * {
     font-size: 2vw;
@@ -1046,17 +1056,22 @@ html body {
     left: 50vw;
     margin: 0;
   }
-  .container header .theme-btn {
+  .container header #nav-bar .theme-btn {
+    position: fixed;
     width: 7.25vw;
     height: 7.25vw;
   }
-  .container header .mobile-menu {
+  .container header #nav-bar .light-mobile-menu {
+    background-color: transparent;
+    border-bottom: none;
+  }
+  .container header #nav-bar .mobile-menu {
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1;
   }
-  .container header .mobile-menu .nav-toggle {
+  .container header #nav-bar .mobile-menu .nav-toggle {
     width: 7vw;
     height: 7vw;
     margin: 4vw;
@@ -1065,7 +1080,7 @@ html body {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
-  .container header .mobile-menu .nav-menu {
+  .container header #nav-bar .mobile-menu .nav-menu {
     right: 0;
     position: fixed;
     height: 0;
@@ -1077,7 +1092,7 @@ html body {
     background-color: #e2adf2b8;
     transition: all 1s;
   }
-  .container header .mobile-menu .nav-menu li {
+  .container header #nav-bar .mobile-menu .nav-menu li {
     display: table;
     opacity: 100%;
     list-style: none;
@@ -1089,7 +1104,7 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
-  .container header .mobile-menu .nav-menu li .nav-item {
+  .container header #nav-bar .mobile-menu .nav-menu li .nav-item {
     display: table-cell;
     vertical-align: middle;
     text-decoration: none;
@@ -1097,7 +1112,7 @@ html body {
     width: 6em;
     height: 2.5em;
   }
-  .container header .mobile-menu .show-menu {
+  .container header #nav-bar .mobile-menu .show-menu {
     right: 0;
     height: 35vw;
     opacity: 100%;
@@ -1107,7 +1122,7 @@ html body {
   .container main #profile-section {
     height: 90vh;
   }
-  .container main #profile-section #my-name {
+  .container main #profile-section .my-name {
     font-size: 6.5em;
     margin-bottom: 2em;
     margin-top: 10vw;
@@ -1117,20 +1132,20 @@ html body {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
-  .container main #bio-section {
+  .container main .bio-section {
     padding: 3em;
   }
-  .container main #bio-section div {
+  .container main .bio-section div {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .container main #bio-section div h2 {
+  .container main .bio-section div h2 {
     font-size: 3vw;
     margin-bottom: 2em;
   }
-  .container main #bio-section div p {
+  .container main .bio-section div p {
     font-size: 15px;
     -webkit-transform: translateY(10vh);
             transform: translateY(10vh);
@@ -1215,10 +1230,15 @@ html body {
             align-items: center;
   }
   .container header #nav-bar .theme-btn {
+    position: fixed;
     border-radius: 50%;
     width: 9vw;
     height: 9vw;
     margin: 1.5em;
+  }
+  .container header #nav-bar .light-mobile-menu {
+    background-color: transparent;
+    border-bottom: none;
   }
   .container header #nav-bar .mobile-menu {
     position: fixed;
@@ -1272,7 +1292,7 @@ html body {
     min-height: 90vh;
     margin-top: 3em;
   }
-  .container main #profile-section #my-name {
+  .container main #profile-section .my-name {
     font-family: 'Roboto', sans-serif;
     font-size: 4em;
     margin-bottom: 2em;
@@ -1288,21 +1308,21 @@ html body {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .container main #bio-section {
+  .container main .bio-section {
     padding: 3em;
     min-height: 100vh;
   }
-  .container main #bio-section div {
+  .container main .bio-section div {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .container main #bio-section div h2 {
+  .container main .bio-section div h2 {
     font-size: 1.5em;
     margin-bottom: 2em;
   }
-  .container main #bio-section div p {
+  .container main .bio-section div p {
     -webkit-transform: translateY(10vh);
             transform: translateY(10vh);
   }
@@ -1360,6 +1380,62 @@ html body {
   }
   .container main #contact-section form input {
     margin-bottom: 0.5em;
+  }
+}
+
+@media all {
+  .bg-light {
+    background: linear-gradient(135deg, #d09dfa, #5266fa);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .container header #nav-bar .mobile-menu .section-top-info.light-section-top {
+    color: white;
+  }
+  .container header #nav-bar .mobile-menu .section-top-info .light-section-top {
+    color: white;
+  }
+  .container header #nav-bar .theme-btn .light-theme #sun-beams {
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    stroke: white;
+  }
+  .container header #nav-bar .theme-btn .light-theme #black-circle {
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    cy: -15;
+    cx: 24;
+  }
+  .container header #nav-bar .mobile-menu #nav-items-parent li .light-nav-item {
+    color: white;
+    border: 1px solid white;
+  }
+  .container main #profile-section .light-my-name {
+    color: white;
+    text-shadow: 1px 3px 0 #0a1252;
+  }
+  .container main #profile-section #basic-info .light-objective {
+    background-color: #4252c798;
+    color: white;
+  }
+  .container main #profile-section #basic-info .light-objective:hover {
+    background-color: #4b5de3;
+  }
+  .container main #profile-section #basic-info .light-interests {
+    background-color: #4252c798;
+    color: white;
+  }
+  .container main #profile-section #basic-info .light-interests:hover {
+    background-color: #4b5de3;
+  }
+  .container main .bio-section.light-bio-section {
+    background-color: #4b5de387;
+  }
+  .container main .bio-section .light-background {
+    color: white;
+  }
+  .container main .bio-section .light-bg-para {
+    color: white;
   }
 }
 /*# sourceMappingURL=main-style.css.map */

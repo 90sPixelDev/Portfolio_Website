@@ -3,7 +3,7 @@
 // VARIABLES
 const navParent = document.getElementById('nav-items-parent');
 const navToggle = document.querySelector('.nav-toggle');
-const myName = document.querySelector('#my-name');
+const myName = document.querySelector('.my-name');
 const toTop = document.querySelector('.to-top');
 const scrollEl = document.querySelectorAll('.anim');
 const emailAfter = document.querySelector('.email-after');
@@ -17,6 +17,16 @@ const projectGrid = document.querySelector('#project-grid');
 const themeBtn = document.querySelector('.theme-btn');
 const r = document.querySelector(':root');
 const themeSymbole = document.querySelector('.sun-and-moon');
+
+// SELECTORS FOR DOM ELEMENTS TO CHANGE THEME
+const bg = document.querySelector('body');
+const mobileMenu = document.querySelector('.mobile-menu');
+const sectionTop = document.querySelector('.section-top-info');
+const objective = document.querySelector('.objective');
+const interests = document.querySelector('.interests');
+const background = document.querySelector('.background');
+const bgPara = document.querySelector('.bg-para');
+const bioSection = document.querySelector('.bio-section');
 
 const skills = ['react', 'api', 'javascript', 'sass', 'tailwind', 'nodejs'];
 let skillsSelected = [];
@@ -42,29 +52,63 @@ const projects = [
 	},
 ];
 
-if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'light');
+if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
 
 themeBtn.addEventListener('click', () => {
 	if (localStorage.getItem('theme') === 'light') {
 		localStorage.setItem('theme', 'dark');
-		console.log('Theme: dark');
-		themeSymbole.classList.add('dark-theme');
 		changeTheme();
 	} else {
 		localStorage.setItem('theme', 'light');
-		console.log('Theme: light');
-		themeSymbole.classList.remove('dark-theme');
 		changeTheme();
 	}
 });
 
 const changeTheme = () => {
-	if (localStorage.getItem('theme') === 'dark') {
-		r.style.setProperty('--mainBGColor1', '#131738');
-		r.style.setProperty('--mainBGColor2', '#542878');
+	if (localStorage.getItem('theme') === 'light') {
+		// THEME BTN
+		themeSymbole.classList.add('light-theme');
+		bg.classList.add('bg-light');
+
+		// HEADER SECTION
+		mobileMenu.classList.add('light-mobile-menu');
+		sectionTop.classList.add('light-section-top');
+		sectionInfo.classList.add('light-section-top');
+		navItem.forEach((el) => {
+			el.classList.add('light-nav-item');
+		});
+
+		// BASIC INFO SECTION
+		myName.classList.add('light-my-name');
+		objective.classList.add('light-objective');
+		interests.classList.add('light-interests');
+
+		// BIO SECTION
+		bioSection.classList.add('light-bio-section');
+		background.classList.add('light-background');
+		bgPara.classList.add('light-bg-para');
 	} else {
-		r.style.setProperty('--mainBGColor1', '#222a68');
-		r.style.setProperty('--mainBGColor2', '#ab81cd');
+		// THEME BTN
+		themeSymbole.classList.remove('light-theme');
+		bg.classList.remove('bg-light');
+
+		// HEADER SECTION
+		mobileMenu.classList.remove('light-mobile-menu');
+		sectionTop.classList.remove('light-section-top');
+		sectionInfo.classList.remove('light-section-top');
+		navItem.forEach((el) => {
+			el.classList.remove('light-nav-item');
+		});
+
+		// BASIC INFO SECTION
+		myName.classList.remove('light-my-name');
+		objective.classList.remove('light-objective');
+		interests.classList.remove('light-interests');
+
+		// BIO SECTION
+		bioSection.classList.remove('light-bio-section');
+		background.classList.remove('light-background');
+		bgPara.classList.remove('light-bg-para');
 	}
 };
 

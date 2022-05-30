@@ -14,7 +14,6 @@ $navBarHeight: 10vh;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	color: white;
 	font-size: 16px;
 	cursor: default;
 }
@@ -24,6 +23,14 @@ html {
 
 	body {
 		width: 100%;
+	}
+}
+
+// MAIN LAYOUT / STYLE
+@media all {
+	.bg-dark {
+		transition: all 1s;
+
 		background: linear-gradient(
 			135deg,
 			var(--mainBGColor1),
@@ -32,10 +39,6 @@ html {
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
-}
-
-// MAIN LAYOUT / STYLE
-@media all {
 	.container {
 		position: absolute;
 		width: 100%;
@@ -92,32 +95,23 @@ html {
 						stroke-linecap: round;
 					}
 
-					.light-theme {
-						border: solid 1px #fff;
-						#sun-beams {
-							transition: all 0.25s;
-							stroke: white;
-						}
-						#black-circle {
-							transition: all 0.25s;
-							cy: 0;
-							cx: 24;
-						}
+					#sun-beams {
+						transition: all 0.5s;
+						stroke: transparent;
 					}
-					.dark-theme {
-						#sun-beams {
-							transition: all 0.25s;
-							stroke: transparent;
-						}
-						#black-circle {
-							transition: all 0.25s;
-							cy: 10;
-							cx: 14;
-						}
+					#black-circle {
+						transition: all 0.5s;
+						cy: 10;
+						cx: 14;
 					}
 				}
 				.section-top-info {
 					display: none;
+					color: #d8defd;
+
+					.section-info {
+						color: #d8defd;
+					}
 				}
 
 				#nav-toggle {
@@ -130,8 +124,9 @@ html {
 				.mobile-menu #nav-items-parent li {
 					list-style: none;
 					.nav-item {
+						color: #d8defd;
 						background-color: transparent;
-						border: 1px solid #fff;
+						border: 1px solid #4b64e3;
 					}
 				}
 			}
@@ -140,7 +135,8 @@ html {
 		main {
 			#profile-section {
 				min-height: 100vh - $navBarHeight;
-				#my-name {
+				.my-name {
+					color: #c1c7e3;
 					font-family: 'Roboto', sans-serif;
 					text-align: center;
 					&::after {
@@ -189,7 +185,14 @@ html {
 						}
 					}
 				}
-				#interests {
+				.objective {
+					color: #d8defd;
+					&:hover {
+						color: white;
+					}
+				}
+				.interests {
+					color: #d8defd;
 					background-color: #222a68a2;
 					border-radius: 3em;
 					padding: 3em;
@@ -198,6 +201,7 @@ html {
 
 					transition: all 1s;
 					&:hover {
+						color: white;
 						transform: scale(103%, 103%);
 						background-color: #ab81cd97;
 					}
@@ -304,7 +308,7 @@ html {
 				}
 			}
 
-			#bio-section {
+			.bio-section {
 				background-color: rgba(0, 0, 0, 0.5);
 				width: 100%;
 
@@ -723,6 +727,8 @@ html {
 				}
 
 				.mobile-menu {
+					transition: all 0.5s;
+
 					top: 0;
 					z-index: 2;
 					width: 100%;
@@ -779,7 +785,7 @@ html {
 
 		main {
 			#profile-section {
-				#my-name {
+				.my-name {
 					margin: 1em 0 1em 0;
 					font-size: 8em;
 				}
@@ -788,7 +794,7 @@ html {
 				}
 			}
 
-			#bio-section {
+			.bio-section {
 				padding: 5em;
 				height: fit-content;
 
@@ -919,6 +925,13 @@ html {
 		}
 	}
 }
+
+// HEADER ON TOP COLOR (ONLY FOR BIGGER SCREENS)
+.container header #nav-bar .light-mobile-menu {
+	background-color: #4251c7;
+	border-bottom: 1px solid #3643a3;
+}
+
 // Medium Sized Screens
 @media all and (min-width: 641px) and (max-width: 1007px) {
 	* {
@@ -932,68 +945,75 @@ html {
 			margin: 0;
 		}
 		header {
-			.theme-btn {
-				width: 7.25vw;
-				height: 7.25vw;
-			}
-
-			.mobile-menu {
-				position: fixed;
-				right: 0;
-				top: 0;
-				z-index: 1;
-
-				.nav-toggle {
-					width: 7vw;
-					height: 7vw;
-
-					margin: 4vw;
-
-					background: url('../img/logo/menu-logo.svg') no-repeat
-						center;
-					background-size: contain;
-					transition: all 0.5s;
-				}
-				.nav-menu {
-					right: 0;
+			#nav-bar {
+				.theme-btn {
 					position: fixed;
-					height: 0;
-					width: 20vw;
-					overflow: hidden;
-					transition: all 1s;
-					opacity: 0;
+					width: 7.25vw;
+					height: 7.25vw;
+				}
 
-					background-color: #e2adf2b8;
+				.light-mobile-menu {
+					background-color: transparent;
+					border-bottom: none;
+				}
+				.mobile-menu {
+					position: fixed;
+					right: 0;
+					top: 0;
+					z-index: 1;
 
-					transition: all 1s;
-					li {
-						display: table;
-						opacity: 100%;
+					.nav-toggle {
+						width: 7vw;
+						height: 7vw;
 
-						list-style: none;
-						text-align: center;
+						margin: 4vw;
+
+						background: url('../img/logo/menu-logo.svg')
+							no-repeat center;
+						background-size: contain;
+						transition: all 0.5s;
+					}
+					.nav-menu {
+						right: 0;
+						position: fixed;
+						height: 0;
+						width: 20vw;
 						overflow: hidden;
-						width: 7em;
-						height: 3em;
-						margin: 1em 1em;
+						transition: all 1s;
+						opacity: 0;
+
+						background-color: #e2adf2b8;
 
 						transition: all 1s;
-						.nav-item {
-							display: table-cell;
-							vertical-align: middle;
-							text-decoration: none;
-							font-size: 1.1em;
-							width: 6em;
-							height: 2.5em;
+						li {
+							display: table;
+							opacity: 100%;
+
+							list-style: none;
+							text-align: center;
+							overflow: hidden;
+							width: 7em;
+							height: 3em;
+							margin: 1em 1em;
+
+							transition: all 1s;
+							.nav-item {
+								display: table-cell;
+								vertical-align: middle;
+								text-decoration: none;
+								font-size: 1.1em;
+								width: 6em;
+								height: 2.5em;
+							}
 						}
 					}
-				}
-				.show-menu {
-					right: 0;
-					height: 35vw;
-					opacity: 100%;
+					.show-menu {
+						right: 0;
+						height: 35vw;
+						opacity: 100%;
 
-					transition: all 1s;
+						transition: all 1s;
+					}
 				}
 			}
 		}
@@ -1001,7 +1021,7 @@ html {
 		main {
 			#profile-section {
 				height: 100vh - $navBarHeight;
-				#my-name {
+				.my-name {
 					font-size: 6.5em;
 					margin-bottom: 2em;
 					margin-top: 10vw;
@@ -1011,7 +1031,7 @@ html {
 				}
 			}
 
-			#bio-section {
+			.bio-section {
 				padding: 3em;
 				div {
 					flex-direction: column;
@@ -1109,10 +1129,16 @@ html {
 				align-items: center;
 
 				.theme-btn {
+					position: fixed;
 					border-radius: 50%;
 					width: 9vw;
 					height: 9vw;
 					margin: 1.5em;
+				}
+
+				.light-mobile-menu {
+					background-color: transparent;
+					border-bottom: none;
 				}
 				.mobile-menu {
 					position: fixed;
@@ -1174,7 +1200,7 @@ html {
 				min-height: 100vh - $navBarHeight;
 				margin-top: 3em;
 
-				#my-name {
+				.my-name {
 					font-family: 'Roboto', sans-serif;
 					font-size: 4em;
 					margin-bottom: 2em;
@@ -1187,7 +1213,7 @@ html {
 				}
 			}
 
-			#bio-section {
+			.bio-section {
 				padding: 3em;
 				min-height: 100vh;
 
@@ -1257,6 +1283,85 @@ html {
 						margin-bottom: 0.5em;
 					}
 				}
+			}
+		}
+	}
+}
+
+//COLOR THEME OVERRIDE
+@media all {
+	// BG COLOR
+	.bg-light {
+		background: linear-gradient(135deg, #d09dfa, #5266fa);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+
+	// TEXT IN TOP SECTION IN HEADER
+	.container header #nav-bar .mobile-menu .section-top-info {
+		&.light-section-top {
+			color: white;
+		}
+		.light-section-top {
+			color: white;
+		}
+	}
+
+	// THE SUN/MOON SYMBOL CHANGES
+	.container header #nav-bar {
+		.theme-btn .light-theme {
+			#sun-beams {
+				transition: all 0.5s ease-out;
+				stroke: white;
+			}
+			#black-circle {
+				transition: all 0.5s ease-in-out;
+				cy: -15;
+				cx: 24;
+			}
+		}
+		// THE NAV ITEMS TEXT
+		.mobile-menu #nav-items-parent li .light-nav-item {
+			color: white;
+			border: 1px solid white;
+		}
+	}
+
+	// MY NAME
+	.container main {
+		#profile-section {
+			.light-my-name {
+				color: white;
+				text-shadow: 1px 3px 0 #0a1252;
+			}
+			#basic-info {
+				.light-objective {
+					background-color: #4252c798;
+					color: white;
+
+					&:hover {
+						background-color: #4b5de3;
+					}
+				}
+				.light-interests {
+					background-color: #4252c798;
+					color: white;
+
+					&:hover {
+						background-color: #4b5de3;
+					}
+				}
+			}
+		}
+		.bio-section {
+			&.light-bio-section {
+				background-color: #4b5de387;
+			}
+			.light-background {
+				color: white;
+			}
+			.light-bg-para {
+				color: white;
 			}
 		}
 	}
