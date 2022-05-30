@@ -1435,6 +1435,7 @@ html body {
 
 @media all {
   .bg-light {
+    height: 100%;
     background: linear-gradient(135deg, #d09dfa, #5266fa);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1479,7 +1480,7 @@ html body {
     color: white;
   }
   .container main #profile-section #basic-info .light-objective:hover {
-    background-color: #d09dfa87;
+    background-color: #5266fa;
   }
   .container main #profile-section #basic-info .light-interests {
     -webkit-transition: all 0.5s;
@@ -1488,7 +1489,7 @@ html body {
     color: white;
   }
   .container main #profile-section #basic-info .light-interests:hover {
-    background-color: #d09dfa87;
+    background-color: #5266fa;
   }
   .container main .bio-section.light-bio-section {
     -webkit-transition: all 0.5s;

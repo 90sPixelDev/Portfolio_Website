@@ -1341,6 +1341,7 @@ html {
 @media all {
 	// BG COLOR
 	.bg-light {
+		height: 100%;
 		background: linear-gradient(135deg, #d09dfa, #5266fa);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
@@ -1402,7 +1403,7 @@ html {
 					color: white;
 
 					&:hover {
-						background-color: #d09dfa87;
+						background-color: #5266fa;
 						// color: black;
 					}
 				}
@@ -1412,7 +1413,7 @@ html {
 					color: white;
 
 					&:hover {
-						background-color: #d09dfa87;
+						background-color: #5266fa;
 						// color: black;
 					}
 				}

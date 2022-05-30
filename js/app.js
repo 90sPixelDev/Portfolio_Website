@@ -102,14 +102,16 @@ const changeTheme = () => {
 		skillsEl.classList.add('light-skills');
 		skillDiv.forEach((el) => {
 			el.classList.add('light-skill-div');
-			if (el.matches('.skill-selected'))
-				console.log('selected skill!');
 		});
 
 		// PROJECT SECTION
 		projectText.classList.add('light-project-text');
 		filterArea.classList.add('light-filter-area');
 		skillList.forEach((el) => {
+			if (el.classList.contains('skill-selected')) {
+				el.classList.add('light-skill-selected');
+				el.classList.remove('skill-selected');
+			}
 			el.classList.add('light-skill-list');
 		});
 		projectGrid.classList.add('light-project-grid');
@@ -153,6 +155,10 @@ const changeTheme = () => {
 		projectText.classList.remove('light-project-text');
 		filterArea.classList.remove('light-filter-area');
 		skillList.forEach((el) => {
+			if (el.classList.contains('light-skill-selected')) {
+				el.classList.add('skill-selected');
+				el.classList.remove('light-skill-selected');
+			}
 			el.classList.remove('light-skill-list');
 		});
 		projectGrid.classList.remove('light-project-grid');
@@ -270,10 +276,10 @@ const removeSkill = (skillToRemove) => {
 
 const filterManager = (e) => {
 	const skill = e.target.textContent;
-	const skillClass =
-		localStorage.getItem('theme') === 'dark'
-			? 'skill-selected'
-			: 'light-skill-selected';
+	let skillClass;
+	localStorage.getItem('theme') === 'dark'
+		? (skillClass = 'skill-selected')
+		: (skillClass = 'light-skill-selected');
 
 	if (!skills[skill]) {
 		skills[skill] = true;
