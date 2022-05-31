@@ -1041,7 +1041,7 @@ html {
 						width: 7vw;
 						height: 7vw;
 
-						margin: 4vw;
+						margin: 4.5vw;
 
 						background: url('../img/logo/menu-logo.svg')
 							no-repeat center;
@@ -1057,7 +1057,7 @@ html {
 						transition: all 1s;
 						opacity: 0;
 
-						background-color: #e2adf2b8;
+						background-color: #ab81cd;
 
 						transition: all 1s;
 						li {
@@ -1079,6 +1079,15 @@ html {
 								font-size: 1.1em;
 								width: 6em;
 								height: 2.5em;
+								border: 1px solid #fff;
+								background-color: rgba(
+									255,
+									255,
+									255,
+									0.15
+								);
+								color: white;
+								text-shadow: 1px 1px #222;
 							}
 						}
 					}
@@ -1225,7 +1234,7 @@ html {
 						width: 9vw;
 						height: 9vw;
 
-						margin: 4vw;
+						margin: 5.5vw;
 
 						background: url('../img/logo/menu-logo.svg')
 							no-repeat center;
@@ -1239,7 +1248,7 @@ html {
 						overflow: hidden;
 						opacity: 0;
 
-						background-color: #e2adf2b8;
+						background-color: #ab81cd;
 
 						transition: all 1s;
 						li {
@@ -1258,6 +1267,15 @@ html {
 								font-size: 1.1em;
 								width: 6em;
 								height: 2.5em;
+								border: 1px solid #fff;
+								background-color: rgba(
+									255,
+									255,
+									255,
+									0.15
+								);
+								color: white;
+								text-shadow: 1px 1px #222;
 							}
 						}
 					}
@@ -1368,17 +1386,24 @@ html {
 	// BG COLOR
 	.bg-light {
 		background: linear-gradient(135deg, #d09dfa, #5266fa);
+		background-size: cover;
+		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
 
 	// TEXT IN TOP SECTION IN HEADER
-	.container header #nav-bar .mobile-menu .section-top-info {
-		&.light-section-top {
-			color: white;
+	.container header #nav-bar .mobile-menu {
+		.section-top-info {
+			&.light-section-top {
+				color: white;
+			}
+			.light-section-top {
+				color: white;
+			}
 		}
-		.light-section-top {
-			color: white;
+		.light-nav-menu {
+			background-color: #d09dfa;
 		}
 	}
 
@@ -1415,6 +1440,9 @@ html {
 
 	// MAIN SECTION
 	.container {
+		header #nav-bar .mobile-menu .nav-toggle {
+			border: 1px solid #fff;
+		}
 		main {
 			#profile-section {
 				.light-my-name {

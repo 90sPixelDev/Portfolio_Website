@@ -1159,7 +1159,7 @@ html body {
   .container header #nav-bar .mobile-menu .nav-toggle {
     width: 7vw;
     height: 7vw;
-    margin: 4vw;
+    margin: 4.5vw;
     background: url("../img/logo/menu-logo.svg") no-repeat center;
     background-size: contain;
     -webkit-transition: all 0.5s;
@@ -1174,7 +1174,7 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
     opacity: 0;
-    background-color: #e2adf2b8;
+    background-color: #ab81cd;
     transition: all 1s;
   }
   .container header #nav-bar .mobile-menu .nav-menu li {
@@ -1196,6 +1196,10 @@ html body {
     font-size: 1.1em;
     width: 6em;
     height: 2.5em;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-shadow: 1px 1px #222;
   }
   .container header #nav-bar .mobile-menu .show-menu {
     right: 0;
@@ -1334,7 +1338,7 @@ html body {
   .container header #nav-bar .mobile-menu .nav-toggle {
     width: 9vw;
     height: 9vw;
-    margin: 4vw;
+    margin: 5.5vw;
     background: url("../img/logo/menu-logo.svg") no-repeat center;
     background-size: contain;
     -webkit-transition: all 0.5s;
@@ -1346,7 +1350,7 @@ html body {
     height: 0;
     overflow: hidden;
     opacity: 0;
-    background-color: #e2adf2b8;
+    background-color: #ab81cd;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
@@ -1367,6 +1371,10 @@ html body {
     font-size: 1.1em;
     width: 6em;
     height: 2.5em;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-shadow: 1px 1px #222;
   }
   .container header #nav-bar .mobile-menu .show-menu {
     right: 0;
@@ -1471,6 +1479,8 @@ html body {
 @media all {
   .bg-light {
     background: linear-gradient(135deg, #d09dfa, #5266fa);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
@@ -1479,6 +1489,9 @@ html body {
   }
   .container header #nav-bar .mobile-menu .section-top-info .light-section-top {
     color: white;
+  }
+  .container header #nav-bar .mobile-menu .light-nav-menu {
+    background-color: #d09dfa;
   }
   .container header #nav-bar .theme-btn.light-theme-btn {
     background-color: rgba(255, 255, 255, 0.25);
@@ -1500,6 +1513,9 @@ html body {
   .container header #nav-bar .mobile-menu #nav-items-parent li .light-nav-item {
     color: white;
     border: 1px solid white;
+  }
+  .container header #nav-bar .mobile-menu .nav-toggle {
+    border: 1px solid #fff;
   }
   .container main #profile-section .light-my-name {
     -webkit-transition: all 0.5s;

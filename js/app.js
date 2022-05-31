@@ -1,7 +1,7 @@
 'use strict';
 
 // VARIABLES
-const navParent = document.getElementById('nav-items-parent');
+const navParent = document.querySelector('.nav-items-parent');
 const navToggle = document.querySelector('.nav-toggle');
 const myName = document.querySelector('.my-name');
 const scrollEl = document.querySelectorAll('.anim');
@@ -38,6 +38,7 @@ const toTop = document.querySelector('.to-top');
 const socialMedia = document.querySelector('.social-media');
 const socialMediaLink = document.querySelectorAll('.social-media a');
 const footerEnd = document.querySelector('.end');
+const navMenu = document.querySelector('.nav-menu');
 
 const skills = ['react', 'api', 'javascript', 'sass', 'tailwind', 'nodejs'];
 let skillsSelected = [];
@@ -90,6 +91,7 @@ const changeTheme = () => {
 		navItem.forEach((el) => {
 			el.classList.add('light-nav-item');
 		});
+		navMenu.classList.add('light-nav-menu');
 
 		// BASIC INFO SECTION
 		myName.classList.add('light-my-name');
@@ -148,6 +150,7 @@ const changeTheme = () => {
 		navItem.forEach((el) => {
 			el.classList.remove('light-nav-item');
 		});
+		navMenu.classList.remove('light-nav-menu');
 
 		// BASIC INFO SECTION
 		myName.classList.remove('light-my-name');
