@@ -2,6 +2,8 @@
 :root {
 	--mainBGColor1: #222a68; //#222a68
 	--mainBGColor2: #ab81cd; //#ab81cd
+	--mainBGColor1Light: #d09dfa; //#d09dfa
+	--mainBGColor2Light: #5266fa; //#5266fa
 }
 $test: #301b52;
 
@@ -958,9 +960,12 @@ html {
 				height: 70vh;
 				min-height: 495px;
 				margin: 20vh 0 10vh 0;
+				.contact-title {
+					margin-bottom: 0;
+				}
 				form {
 					justify-content: space-evenly;
-					height: fit-content;
+					height: 70%;
 					min-height: 310px;
 					width: 25vw;
 					min-width: 500px;
@@ -1364,7 +1369,11 @@ html {
 @media all {
 	// BG COLOR
 	.bg-light {
-		background: linear-gradient(135deg, #d09dfa, #5266fa);
+		background: linear-gradient(
+			135deg,
+			var(--mainBGColor1Light),
+			var(--mainBGColor2Light)
+		);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}

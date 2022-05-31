@@ -2,6 +2,8 @@
 :root {
   --mainBGColor1: #222a68;
   --mainBGColor2: #ab81cd;
+  --mainBGColor1Light: #d09dfa;
+  --mainBGColor2Light: #5266fa;
 }
 
 * {
@@ -1089,13 +1091,14 @@ html body {
     min-height: 495px;
     margin: 20vh 0 10vh 0;
   }
+  .container main #contact-section .contact-title {
+    margin-bottom: 0;
+  }
   .container main #contact-section form {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    height: 70%;
     min-height: 310px;
     width: 25vw;
     min-width: 500px;
@@ -1465,7 +1468,7 @@ html body {
 
 @media all {
   .bg-light {
-    background: linear-gradient(135deg, #d09dfa, #5266fa);
+    background: linear-gradient(135deg, var(--mainBGColor1Light), var(--mainBGColor2Light));
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
