@@ -1479,8 +1479,6 @@ html body {
 @media all {
   .bg-light {
     background: linear-gradient(135deg, #d09dfa, #5266fa);
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
