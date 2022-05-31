@@ -29,7 +29,9 @@ html body {
   .bg-dark {
     -webkit-transition: all 1s;
     transition: all 1s;
-    background: linear-gradient(135deg, var(--mainBGColor1), var(--mainBGColor2));
+    background: linear-gradient(135deg, #222a68, #ab81cd);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
@@ -1428,7 +1430,7 @@ html body {
     left: 33%;
   }
   .container main #skills-section .skill-desc p {
-    font-size: 9px;
+    font-size: 7px;
   }
   .container main #projects-section {
     min-height: 70vh;
@@ -1468,7 +1470,7 @@ html body {
 
 @media all {
   .bg-light {
-    background: linear-gradient(135deg, var(--mainBGColor1Light), var(--mainBGColor2Light));
+    background: linear-gradient(135deg, #d09dfa, #5266fa);
     background-repeat: no-repeat;
     background-attachment: fixed;
   }

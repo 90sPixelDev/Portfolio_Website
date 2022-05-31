@@ -33,11 +33,9 @@ html {
 	.bg-dark {
 		transition: all 1s;
 
-		background: linear-gradient(
-			135deg,
-			var(--mainBGColor1),
-			var(--mainBGColor2)
-		);
+		background: linear-gradient(135deg, #222a68, #ab81cd);
+		background-size: cover;
+		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
@@ -1323,7 +1321,7 @@ html {
 						left: 33%;
 					}
 					p {
-						font-size: 9px;
+						font-size: 7px;
 					}
 				}
 			}
@@ -1369,11 +1367,7 @@ html {
 @media all {
 	// BG COLOR
 	.bg-light {
-		background: linear-gradient(
-			135deg,
-			var(--mainBGColor1Light),
-			var(--mainBGColor2Light)
-		);
+		background: linear-gradient(135deg, #d09dfa, #5266fa);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
