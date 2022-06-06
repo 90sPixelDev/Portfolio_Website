@@ -697,8 +697,8 @@ html body {
   .container main #contact-section form {
     opacity: 0;
     color: #d8defd;
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

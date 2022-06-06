@@ -12,7 +12,6 @@ const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('.project-grid');
-const r = document.querySelector(':root');
 
 // SELECTORS FOR DOM ELEMENTS TO CHANGE THEME
 const bg = document.querySelector('body');
@@ -45,7 +44,7 @@ let skillsSelected = [];
 
 const projects = [
 	{
-		title: 'Mini Expense Tracker',
+		title: 'MinExpense',
 		url: 'https://lienfont-react-expense-tracker.vercel.app',
 		class: 'mini-expense-tracker',
 		skills: ['javascript', 'react', 'tailwind'],
