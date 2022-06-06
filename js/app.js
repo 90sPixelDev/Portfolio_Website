@@ -39,7 +39,15 @@ const socialMediaLink = document.querySelectorAll('.social-media a');
 const footerEnd = document.querySelector('.end');
 const navMenu = document.querySelector('.nav-menu');
 
-const skills = ['react', 'api', 'javascript', 'sass', 'tailwind', 'nodejs'];
+const skills = [
+	'react',
+	'api',
+	'javascript',
+	'sass',
+	'auth0',
+	'tailwind',
+	'nodejs',
+];
 let skillsSelected = [];
 
 const projects = [
@@ -47,7 +55,7 @@ const projects = [
 		title: 'MinExpense',
 		url: 'https://lienfont-react-expense-tracker.vercel.app',
 		class: 'mini-expense-tracker',
-		skills: ['javascript', 'react', 'tailwind'],
+		skills: ['javascript', 'react', 'tailwind', 'auth0'],
 	},
 	{
 		title: 'Free The Games',
