@@ -42,8 +42,10 @@ const navMenu = document.querySelector('.nav-menu');
 const skills = [
 	'react',
 	'api',
+	'firebase',
 	'javascript',
 	'sass',
+	'typescript',
 	'auth0',
 	'tailwind',
 	'nodejs',
@@ -55,7 +57,7 @@ const projects = [
 		title: 'MinExpense',
 		url: 'https://lienfont-react-expense-tracker.vercel.app',
 		class: 'mini-expense-tracker',
-		skills: ['javascript', 'react', 'tailwind', 'auth0'],
+		skills: ['javascript', 'react', 'firebase', 'tailwind', 'auth0'],
 	},
 	{
 		title: 'Free The Games',
