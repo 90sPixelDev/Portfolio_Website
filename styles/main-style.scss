@@ -398,18 +398,26 @@ html {
 				#sql-s > div,
 				#react-s > div,
 				#tailwind-s > div,
+				#auth0-s > div,
+				#firebase-s > div,
 				#github-s > div {
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
+					@media all and (min-width: 1008px) {
+						filter: saturate(0);
+					}
 					width: 5em;
 					height: 5em;
 
 					transition: all 0.5s ease-out;
 					&:hover {
 						transform: scale(2, 2);
-						// transform-origin: center center;
+						@media all and (min-width: 1008px) {
+							filter: saturate(1);
+						}
+
 						margin: 0 3%;
 					}
 					&:hover .skill-desc {
@@ -875,7 +883,7 @@ html {
 				.skill-icons {
 					align-content: center;
 					column-gap: 3em;
-					gap: 3em;
+					gap: 5em;
 				}
 				.skill-desc {
 					width: max-content;
