@@ -66,12 +66,12 @@ const projects = [
 		skills: ['javascript', 'api', 'sass'],
 	},
 	// TODO MAKE THE CODEBASE FOR THE HTML BETTER
-	{
-		title: 'Dress Up Game',
-		url: '/dress_up_game.html',
-		class: 'dress-up-game',
-		skills: ['javascript'],
-	},
+	// {
+	// 	title: 'Dress Up Game',
+	// 	url: '/dress_up_game.html',
+	// 	class: 'dress-up-game',
+	// 	skills: ['javascript'],
+	// },
 ];
 
 if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
