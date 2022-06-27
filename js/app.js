@@ -65,6 +65,12 @@ const projects = [
 		class: 'free-the-games',
 		skills: ['javascript', 'api', 'sass'],
 	},
+	{
+		title: 'Simple Project Timer',
+		url: 'https://simple-project-timer.vercel.app',
+		class: 'simple-project-timer',
+		skills: ['javascript', 'react', 'tailwind', 'firebase'],
+	},
 	// TODO MAKE THE CODEBASE FOR THE HTML BETTER
 	// {
 	// 	title: 'Dress Up Game',

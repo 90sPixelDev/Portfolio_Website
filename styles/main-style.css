@@ -679,6 +679,9 @@ html body {
   .container main #projects-section .project-grid .dress-up-game {
     background: url("../img/projects/dress-up-thumbnail.jpg") no-repeat;
   }
+  .container main #projects-section .project-grid .simple-project-timer {
+    background: url("../img/projects/simple-project-timer-thumbnail.jpg") no-repeat;
+  }
   .container main #projects-section .project-grid .mini-expense-tracker {
     background: url("../img/projects/mini-expense-tracker-thumbnail.jpg") no-repeat;
   }
