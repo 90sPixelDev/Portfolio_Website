@@ -45,10 +45,8 @@ const skills = [
 	'firebase',
 	'javascript',
 	'sass',
-	'typescript',
 	'auth0',
 	'tailwind',
-	'nodejs',
 ];
 let skillsSelected = [];
 
