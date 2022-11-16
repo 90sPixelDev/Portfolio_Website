@@ -46,7 +46,9 @@ const skills = [
 	'javascript',
 	'sass',
 	'auth0',
+	'typescript',
 	'tailwind',
+	'react-router',
 ];
 let skillsSelected = [];
 
@@ -68,6 +70,18 @@ const projects = [
 		url: 'https://simple-project-timer.vercel.app',
 		class: 'simple-project-timer',
 		skills: ['javascript', 'react', 'tailwind', 'firebase'],
+	},
+	{
+		title: 'RP Rooms (Work In Progress)',
+		url: 'https://rp-rooms.vercel.app/login',
+		class: 'rp-rooms',
+		skills: [
+			'typescript',
+			'react',
+			'tailwind',
+			'firebase',
+			'react-router',
+		],
 	},
 	// TODO MAKE THE CODEBASE FOR THE HTML BETTER
 	// {

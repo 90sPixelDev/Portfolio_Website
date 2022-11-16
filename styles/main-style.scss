@@ -523,6 +523,10 @@ html {
 					padding: 2em 1em;
 
 					transition: all 1s;
+					.rp-rooms {
+						background: url('../img/projects/rp-rooms-thumbnail.jpg')
+							no-repeat;
+					}
 					.free-the-games {
 						background: url('../img/projects/video-game-list-thumbnail.jpg')
 							no-repeat;

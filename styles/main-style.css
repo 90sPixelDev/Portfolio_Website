@@ -673,6 +673,9 @@ html body {
     -webkit-transition: all 1s;
     transition: all 1s;
   }
+  .container main #projects-section .project-grid .rp-rooms {
+    background: url("../img/projects/rp-rooms-thumbnail.jpg") no-repeat;
+  }
   .container main #projects-section .project-grid .free-the-games {
     background: url("../img/projects/video-game-list-thumbnail.jpg") no-repeat;
   }
