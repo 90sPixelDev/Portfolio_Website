@@ -54,6 +54,18 @@ let skillsSelected = [];
 
 const projects = [
 	{
+		title: 'RP Rooms (Work In Progress)',
+		url: 'https://rp-rooms.vercel.app/login',
+		class: 'rp-rooms',
+		skills: [
+			'typescript',
+			'react',
+			'tailwind',
+			'firebase',
+			'react-router',
+		],
+	},
+	{
 		title: 'MinExpense',
 		url: 'https://lienfont-react-expense-tracker.vercel.app',
 		class: 'mini-expense-tracker',
@@ -70,18 +82,6 @@ const projects = [
 		url: 'https://simple-project-timer.vercel.app',
 		class: 'simple-project-timer',
 		skills: ['javascript', 'react', 'tailwind', 'firebase'],
-	},
-	{
-		title: 'RP Rooms (Work In Progress)',
-		url: 'https://rp-rooms.vercel.app/login',
-		class: 'rp-rooms',
-		skills: [
-			'typescript',
-			'react',
-			'tailwind',
-			'firebase',
-			'react-router',
-		],
 	},
 	// TODO MAKE THE CODEBASE FOR THE HTML BETTER
 	// {
