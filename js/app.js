@@ -12,6 +12,7 @@ const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('.project-grid');
+const skillDesc = document.querySelector('.skill-desc');
 
 // SELECTORS FOR DOM ELEMENTS TO CHANGE THEME
 const bg = document.querySelector('body');
