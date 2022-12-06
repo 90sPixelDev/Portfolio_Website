@@ -107,21 +107,28 @@ html body {
         touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     outline-offset: 5px;
+    cursor: pointer;
   }
   .container header #nav-bar .theme-btn > svg {
     inline-size: 100%;
     block-size: 100%;
     stroke-linecap: round;
+    cursor: pointer;
+  }
+  .container header #nav-bar .theme-btn .sun-and-moon {
+    cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon circle {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     fill: black;
+    cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon #sun-beams {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     stroke: transparent;
+    cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon #black-circle {
     -webkit-transition: all 0.5s;
@@ -129,6 +136,7 @@ html body {
     radius: 5;
     cy: 9;
     cx: 15;
+    cursor: pointer;
   }
   .container header #nav-bar .section-top-info {
     display: none;
@@ -406,7 +414,7 @@ html body {
   .container main #skills-section {
     display: -ms-grid;
     display: grid;
-    margin: 1em 10vw;
+    margin: 1em 3vw;
     -ms-grid-columns: 1fr 1fr minmax(0, 1fr);
         grid-template-columns: 1fr 1fr minmax(0, 1fr);
     height: 50vh;
@@ -618,6 +626,9 @@ html body {
     background-color: #222a687c;
     border-radius: 1em;
     color: #d8defd;
+    -webkit-box-shadow: 5px 7px 3px #222a68;
+            box-shadow: 5px 7px 3px #222a68;
+    border: 1px solid rgba(0, 0, 0, 0);
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
   }
@@ -627,10 +638,21 @@ html body {
     -webkit-box-shadow: 0 3px 10px #0000007c;
             box-shadow: 0 3px 10px #0000007c;
   }
+  .container main #projects-section .filter-area .skill-list .skill:hover {
+    -webkit-box-shadow: 0 0 15px 5px #f0d8fd39 inset;
+            box-shadow: 0 0 15px 5px #f0d8fd39 inset;
+    border: 1px solid;
+  }
   .container main #projects-section .filter-area .skill-list .skill-selected {
     background-color: #222a68;
     -webkit-animation: skillSelected 0.5s forwards;
             animation: skillSelected 0.5s forwards;
+  }
+  .container main #projects-section .filter-area .skill-list .skill-selected:hover {
+    background-color: #222a68;
+    -webkit-box-shadow: 0 0 15px 5px #d8d8fd39 inset;
+            box-shadow: 0 0 15px 5px #d8d8fd39 inset;
+    border: 1px solid;
   }
   @-webkit-keyframes skillSelected {
     0% {
@@ -1214,6 +1236,7 @@ html body {
     background-size: contain;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    cursor: pointer;
   }
   .container header #nav-bar .mobile-menu .nav-menu {
     right: 0;
@@ -1665,6 +1688,10 @@ html body {
     color: white;
     background-color: #5266fa8e;
   }
+  .container main #projects-section .filter-area .skill-list .light-skill-list:hover {
+    background-color: #95a2ff8e;
+    color: white;
+  }
   .container main #projects-section .filter-area .skill-list .light-skill-selected {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
@@ -1674,6 +1701,10 @@ html body {
             box-shadow: 0 3px 10px #17259179;
     -webkit-animation: lightSkillSelected 0.5s forwards;
             animation: lightSkillSelected 0.5s forwards;
+  }
+  .container main #projects-section .filter-area .skill-list .light-skill-selected:hover {
+    background-color: #ddb4ff8f;
+    border: 1px solid #fff;
   }
   @-webkit-keyframes lightSkillSelected {
     0% {

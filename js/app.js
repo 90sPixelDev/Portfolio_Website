@@ -12,7 +12,7 @@ const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('.project-grid');
-const skillDesc = document.querySelector('.skill-desc');
+const skillDesc = document.querySelectorAll('.skill-desc');
 
 // SELECTORS FOR DOM ELEMENTS TO CHANGE THEME
 const bg = document.querySelector('body');
@@ -258,6 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	skillsListCreation();
 	skillList = skillsParent.querySelectorAll('li');
+
 	changeTheme();
 });
 
@@ -266,6 +267,11 @@ let currentSelectedSKills = [];
 
 const createProject = (project) => {
 	const projParent = document.createElement('div');
+
+	projParent.style.opacity = 0;
+
+	projParent.style.transform = 'translateY(-20px)';
+
 	projParent.classList.add('project-parent');
 	projectGrid.append(projParent);
 
@@ -287,6 +293,20 @@ const createProject = (project) => {
 	projTitle.classList.add('project-title');
 
 	proj.append(projTitle);
+
+	let slideSteps = -20;
+	let steps = 0;
+	const timer = setInterval(function () {
+		steps++;
+		slideSteps += 1;
+		projParent.style.transform = `translateY(${slideSteps}px)`;
+		projParent.style.opacity = 0.075 * steps;
+		if (projParent.style.opacity >= 1) {
+			clearInterval(timer);
+		}
+	}, 50);
+
+	// timer();
 };
 
 // CREATE ALL PROJECTS WHEN NO SKILLS SELECTED
@@ -300,6 +320,7 @@ const createProjectElements = () => {
 	if (!currentProjectList[0] && noSkillSelected()) {
 		projects.forEach((project) => {
 			createProject(project);
+			project.style.cursor = 'pointer';
 		});
 	} else {
 		currentProjectList.forEach((project) => {
@@ -364,6 +385,7 @@ const skillsListCreation = () => {
 		if (localStorage.getItem('theme') === 'dark') {
 			skillEl.classList.add('skill');
 		}
+		skillEl.style.cursor = 'pointer';
 
 		skillsParent.append(skillEl);
 
@@ -401,6 +423,12 @@ window.onload = function () {
 			this.message.value = '';
 		});
 	sectionInfo.textContent = 'Top';
+};
+
+// SKILL DESCRIPTION TOOLTIP POSITIONING
+const skillDescPos = () => {
+	const skillDesc_Rect = skillDesc.getBoundingClientRect();
+	console.log(skillDesc_Rect);
 };
 
 // ANIMATIONS ON SCROLL SECTION
