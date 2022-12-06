@@ -13,6 +13,7 @@ const sectionTitle = document.querySelectorAll('.section');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('.project-grid');
 const skillDesc = document.querySelectorAll('.skill-desc');
+let noProjectsDisplay = false;
 
 // SELECTORS FOR DOM ELEMENTS TO CHANGE THEME
 const bg = document.querySelector('body');
@@ -270,8 +271,6 @@ const createProject = (project) => {
 
 	projParent.style.opacity = 0;
 
-	projParent.style.transform = 'translateY(-20px)';
-
 	projParent.classList.add('project-parent');
 	projectGrid.append(projParent);
 
@@ -294,11 +293,11 @@ const createProject = (project) => {
 
 	proj.append(projTitle);
 
-	let slideSteps = -20;
+	let slideSteps = 20;
 	let steps = 0;
 	const timer = setInterval(function () {
 		steps++;
-		slideSteps += 1;
+		slideSteps -= 1;
 		projParent.style.transform = `translateY(${slideSteps}px)`;
 		projParent.style.opacity = 0.075 * steps;
 		if (projParent.style.opacity >= 1) {
@@ -317,11 +316,23 @@ const noSkillSelected = () => {
 
 const createProjectElements = () => {
 	projectGrid.textContent = '';
+	projectGrid.style.display = 'grid';
+	projectGrid.style.padding = '2em 1em';
 	if (!currentProjectList[0] && noSkillSelected()) {
 		projects.forEach((project) => {
 			createProject(project);
 			project.style.cursor = 'pointer';
 		});
+	} else if (currentProjectList.length <= 0 && skillsSelected.length > 0) {
+		noProjectsDisplay = true;
+
+		const noProjDisplay = document.createElement('p');
+		noProjDisplay.textContent =
+			'No projects available that use all skills selected. Please select another range of skills.';
+		noProjDisplay.style.color = '#fff';
+		noProjDisplay.style.textAlign = 'center';
+		projectGrid.style.display = 'block';
+		projectGrid.appendChild(noProjDisplay);
 	} else {
 		currentProjectList.forEach((project) => {
 			createProject(project);
@@ -448,7 +459,6 @@ navItem.forEach((el) => {
 		if (e.target.innerText === 'Resume') return;
 		else {
 			const area = e.target.textContent;
-			// console.log(area);
 			const areaFix = '#' + area + '-section';
 			document.querySelector(areaFix.toLowerCase()).scrollIntoView({
 				behavior: 'smooth',

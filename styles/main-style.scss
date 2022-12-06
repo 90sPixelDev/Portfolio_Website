@@ -417,59 +417,10 @@ html {
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
-					@media all and (min-width: 1008px) {
-						filter: saturate(0);
-					}
 					width: 5em;
 					height: 5em;
 
 					transition: all 0.5s ease-out;
-					&:hover {
-						transform: scale(2, 2);
-						@media all and (min-width: 1008px) {
-							filter: saturate(1);
-						}
-
-						margin: 0 3%;
-					}
-					&:hover .skill-desc {
-						display: block;
-						opacity: 100%;
-
-						bottom: 150%;
-					}
-				}
-				.skill-desc {
-					position: absolute;
-					max-width: 20vw;
-					height: fit-content;
-					padding: 1em;
-					text-align: center;
-					background-color: #222a68be;
-					box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-					bottom: 100%;
-
-					transition: all 0.5s ease-out;
-					opacity: 0%;
-					p {
-						font-size: xx-small;
-					}
-
-					&::before {
-						content: '';
-						position: absolute;
-						width: 0;
-						height: 0;
-						top: 100%;
-
-						border: 0.75rem solid transparent;
-						border-bottom: none;
-
-						border-top-color: #222a68be;
-						filter: drop-shadow(
-							0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1)
-						);
-					}
 				}
 			}
 
@@ -587,6 +538,8 @@ html {
 							background-color: rgba(0, 0, 0, 0.5);
 							text-align: center;
 							padding: 0.5rem 0;
+
+							border-radius: 0 0 1em 1em;
 						}
 					}
 					.fade-animated {
