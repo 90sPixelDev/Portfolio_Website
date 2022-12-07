@@ -406,9 +406,15 @@ html {
 				#html-s > div,
 				#css-s > div,
 				#js-s > div,
+				#ts-s > div,
+				#visual-studio-code-s > div,
+				#c-sharp-s > div,
+				#mysql-s > div,
 				#scss-s > div,
 				#sql-s > div,
+				#visual-studio-s > div,
 				#react-s > div,
+				#dot-net-core-s > div,
 				#tailwind-s > div,
 				#auth0-s > div,
 				#firebase-s > div,
@@ -421,6 +427,7 @@ html {
 					height: 5em;
 
 					transition: all 0.5s ease-out;
+					text-align: center;
 				}
 			}
 

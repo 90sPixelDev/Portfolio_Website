@@ -467,9 +467,15 @@ html body {
   .container main #skills-section #html-s > div,
   .container main #skills-section #css-s > div,
   .container main #skills-section #js-s > div,
+  .container main #skills-section #ts-s > div,
+  .container main #skills-section #visual-studio-code-s > div,
+  .container main #skills-section #c-sharp-s > div,
+  .container main #skills-section #mysql-s > div,
   .container main #skills-section #scss-s > div,
   .container main #skills-section #sql-s > div,
+  .container main #skills-section #visual-studio-s > div,
   .container main #skills-section #react-s > div,
+  .container main #skills-section #dot-net-core-s > div,
   .container main #skills-section #tailwind-s > div,
   .container main #skills-section #auth0-s > div,
   .container main #skills-section #firebase-s > div,
@@ -491,6 +497,7 @@ html body {
     height: 5em;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+    text-align: center;
   }
   .container main #projects-section .project-text {
     -webkit-transition: all 0.5s;
