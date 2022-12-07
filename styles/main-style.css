@@ -638,6 +638,7 @@ html body {
     background-size: contain;
     background-position: center;
     border-radius: 1em;
+    cursor: pointer;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
@@ -646,6 +647,7 @@ html body {
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 0.5rem 0;
+    cursor: pointer;
     border-radius: 0 0 1em 1em;
   }
   .container main #projects-section .project-grid .fade-animated {
