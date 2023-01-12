@@ -12,6 +12,8 @@ const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 const skillsParent = document.querySelector('.skill-list');
 const projectGrid = document.querySelector('.project-grid');
+const skillDesc = document.querySelectorAll('.skill-desc');
+let noProjectsDisplay = false;
 
 // SELECTORS FOR DOM ELEMENTS TO CHANGE THEME
 const bg = document.querySelector('body');
@@ -77,12 +79,13 @@ const projects = [
 		class: 'free-the-games',
 		skills: ['javascript', 'api', 'sass'],
 	},
-	{
-		title: 'Simple Project Timer',
-		url: 'https://simple-project-timer.vercel.app',
-		class: 'simple-project-timer',
-		skills: ['javascript', 'react', 'tailwind', 'firebase'],
-	},
+	//? PROJECT ISN'T AS WELL POLISHED AS SOME OF THE OTHERS
+	// {
+	// 	title: 'Simple Project Timer',
+	// 	url: 'https://simple-project-timer.vercel.app',
+	// 	class: 'simple-project-timer',
+	// 	skills: ['javascript', 'react', 'tailwind', 'firebase'],
+	// },
 	// TODO MAKE THE CODEBASE FOR THE HTML BETTER
 	// {
 	// 	title: 'Dress Up Game',
@@ -257,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	skillsListCreation();
 	skillList = skillsParent.querySelectorAll('li');
+
 	changeTheme();
 });
 
@@ -265,6 +269,9 @@ let currentSelectedSKills = [];
 
 const createProject = (project) => {
 	const projParent = document.createElement('div');
+
+	projParent.style.opacity = 0;
+
 	projParent.classList.add('project-parent');
 	projectGrid.append(projParent);
 
@@ -286,6 +293,20 @@ const createProject = (project) => {
 	projTitle.classList.add('project-title');
 
 	proj.append(projTitle);
+
+	let slideSteps = 20;
+	let steps = 0;
+	const timer = setInterval(function () {
+		steps++;
+		slideSteps -= 1;
+		projParent.style.transform = `translateY(${slideSteps}px)`;
+		projParent.style.opacity = 0.075 * steps;
+		if (projParent.style.opacity >= 1) {
+			clearInterval(timer);
+		}
+	}, 50);
+
+	// timer();
 };
 
 // CREATE ALL PROJECTS WHEN NO SKILLS SELECTED
@@ -296,10 +317,23 @@ const noSkillSelected = () => {
 
 const createProjectElements = () => {
 	projectGrid.textContent = '';
+	projectGrid.style.display = 'grid';
+	projectGrid.style.padding = '2em 1em';
 	if (!currentProjectList[0] && noSkillSelected()) {
 		projects.forEach((project) => {
 			createProject(project);
+			project.style.cursor = 'pointer';
 		});
+	} else if (currentProjectList.length <= 0 && skillsSelected.length > 0) {
+		noProjectsDisplay = true;
+
+		const noProjDisplay = document.createElement('p');
+		noProjDisplay.textContent =
+			'No projects available that use all skills selected. Please select another range of skills.';
+		noProjDisplay.style.color = '#fff';
+		noProjDisplay.style.textAlign = 'center';
+		projectGrid.style.display = 'block';
+		projectGrid.appendChild(noProjDisplay);
 	} else {
 		currentProjectList.forEach((project) => {
 			createProject(project);
@@ -363,6 +397,7 @@ const skillsListCreation = () => {
 		if (localStorage.getItem('theme') === 'dark') {
 			skillEl.classList.add('skill');
 		}
+		skillEl.style.cursor = 'pointer';
 
 		skillsParent.append(skillEl);
 
@@ -402,6 +437,12 @@ window.onload = function () {
 	sectionInfo.textContent = 'Top';
 };
 
+// SKILL DESCRIPTION TOOLTIP POSITIONING
+const skillDescPos = () => {
+	const skillDesc_Rect = skillDesc.getBoundingClientRect();
+	console.log(skillDesc_Rect);
+};
+
 // ANIMATIONS ON SCROLL SECTION
 let options = {
 	root: null,
@@ -419,7 +460,6 @@ navItem.forEach((el) => {
 		if (e.target.innerText === 'Resume') return;
 		else {
 			const area = e.target.textContent;
-			// console.log(area);
 			const areaFix = '#' + area + '-section';
 			document.querySelector(areaFix.toLowerCase()).scrollIntoView({
 				behavior: 'smooth',

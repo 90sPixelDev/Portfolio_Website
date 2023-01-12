@@ -93,26 +93,38 @@ html {
 					touch-action: manipulation;
 					-webkit-tap-highlight-color: transparent;
 					outline-offset: 5px;
+
+					cursor: pointer;
+
 					& > svg {
 						inline-size: 100%;
 						block-size: 100%;
 						stroke-linecap: round;
+
+						cursor: pointer;
 					}
 
 					.sun-and-moon {
+						cursor: pointer;
 						circle {
 							transition: all 0.5s;
 							fill: black;
+
+							cursor: pointer;
 						}
 						#sun-beams {
 							transition: all 0.5s;
 							stroke: transparent;
+
+							cursor: pointer;
 						}
 						#black-circle {
 							transition: all 0.5s;
 							radius: 5;
 							cy: 9;
 							cx: 15;
+
+							cursor: pointer;
 						}
 					}
 				}
@@ -351,7 +363,7 @@ html {
 
 			#skills-section {
 				display: grid;
-				margin: 1em 10vw;
+				margin: 1em 3vw;
 				grid-template-columns: 1fr 1fr minmax(0, 1fr);
 				height: 50vh;
 
@@ -394,9 +406,15 @@ html {
 				#html-s > div,
 				#css-s > div,
 				#js-s > div,
+				#ts-s > div,
+				#visual-studio-code-s > div,
+				#c-sharp-s > div,
+				#mysql-s > div,
 				#scss-s > div,
 				#sql-s > div,
+				#visual-studio-s > div,
 				#react-s > div,
+				#dot-net-core-s > div,
 				#tailwind-s > div,
 				#auth0-s > div,
 				#firebase-s > div,
@@ -405,59 +423,11 @@ html {
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
-					@media all and (min-width: 1008px) {
-						filter: saturate(0);
-					}
 					width: 5em;
 					height: 5em;
 
 					transition: all 0.5s ease-out;
-					&:hover {
-						transform: scale(2, 2);
-						@media all and (min-width: 1008px) {
-							filter: saturate(1);
-						}
-
-						margin: 0 3%;
-					}
-					&:hover .skill-desc {
-						display: block;
-						opacity: 100%;
-
-						bottom: 150%;
-					}
-				}
-				.skill-desc {
-					position: absolute;
-					max-width: 20vw;
-					height: fit-content;
-					padding: 1em;
 					text-align: center;
-					background-color: #222a68be;
-					box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-					bottom: 100%;
-
-					transition: all 0.5s ease-out;
-					opacity: 0%;
-					p {
-						font-size: xx-small;
-					}
-
-					&::before {
-						content: '';
-						position: absolute;
-						width: 0;
-						height: 0;
-						top: 100%;
-
-						border: 0.75rem solid transparent;
-						border-bottom: none;
-
-						border-top-color: #222a68be;
-						filter: drop-shadow(
-							0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1)
-						);
-					}
 				}
 			}
 
@@ -490,16 +460,29 @@ html {
 							background-color: #222a687c;
 							border-radius: 1em;
 							color: #d8defd;
+							box-shadow: 5px 7px 3px #222a68;
+							border: 1px solid rgba(0, 0, 0, 0);
 
 							transition: all 0.25s;
 						}
 						.skill {
 							transition: all 0.5s;
 							box-shadow: 0 3px 10px #0000007c;
+
+							&:hover {
+								box-shadow: 0 0 15px 5px #f0d8fd39 inset;
+								border: 1px solid;
+							}
 						}
 						.skill-selected {
 							background-color: #222a68;
 							animation: skillSelected 0.5s forwards;
+
+							&:hover {
+								background-color: #222a68;
+								box-shadow: 0 0 15px 5px #d8d8fd39 inset;
+								border: 1px solid;
+							}
 						}
 						@keyframes skillSelected {
 							0% {
@@ -554,6 +537,7 @@ html {
 						background-size: contain;
 						background-position: center;
 						border-radius: 1em;
+						cursor: pointer;
 
 						transition: all 1s;
 
@@ -562,6 +546,9 @@ html {
 							background-color: rgba(0, 0, 0, 0.5);
 							text-align: center;
 							padding: 0.5rem 0;
+							cursor: pointer;
+
+							border-radius: 0 0 1em 1em;
 						}
 					}
 					.fade-animated {
@@ -1063,6 +1050,8 @@ html {
 							no-repeat center;
 						background-size: contain;
 						transition: all 0.5s;
+
+						cursor: pointer;
 					}
 					.nav-menu {
 						right: 0;
@@ -1556,6 +1545,11 @@ html {
 							transition: all 0.5s;
 							color: white;
 							background-color: #5266fa8e;
+
+							&:hover {
+								background-color: #95a2ff8e;
+								color: white;
+							}
 						}
 						.light-skill-selected {
 							transition: all 0.5s;
@@ -1564,6 +1558,11 @@ html {
 							box-shadow: 0 3px 10px #17259179;
 
 							animation: lightSkillSelected 0.5s forwards;
+
+							&:hover {
+								background-color: #ddb4ff8f;
+								border: 1px solid #fff;
+							}
 						}
 						@keyframes lightSkillSelected {
 							0% {

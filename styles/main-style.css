@@ -107,21 +107,28 @@ html body {
         touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     outline-offset: 5px;
+    cursor: pointer;
   }
   .container header #nav-bar .theme-btn > svg {
     inline-size: 100%;
     block-size: 100%;
     stroke-linecap: round;
+    cursor: pointer;
+  }
+  .container header #nav-bar .theme-btn .sun-and-moon {
+    cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon circle {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     fill: black;
+    cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon #sun-beams {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     stroke: transparent;
+    cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon #black-circle {
     -webkit-transition: all 0.5s;
@@ -129,6 +136,7 @@ html body {
     radius: 5;
     cy: 9;
     cx: 15;
+    cursor: pointer;
   }
   .container header #nav-bar .section-top-info {
     display: none;
@@ -406,7 +414,7 @@ html body {
   .container main #skills-section {
     display: -ms-grid;
     display: grid;
-    margin: 1em 10vw;
+    margin: 1em 3vw;
     -ms-grid-columns: 1fr 1fr minmax(0, 1fr);
         grid-template-columns: 1fr 1fr minmax(0, 1fr);
     height: 50vh;
@@ -459,9 +467,15 @@ html body {
   .container main #skills-section #html-s > div,
   .container main #skills-section #css-s > div,
   .container main #skills-section #js-s > div,
+  .container main #skills-section #ts-s > div,
+  .container main #skills-section #visual-studio-code-s > div,
+  .container main #skills-section #c-sharp-s > div,
+  .container main #skills-section #mysql-s > div,
   .container main #skills-section #scss-s > div,
   .container main #skills-section #sql-s > div,
+  .container main #skills-section #visual-studio-s > div,
   .container main #skills-section #react-s > div,
+  .container main #skills-section #dot-net-core-s > div,
   .container main #skills-section #tailwind-s > div,
   .container main #skills-section #auth0-s > div,
   .container main #skills-section #firebase-s > div,
@@ -483,103 +497,7 @@ html body {
     height: 5em;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
-  }
-}
-
-@media all and (min-width: 1008px) {
-  .container main #skills-section #html-s > div,
-  .container main #skills-section #css-s > div,
-  .container main #skills-section #js-s > div,
-  .container main #skills-section #scss-s > div,
-  .container main #skills-section #sql-s > div,
-  .container main #skills-section #react-s > div,
-  .container main #skills-section #tailwind-s > div,
-  .container main #skills-section #auth0-s > div,
-  .container main #skills-section #firebase-s > div,
-  .container main #skills-section #github-s > div {
-    -webkit-filter: saturate(0);
-            filter: saturate(0);
-  }
-}
-
-@media all {
-  .container main #skills-section #html-s > div:hover,
-  .container main #skills-section #css-s > div:hover,
-  .container main #skills-section #js-s > div:hover,
-  .container main #skills-section #scss-s > div:hover,
-  .container main #skills-section #sql-s > div:hover,
-  .container main #skills-section #react-s > div:hover,
-  .container main #skills-section #tailwind-s > div:hover,
-  .container main #skills-section #auth0-s > div:hover,
-  .container main #skills-section #firebase-s > div:hover,
-  .container main #skills-section #github-s > div:hover {
-    -webkit-transform: scale(2, 2);
-            transform: scale(2, 2);
-    margin: 0 3%;
-  }
-}
-
-@media all and (min-width: 1008px) {
-  .container main #skills-section #html-s > div:hover,
-  .container main #skills-section #css-s > div:hover,
-  .container main #skills-section #js-s > div:hover,
-  .container main #skills-section #scss-s > div:hover,
-  .container main #skills-section #sql-s > div:hover,
-  .container main #skills-section #react-s > div:hover,
-  .container main #skills-section #tailwind-s > div:hover,
-  .container main #skills-section #auth0-s > div:hover,
-  .container main #skills-section #firebase-s > div:hover,
-  .container main #skills-section #github-s > div:hover {
-    -webkit-filter: saturate(1);
-            filter: saturate(1);
-  }
-}
-
-@media all {
-  .container main #skills-section #html-s > div:hover .skill-desc,
-  .container main #skills-section #css-s > div:hover .skill-desc,
-  .container main #skills-section #js-s > div:hover .skill-desc,
-  .container main #skills-section #scss-s > div:hover .skill-desc,
-  .container main #skills-section #sql-s > div:hover .skill-desc,
-  .container main #skills-section #react-s > div:hover .skill-desc,
-  .container main #skills-section #tailwind-s > div:hover .skill-desc,
-  .container main #skills-section #auth0-s > div:hover .skill-desc,
-  .container main #skills-section #firebase-s > div:hover .skill-desc,
-  .container main #skills-section #github-s > div:hover .skill-desc {
-    display: block;
-    opacity: 100%;
-    bottom: 150%;
-  }
-  .container main #skills-section .skill-desc {
-    position: absolute;
-    max-width: 20vw;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding: 1em;
     text-align: center;
-    background-color: #222a68be;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    bottom: 100%;
-    -webkit-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
-    opacity: 0%;
-  }
-  .container main #skills-section .skill-desc p {
-    font-size: xx-small;
-  }
-  .container main #skills-section .skill-desc::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 100%;
-    border: 0.75rem solid transparent;
-    border-bottom: none;
-    border-top-color: #222a68be;
-    -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
-            filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
   }
   .container main #projects-section .project-text {
     -webkit-transition: all 0.5s;
@@ -618,6 +536,9 @@ html body {
     background-color: #222a687c;
     border-radius: 1em;
     color: #d8defd;
+    -webkit-box-shadow: 5px 7px 3px #222a68;
+            box-shadow: 5px 7px 3px #222a68;
+    border: 1px solid rgba(0, 0, 0, 0);
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
   }
@@ -627,10 +548,21 @@ html body {
     -webkit-box-shadow: 0 3px 10px #0000007c;
             box-shadow: 0 3px 10px #0000007c;
   }
+  .container main #projects-section .filter-area .skill-list .skill:hover {
+    -webkit-box-shadow: 0 0 15px 5px #f0d8fd39 inset;
+            box-shadow: 0 0 15px 5px #f0d8fd39 inset;
+    border: 1px solid;
+  }
   .container main #projects-section .filter-area .skill-list .skill-selected {
     background-color: #222a68;
     -webkit-animation: skillSelected 0.5s forwards;
             animation: skillSelected 0.5s forwards;
+  }
+  .container main #projects-section .filter-area .skill-list .skill-selected:hover {
+    background-color: #222a68;
+    -webkit-box-shadow: 0 0 15px 5px #d8d8fd39 inset;
+            box-shadow: 0 0 15px 5px #d8d8fd39 inset;
+    border: 1px solid;
   }
   @-webkit-keyframes skillSelected {
     0% {
@@ -706,6 +638,7 @@ html body {
     background-size: contain;
     background-position: center;
     border-radius: 1em;
+    cursor: pointer;
     -webkit-transition: all 1s;
     transition: all 1s;
   }
@@ -714,6 +647,8 @@ html body {
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 0.5rem 0;
+    cursor: pointer;
+    border-radius: 0 0 1em 1em;
   }
   .container main #projects-section .project-grid .fade-animated {
     opacity: 100%;
@@ -1214,6 +1149,7 @@ html body {
     background-size: contain;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    cursor: pointer;
   }
   .container header #nav-bar .mobile-menu .nav-menu {
     right: 0;
@@ -1665,6 +1601,10 @@ html body {
     color: white;
     background-color: #5266fa8e;
   }
+  .container main #projects-section .filter-area .skill-list .light-skill-list:hover {
+    background-color: #95a2ff8e;
+    color: white;
+  }
   .container main #projects-section .filter-area .skill-list .light-skill-selected {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
@@ -1674,6 +1614,10 @@ html body {
             box-shadow: 0 3px 10px #17259179;
     -webkit-animation: lightSkillSelected 0.5s forwards;
             animation: lightSkillSelected 0.5s forwards;
+  }
+  .container main #projects-section .filter-area .skill-list .light-skill-selected:hover {
+    background-color: #ddb4ff8f;
+    border: 1px solid #fff;
   }
   @-webkit-keyframes lightSkillSelected {
     0% {
