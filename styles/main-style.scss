@@ -365,7 +365,8 @@ html {
 				display: grid;
 				margin: 1em 3vw;
 				grid-template-columns: 1fr 1fr minmax(0, 1fr);
-				height: 50vh;
+				min-height: 50vh;
+				height: fit-content;
 
 				.skills {
 					color: #d8defd;
