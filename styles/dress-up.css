@@ -5,7 +5,6 @@
 html {
   height: 100%;
 }
-
 html body {
   background: linear-gradient(135deg, #222A68, #ab81cd);
   width: 100%;
@@ -22,7 +21,6 @@ html body {
 
 .wrapper {
   position: absolute;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   width: 100%;
@@ -31,28 +29,21 @@ html body {
 
 .credit {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   bottom: 0;
   font-size: 1em;
 }
-
 .credit p {
   display: block;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   text-align: center;
 }
-
 .credit > div {
   margin: 1em 2em;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-
 .credit > div img {
   display: block;
   width: 3em;
@@ -71,19 +62,15 @@ html body {
     position: absolute;
     top: 0;
     margin: 5em;
-    background-color: #c3aa8c;
+    background-color: rgb(195, 170, 140);
     width: 700px;
     height: 500px;
-    display: -ms-grid;
     display: grid;
-    -webkit-box-shadow: 0px 0px 10px rgba(55, 55, 55, 0.7);
-            box-shadow: 0px 0px 10px rgba(55, 55, 55, 0.7);
+    box-shadow: 0px 0px 10px rgba(55, 55, 55, 0.7);
   }
   .credit {
     position: absolute;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.1);
   }
@@ -91,15 +78,12 @@ html body {
     margin-left: 1em;
   }
 }
-
 @media all and (max-width: 415px) and (orientation: portrait) {
   body {
     position: fixed;
   }
   .widthWarning {
     z-index: 3;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
     height: 100%;
@@ -108,11 +92,8 @@ html body {
   .widthWarning p {
     color: white;
     text-align: center;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    -ms-grid-column-align: center;
-        justify-self: center;
+    align-self: center;
+    justify-self: center;
     margin: 1em;
   }
   .game-container {
@@ -122,16 +103,13 @@ html body {
     display: none;
   }
 }
-
 .game-container {
   position: absolute;
-  background-color: #c3aa8c;
+  background-color: rgb(195, 170, 140);
   width: 700px;
   height: 500px;
-  display: -ms-grid;
   display: grid;
-  -webkit-box-shadow: 0px 0px 10px rgba(55, 55, 55, 0.7);
-          box-shadow: 0px 0px 10px rgba(55, 55, 55, 0.7);
+  box-shadow: 0px 0px 10px rgba(55, 55, 55, 0.7);
 }
 
 #game-bg {
@@ -156,16 +134,15 @@ html body {
   background-repeat: no-repeat;
   border: 0;
   border-radius: 25%;
-  border: 1px solid #0e2e73;
-  -webkit-box-shadow: 3px 3px 5px rgba(55, 55, 55, 0.7);
-          box-shadow: 3px 3px 5px rgba(55, 55, 55, 0.7);
+  border: 1px solid rgb(14, 46, 115);
+  box-shadow: 3px 3px 5px rgba(55, 55, 55, 0.7);
 }
 
 #prev-base, #prev-hair, #prev-top, #prev-bottom, #prev-shoe {
   position: relative;
   width: 6em;
   height: 25px;
-  padding: 0  0.7em 0 2em;
+  padding: 0 0.7em 0 2em;
   text-align: right;
   color: white;
   background: url("../img/dress_up_game/test/prev-btn.png");
@@ -174,15 +151,13 @@ html body {
   background-repeat: no-repeat;
   border: 0;
   border-radius: 25%;
-  border: 1px solid #0e2e73;
-  -webkit-box-shadow: 3px 3px 5px rgba(55, 55, 55, 0.7);
-          box-shadow: 3px 3px 5px rgba(55, 55, 55, 0.7);
+  border: 1px solid rgb(14, 46, 115);
+  box-shadow: 3px 3px 5px rgba(55, 55, 55, 0.7);
 }
 
 /* When hovering over the buttons! */
 #next-base:hover, #prev-base:hover, #next-hair:hover, #prev-hair:hover, #next-top:hover, #prev-top:hover, #next-bottom:hover, #prev-bottom:hover, #next-shoe:hover, #prev-shoe:hover {
-  -webkit-box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
-          box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
 }
 
 /* The clothes to overite the character */
@@ -231,27 +206,19 @@ html body {
 /* Button Position Set Up */
 form {
   position: absolute;
-  display: -ms-grid;
   display: grid;
   width: 100%;
   height: 100%;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: (1fr)[7];
-      grid-template-rows: repeat(7, 1fr);
-      grid-template-areas: "logo-left logo base-right" "base-left base base-right" "head-left head head-right" "top-left top top-right" "blank-left blank blank-right" "bottom-left bottom bottom-right" "feet-left feet feet-right";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas: "logo-left logo base-right" "base-left base base-right" "head-left head head-right" "top-left top top-right" "blank-left blank blank-right" "bottom-left bottom bottom-right" "feet-left feet feet-right";
 }
 
 /* Positions of the buttons on the grid */
 .color-section {
   font-size: 12px;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 3;
   grid-area: base-right;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -266,130 +233,86 @@ input[type=range] {
 }
 
 #next-base {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
   grid-area: head-right;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   margin-left: 2em;
 }
 
 #next-hair {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
   grid-area: head-right;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  align-self: end;
   margin-left: 2em;
 }
 
 #next-top {
-  -ms-grid-row: 4;
-  -ms-grid-column: 3;
   grid-area: top-right;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  align-self: end;
   margin-left: 2em;
 }
 
 #next-bottom {
-  -ms-grid-row: 6;
-  -ms-grid-column: 3;
   grid-area: bottom-right;
   margin-left: 2em;
 }
 
 #next-shoe {
-  -ms-grid-row: 7;
-  -ms-grid-column: 3;
   grid-area: feet-right;
   margin-left: 2em;
 }
 
 #prev-base {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
   grid-area: head-right;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   margin-left: 2em;
 }
 
 #prev-hair {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
   grid-area: head-right;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  align-self: end;
   margin-left: 2em;
 }
 
 #prev-top {
-  -ms-grid-row: 4;
-  -ms-grid-column: 3;
   grid-area: top-right;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  align-self: end;
   margin-left: 2em;
 }
 
 #prev-bottom {
-  -ms-grid-row: 6;
-  -ms-grid-column: 3;
   grid-area: bottom-right;
   margin-left: 2em;
 }
 
 #prev-shoe {
-  -ms-grid-row: 7;
-  -ms-grid-column: 3;
   grid-area: feet-right;
   margin-left: 2em;
 }
 
 /* RADIO BUTTONS TO SELECT WHICH ITEM TO COLOR */
 #base-color {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
   grid-area: head-right;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin: .35em 0 0 0;
+  align-self: flex-start;
+  margin: 0.35em 0 0 0;
 }
 
 #hair-color {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
   grid-area: head-right;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin: 0 0 .35em 0;
+  align-self: flex-end;
+  margin: 0 0 0.35em 0;
 }
 
 #top-color {
-  -ms-grid-row: 4;
-  -ms-grid-column: 3;
   grid-area: top-right;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin: 0 0 .35em 0;
+  align-self: flex-end;
+  margin: 0 0 0.35em 0;
 }
 
 #bottom-color {
-  -ms-grid-row: 6;
-  -ms-grid-column: 3;
   grid-area: bottom-right;
-  margin: .35em 0 0 0;
+  margin: 0.35em 0 0 0;
 }
 
 #shoes-color {
-  -ms-grid-row: 7;
-  -ms-grid-column: 3;
   grid-area: feet-right;
-  margin: .35em 0 0 0;
-}
-/*# sourceMappingURL=dress-up.css.map */
+  margin: 0.35em 0 0 0;
+}/*# sourceMappingURL=dress-up.css.map */
