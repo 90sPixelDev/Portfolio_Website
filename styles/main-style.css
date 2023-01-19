@@ -16,6 +16,13 @@
   cursor: default;
 }
 
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pacifico Regular"), local("Pacifico-Regular"), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format("woff2");
+  font-display: swap;
+}
 html {
   height: 100%;
 }
@@ -25,7 +32,7 @@ html body {
 
 @media all {
   .bg-dark {
-    transition: all 1s;
+    transition: color 1s;
     background: linear-gradient(135deg, #222a68, #ab81cd);
     background-size: cover;
     background-position: center;
@@ -101,17 +108,17 @@ html body {
     cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon circle {
-    transition: all 0.5s;
+    transition: transform 0.5s;
     fill: black;
     cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon #sun-beams {
-    transition: all 0.5s;
+    transition: transform 0.5s;
     stroke: transparent;
     cursor: pointer;
   }
   .container header #nav-bar .theme-btn .sun-and-moon #black-circle {
-    transition: all 0.5s;
+    transition: transform 0.5s, cy 0.5s, cx 0.5s;
     radius: 5;
     cy: 9;
     cx: 15;
@@ -203,7 +210,7 @@ html body {
     width: 20em;
     text-align: center;
     line-height: 1.8em;
-    transition: all 1s;
+    transition: color 1s;
   }
   .container main #profile-section #basic-info p:hover {
     transform: scale(103%, 103%);
@@ -342,14 +349,16 @@ html body {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
   }
+  .container main .bio-section .bio {
+    color: #d8defd;
+    font-size: 2.5em;
+    text-align: center;
+  }
   .container main .bio-section div {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 100%;
-  }
-  .container main .bio-section div .background {
-    color: #d8defd;
   }
   .container main .bio-section div .bg-para {
     line-height: 1.7em;
@@ -376,7 +385,7 @@ html body {
   .container main #skills-section .skills {
     color: #d8defd;
   }
-  .container main #skills-section h3 {
+  .container main #skills-section h2 {
     grid-column: 2;
     text-align: center;
     margin: 1em;
@@ -515,7 +524,7 @@ html body {
     background-color: rgba(34, 42, 104, 0.4862745098);
     border-radius: 1em;
     padding: 2em 1em;
-    transition: all 1s;
+    transition: opacity 0.25s, transform 0.5s;
   }
   .container main #projects-section .project-grid .rp-rooms {
     background: url("../img/projects/rp-rooms-thumbnail.jpg") no-repeat;
@@ -598,6 +607,7 @@ html body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 0.25em;
+    padding: 0.25em;
   }
   .container main #contact-section form #name {
     width: 10em;
@@ -825,7 +835,7 @@ html body {
     min-height: 70vh;
     grid-template-rows: 1fr 2fr;
   }
-  .container main #skills-section h3 {
+  .container main #skills-section h2 {
     font-size: 4em;
   }
   .container main #skills-section .skill-icons {
@@ -850,7 +860,7 @@ html body {
     margin-top: 10vw;
     width: 100%;
   }
-  .container main #projects-section h4 {
+  .container main #projects-section h2 {
     text-align: center;
     font-size: 4em;
     margin-bottom: 2em;
@@ -1039,7 +1049,7 @@ html body {
   .container main #skills-section {
     grid-template-rows: 0.5fr 2fr;
   }
-  .container main #skills-section h3 {
+  .container main #skills-section h2 {
     font-size: 2.5em;
   }
   .container main #skills-section .skill-icons {
@@ -1058,7 +1068,7 @@ html body {
     min-height: 70vh;
     margin-top: 7em;
   }
-  .container main #projects-section h4 {
+  .container main #projects-section h2 {
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 1em;
@@ -1202,7 +1212,7 @@ html body {
   .container main #skills-section {
     grid-template-rows: 0.5fr 2fr;
   }
-  .container main #skills-section h3 {
+  .container main #skills-section h2 {
     font-size: 3em;
   }
   .container main #skills-section .skill-icons {
@@ -1223,7 +1233,7 @@ html body {
     min-height: 70vh;
     margin-top: 7em;
   }
-  .container main #projects-section h4 {
+  .container main #projects-section h2 {
     font-size: 2.5em;
     margin-bottom: 1em;
   }
@@ -1338,8 +1348,11 @@ html body {
     text-shadow: 1px 1px 0 #222;
     color: white;
   }
+  .container main #skills-section .skill-icons .skill-div img {
+    width: 64px;
+    height: 64px;
+  }
   .container main #skills-section .skill-icons .light-skill-div .skill-desc {
-    transition: all 0.5s;
     background-color: rgba(82, 102, 250, 0.7176470588);
   }
   .container main #skills-section .skill-icons .light-skill-div .skill-desc::before {
@@ -1357,12 +1370,12 @@ html body {
     text-shadow: 1px 1px black;
   }
   .container main #projects-section .light-project-text {
-    transition: all 0.5s;
+    transition: color 0.5s;
     color: white;
     text-shadow: 1px 1px 0 #222;
   }
   .container main #projects-section .filter-area.light-filter-area {
-    transition: all 0.5s;
+    transition: color 0.5s;
   }
   .container main #projects-section .filter-area.light-filter-area p {
     color: white;

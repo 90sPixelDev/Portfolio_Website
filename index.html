@@ -7,14 +7,33 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
 		/>
+		<meta name="description"
+			content="Lien Font's portfolio which contains their resume and live web apps available to browse."
+		/>
 		<title>Lien Font</title>
 		<link rel="icon" type="image/x-icon" href="lf-icon.ico">
 		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
-			rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+		rel="stylesheet"
 		/>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
 		<link href="styles/main-style.css" rel="stylesheet" />
+		<meta
+			property="og:title" content="Lien Font's Portfolio"
+		/>
+		<meta
+			property="og:type" content="website"
+		/>
+		<meta
+			property="og:url" content="https://lienfont.dev"
+		/>
+		<meta
+			property="og:image" content="/img/Lien_Font-website-thumbnail-.jpg"
+		/>
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="og:description" content="Lien Font's portfolio which contains their resume and live web apps available to browse.">
+		<meta property="og:site_name" content="Lien Font's Portfolio">
+		<meta name="twitter:image:alt" content="Lien Font">
 	</head>
 
 	<body class="bg-dark">
@@ -47,16 +66,16 @@
 						<p class="section-top-info">Lien Font | <span class="section-info">Top</span></p>
 						<ul class="nav-items-parent nav-menu">
 							<li>
-								<button class="nav-item">Skills</button>
+								<button class="nav-item" title="Head to Skills Section">Skills</button>
 							</li>
 							<li>
-								<button class="nav-item">Projects</button>
+								<button class="nav-item" title="Head to Projects Section">Projects</button>
 							</li>
 							<li>
-								<button class="nav-item resume" type="submit" onclick="window.open('Lien_Font_Resume_Software_Developer.pdf')">Resume</button>
+								<button class="nav-item resume" type="submit" onclick="window.open('Lien_Font_Resume_Software_Developer.pdf')" title="View Resume in new tab">Resume</button>
 							</li>
 							<li>
-								<button class="nav-item">Contact</button>
+								<button class="nav-item" title="Head to Contact Section">Contact</button>
 							</li>
 						</ul>
 					</div>
@@ -82,104 +101,102 @@
 					</section>
 				</section>
 				<section id="skills-section" class="section">
-					<h3 class="skills">Skills</h3>
-					<!-- DESCRIPTIONS FOR PROGRAMS AND THINGS CREATED WITH EACH TECHNOLOGY WILL BE UPDATED AS THINGS ARE DONE-->
+					<h2 class="skills">Skills</h2>
 					<div class="skill-icons anim fade-anim">
 						<section id="html-s">
-							<!-- Need this extra div to scale the items inside without having hover glitch-->
 							<div class="skill-div">
-								<img src="img/logo/html_logo.png" />
+								<img src="img/logo/html_logo-optm.png" alt="HTML Logo" />
 								<p class="skill-title">HTML5</p>
 							</div>
 						</section>
 						<section id="css-s">
 							<div class="skill-div">
-								<img src="img/logo/css_logo.png" />
+								<img src="img/logo/css_logo-optm.png"
+								alt="CSS Logo"  />
 								<p class="skill-title">CSS3</p>
 							</div>
 						</section>
 						<section id="js-s">
 							<div class="skill-div">
-								<img src="img/logo/js_logo.png" />
+								<img src="img/logo/js_logo-optm.png"
+								alt="JavaScript Logo" />
 								<p class="skill-title">Javascript</p>
 							</div>
 						</section>
 						<section id="ts-s">
 							<div class="skill-div">
-								<img src="img/logo/ts_logo.png" />
+								<img src="img/logo/ts_logo-optm.png"
+								alt="TypeScript Logo" />
 								<p class="skill-title">Typescript</p>
 							</div>
 						</section>
 						<section id="scss-s">
 							<div class="skill-div">
-								<img src="img/logo/sass_logo.png" />
+								<img src="img/logo/sass_logo-optm.png"
+								alt="SaSS Logo" />
 								<p class="skill-title">SASS</p>
 							</div>
 						</section>
 						<section id="c-sharp-s">
 							<div class="skill-div">
-								<img src="img/logo/c-sharp_logo.png" />
+								<img src="img/logo/c-sharp_logo-optm.png"
+								alt="C# Logo" />
 								<p class="skill-title">C#</p>
 							</div>
 						</section>
 						<section id="github-s">
 							<div class="skill-div">
-								<img src="img/logo/github_logo.png" />
+								<img src="img/logo/github_logo-optm.png"
+								alt="GitHub Logo" />
 								<p class="skill-title">GitHub</p>
 							</div>
 						</section>
 						<section id="mysql-s">
 							<div class="skill-div">
-								<img src="img/logo/mySQL_logo.png" />
+								<img src="img/logo/mySQL_logo-optm.png"
+								alt="MySQL Logo" />
 								<p class="skill-title">mySQL</p>
 							</div>
 						</section>
 						<section id="react-s">
 							<div class="skill-div">
-								<img src="img/logo/react_logo.png" />
+								<img src="img/logo/react_logo-optm.png"
+								alt="React Logo" />
 								<p class="skill-title">ReactJS</p>
-							</div>
-						</section>
-						<section id="visual-studio-code-s">
-							<div class="skill-div">
-								<img src="img/logo/visual-studio-code_logo.png" />
-								<p class="skill-title">Visual Studio Code</p>
 							</div>
 						</section>
 						<section id="tailwind-s">
 							<div class="skill-div">
-								<img src="img/logo/tailwind_logo.png" />
+								<img src="img/logo/tailwind_logo-optm.png"
+								alt="TailwindCSS Logo" />
 								<p class="skill-title">TailwindCSS</p>
 							</div>
 						</section>
 						<section id="dot-net-core-s">
 							<div class="skill-div">
-								<img src="img/logo/dot-net-core_logo.png" />
+								<img src="img/logo/dot-net-core_logo-optm.png"
+								alt=".NET Core Logo" />
 								<p class="skill-title">.NET Core</p>
 							</div>
 						</section>
 						<section id="auth0-s">
 							<div class="skill-div">
-								<img src="img/logo/auth0_logo.png" />
+								<img src="img/logo/auth0_logo-optm.png"
+								alt="Auth0 Logo" />
 								<p class="skill-title">Auth0</p>
 							</div>
 						</section>
 						<section id="firebase-s">
 							<div class="skill-div">
-								<img src="img/logo/firebase_logo.png" />
+								<img src="img/logo/firebase_logo-optm.png"
+								alt="Firebase Logo" />
 								<p class="skill-title">Firebase</p>
-							</div>
-						</section>
-						<section id="visual-studio-s">
-							<div class="skill-div">
-								<img src="img/logo/visual-studio-logo.png" />
-								<p class="skill-title">Visual Studio</p>
 							</div>
 						</section>
 					</div>
 				</section>
 				<section id="projects-section" class="section">
-					<h4 class="project-text">Projects</h4>
+					<h2 class="project-text">Projects</h2>
 					<div class="filter-area">
 						<p>Include projects that used all the skills selected:</p>
 						<ul class="skill-list">
@@ -189,23 +206,8 @@
 					</div>
 					<p class="project-disclaimer">NOTE: Not all of my projects are viewable here. Please visit my GitHub (located at bottom of the page) to see all of projects.</p>
 				</section>
-				<section class="bio-section" class="section">
-					<div>
-						<h2 class="background">Background</h2>
-						<p class="bg-para anim translateU-anim">
-							I was born in Cuba but came to America at a very early age. I
-							quickly found an interest in the computer at my house and started
-							browsing the internet at the early age of 6. I've always had a
-							natural inclination for creativity and problem solving which led
-							to me getting my bachelor's in 3D Game Art & Design.<br>As time went
-							on I noticed that I kept returning to the development of software
-							and programs like creating mods for video games and mini apps for my own personal use which leads to me finding my true passion in
-							programming and development.
-						</p>
-					</div>
-				</section>
 				<section id="contact-section" class="section">
-					<h5 class="contact-title">Let's connect!</h5>
+					<h2 class="contact-title">Let's connect!</h2>
 					<form id="contact-form" class="anim scale-anim">
 						<label for="user_name">Name</label>
 						<input type="text" name="user_name" id="name" required />
@@ -256,7 +258,7 @@
 						></i>
 					</ul>
 				</section>
-				<p class="end">Developed and designed with ❤️ by Lien Font &COPY; 2022</p>
+				<p class="end">Developed and designed with ❤️ by Lien Font &COPY; 2023</p>
 			</footer>
 		</div>
 		<script

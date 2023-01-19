@@ -24,9 +24,9 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const sectionTop = document.querySelector('.section-top-info');
 const objective = document.querySelector('.objective');
 const interests = document.querySelector('.interests');
-const background = document.querySelector('.background');
-const bgPara = document.querySelector('.bg-para');
-const bioSection = document.querySelector('.bio-section');
+// const bio = document.querySelector('.bio');
+// const bgPara = document.querySelector('.bg-para');
+// const bioSection = document.querySelector('.bio-section');
 const skillsEl = document.querySelector('.skills');
 const skillDiv = document.querySelectorAll('.skill-div');
 const projectText = document.querySelector('.project-text');
@@ -130,9 +130,9 @@ const changeTheme = () => {
 		interests.classList.add('light-interests');
 
 		// BIO SECTION
-		bioSection.classList.add('light-bio-section');
-		background.classList.add('light-background');
-		bgPara.classList.add('light-bg-para');
+		// bioSection.classList.add('light-bio-section');
+		// bio.classList.add('light-background');
+		// bgPara.classList.add('light-bg-para');
 
 		// SKILLS SECTION
 		skillsEl.classList.add('light-skills');
@@ -189,9 +189,9 @@ const changeTheme = () => {
 		interests.classList.remove('light-interests');
 
 		// BIO SECTION
-		bioSection.classList.remove('light-bio-section');
-		background.classList.remove('light-background');
-		bgPara.classList.remove('light-bg-para');
+		// bioSection.classList.remove('light-bio-section');
+		// bio.classList.remove('light-background');
+		// bgPara.classList.remove('light-bg-para');
 
 		// SKILLS SECTION
 		skillsEl.classList.remove('light-skills');
@@ -300,11 +300,11 @@ const createProject = (project) => {
 		steps++;
 		slideSteps -= 1;
 		projParent.style.transform = `translateY(${slideSteps}px)`;
-		projParent.style.opacity = 0.075 * steps;
+		projParent.style.opacity = 0.05 * steps;
 		if (projParent.style.opacity >= 1) {
 			clearInterval(timer);
 		}
-	}, 50);
+	}, 0);
 
 	// timer();
 };
@@ -484,7 +484,7 @@ const fixTitle = (text) => {
 	return newText;
 };
 
-function onSection(entries, observeTitle) {
+function onSection(entries) {
 	entries.forEach((el) => {
 		const text = el.target.id;
 		const newText = fixTitle(text);
@@ -493,7 +493,7 @@ function onSection(entries, observeTitle) {
 	});
 }
 
-function onChange(entries, observer) {
+function onChange(entries) {
 	entries.forEach((entry) => {
 		if (entry.intersectionRatio > 0) {
 			if (entry.target.classList.contains('fade-anim')) {
