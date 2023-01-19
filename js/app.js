@@ -75,7 +75,7 @@ const projects = [
 	},
 	{
 		title: 'Free The Games',
-		url: '/projects/Free_the_Games/home.html',
+		url: 'https://free-the-games.vercel.app/index.html',
 		class: 'free-the-games',
 		skills: ['javascript', 'api', 'sass'],
 	},
