@@ -1618,9 +1618,9 @@ html {
 		}
 		footer {
 			.light-to-top {
-				background: linear-gradient(bottom, #d09dfa, #5266fa);
+				background: linear-gradient(0deg, #d09dfa, #5266fa);
 				&:hover {
-					background: linear-gradient(top, #d09dfa, #5266fa);
+					background: linear-gradient(180deg, #d09dfa, #5266fa);
 				}
 			}
 			.light-social-media {

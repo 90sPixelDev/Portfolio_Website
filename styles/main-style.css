@@ -1443,10 +1443,10 @@ html body {
     color: white;
   }
   .container footer .light-to-top {
-    background: linear-gradient(bottom, #d09dfa, #5266fa);
+    background: linear-gradient(0deg, #d09dfa, #5266fa);
   }
   .container footer .light-to-top:hover {
-    background: linear-gradient(top, #d09dfa, #5266fa);
+    background: linear-gradient(180deg, #d09dfa, #5266fa);
   }
   .container footer .light-social-media {
     transition: all 1s;
