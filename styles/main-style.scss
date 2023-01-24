@@ -201,6 +201,8 @@ html {
 					flex-wrap: wrap;
 					row-gap: 3em;
 
+					transition: background-color 1s;
+					transition: scale 1s;
 					p {
 						height: min-content;
 						background-color: #222a68a2;
@@ -210,15 +212,19 @@ html {
 						text-align: center;
 						line-height: 1.8em;
 
-						transition: color 1s;
+						transition: background-color 1s;
+						transition: scale 1s;
 						&:hover {
 							transform: scale(103%, 103%);
 							background-color: #ab81cd97;
+							transition: background-color 1s;
+							transition: scale 1s;
 						}
 					}
 				}
 				.objective {
 					color: #d8defd;
+
 					&:hover {
 						color: white;
 					}
@@ -1473,6 +1479,7 @@ html {
 						color: white;
 
 						&:hover {
+							transition: all 0.5s;
 							background-color: #5266fa;
 							box-shadow: 0 3px 10px #17259179;
 						}
@@ -1483,6 +1490,7 @@ html {
 						color: white;
 
 						&:hover {
+							transition: all 0.5s;
 							background-color: #5266fa;
 							box-shadow: 0 3px 10px #17259179;
 						}

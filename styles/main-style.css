@@ -199,6 +199,8 @@ html body {
     align-items: center;
     flex-wrap: wrap;
     row-gap: 3em;
+    transition: background-color 1s;
+    transition: scale 1s;
   }
   .container main #profile-section #basic-info p {
     height: -webkit-min-content;
@@ -210,11 +212,14 @@ html body {
     width: 20em;
     text-align: center;
     line-height: 1.8em;
-    transition: color 1s;
+    transition: background-color 1s;
+    transition: scale 1s;
   }
   .container main #profile-section #basic-info p:hover {
     transform: scale(103%, 103%);
     background-color: rgba(171, 129, 205, 0.5921568627);
+    transition: background-color 1s;
+    transition: scale 1s;
   }
   .container main #profile-section .objective {
     color: #d8defd;
@@ -1316,6 +1321,7 @@ html body {
     color: white;
   }
   .container main #profile-section #basic-info .light-objective:hover {
+    transition: all 0.5s;
     background-color: #5266fa;
     box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
   }
@@ -1325,6 +1331,7 @@ html body {
     color: white;
   }
   .container main #profile-section #basic-info .light-interests:hover {
+    transition: all 0.5s;
     background-color: #5266fa;
     box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
   }
