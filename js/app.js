@@ -44,6 +44,7 @@ const navMenu = document.querySelector('.nav-menu');
 const skills = [
 	'react',
 	'api',
+	'BIRT',
 	'firebase',
 	'javascript',
 	'sass',
