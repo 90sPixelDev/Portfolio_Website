@@ -1618,6 +1618,22 @@ html {
 					color: white;
 					text-shadow: 1px 2px 0 #222;
 				}
+				.contact-sentences {
+					display: flex;
+					flex-direction: column;
+					min-height: 30%;
+				}
+				.contact-line {
+					margin: auto;
+					color: #c1c1c1;
+					b {
+						color: #fff;
+					}
+				}
+				.contact-response {
+					color: #c1c1c1;
+					margin: auto;
+				}
 				#contact-form {
 					&.light-form {
 						color: white;

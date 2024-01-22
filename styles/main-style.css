@@ -1367,6 +1367,22 @@ html body {
     color: white;
     text-shadow: 1px 2px 0 #222;
   }
+  .container main #contact-section .contact-sentences {
+    display: flex;
+    flex-direction: column;
+    min-height: 30%;
+  }
+  .container main #contact-section .contact-line {
+    margin: auto;
+    color: #c1c1c1;
+  }
+  .container main #contact-section .contact-line b {
+    color: #fff;
+  }
+  .container main #contact-section .contact-response {
+    color: #c1c1c1;
+    margin: auto;
+  }
   .container main #contact-section #contact-form.light-form {
     color: white;
   }
