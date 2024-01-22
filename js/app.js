@@ -157,7 +157,7 @@ const changeTheme = () => {
 		// CONTACT SECTION
 		contactSection.classList.add('light-contact-section');
 		contactTitle.classList.add('light-contact-title');
-		formElement.classList.add('light-form');
+		//formElement.classList.add('light-form');
 
 		// FOOTER SECTION
 		toTop.classList.add('light-to-top');
@@ -216,7 +216,7 @@ const changeTheme = () => {
 		// CONTACT SECTION
 		contactTitle.classList.remove('light-contact-title');
 		contactSection.classList.remove('light-contact-section');
-		formElement.classList.remove('light-form');
+		//formElement.classList.remove('light-form');
 
 		// FOOTER SECTION
 		toTop.classList.remove('light-to-top');
