@@ -513,6 +513,16 @@ html body {
     margin: 1em 5em;
     color: rgba(255, 255, 255, 0.5);
   }
+  .container main #games-section .project-text {
+    transition: all 0.5s;
+    text-align: center;
+    color: #d8defd;
+  }
+  .container main #games-section .games-note {
+    text-align: center;
+    margin: 1em 5em;
+    color: rgba(255, 255, 255, 0.5);
+  }
   .container main #contact-section {
     background-color: #222a68;
     width: 100%;
@@ -851,6 +861,62 @@ html body {
   .container main #projects-section .project-grid .project-parent-hide {
     display: none;
   }
+  .container main #games-section {
+    min-height: 70vh;
+    margin-top: 10vw;
+    width: 100%;
+  }
+  .container main #games-section h2 {
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: 2em;
+  }
+  .container main #games-section .project-grid {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3.5vw;
+    margin: 3vh 3vh;
+  }
+  .container main #games-section .project-grid .project {
+    transition: all 0.5s;
+    background-color: transparent;
+    max-height: 252px;
+    max-width: 350px;
+  }
+  .container main #games-section .project-grid .project .project-title {
+    opacity: 0;
+    transform: translateY(-200%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.5rem 0;
+    transition: all 0.5s;
+  }
+  .container main #games-section .project-grid .project-parent {
+    transition: all 0.5s;
+    border-radius: 1em;
+    filter: saturate(0) brightness(0.75);
+  }
+  .container main #games-section .project-grid .project-parent:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    filter: brightness(1) saturate(1);
+    transform-origin: center;
+  }
+  .container main #games-section .project-grid .project-parent:hover .project {
+    background-position: top;
+    filter: drop-shadow(0 5px 5px #222);
+    box-shadow: inset 1px 1px 0 #222, inset -1px 0 1px #222;
+  }
+  .container main #games-section .project-grid .project-parent:hover .project .project-title {
+    transform: translateY(-10%);
+    filter: drop-shadow(0 0 0 transparent);
+    color: black;
+    opacity: 100%;
+    background-color: transparent;
+  }
+  .container main #games-section .project-grid .project-parent-hide {
+    display: none;
+  }
   .container main #contact-section {
     height: 70vh;
     min-height: 495px;
@@ -1023,6 +1089,25 @@ html body {
     height: 27vw;
     width: 37vw;
   }
+  .container main #games-section {
+    min-height: 70vh;
+    margin-top: 7em;
+  }
+  .container main #games-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .container main #games-section .project-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 3.5vw;
+    margin: 0 2em;
+  }
+  .container main #games-section .project-grid .project {
+    height: 27vw;
+    width: 37vw;
+  }
   .container main #contact-section {
     margin-top: 3em;
     height: 50vh;
@@ -1184,6 +1269,24 @@ html body {
     margin: 0 2em;
   }
   .container main #projects-section .project-grid .project {
+    height: 27vw;
+    width: 37.5vw;
+  }
+  .container main #games-section {
+    min-height: 70vh;
+    margin-top: 7em;
+  }
+  .container main #games-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+  }
+  .container main #games-section .project-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 3.5vw;
+    margin: 0 2em;
+  }
+  .container main #games-section .project-grid .project {
     height: 27vw;
     width: 37.5vw;
   }
@@ -1353,6 +1456,54 @@ html body {
     }
   }
   .container main #projects-section .light-project-grid {
+    transition: all 0.5s;
+    box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
+    background-color: rgba(82, 102, 250, 0.5568627451);
+  }
+  .container main #games-section .light-project-text {
+    transition: color 0.5s;
+    color: white;
+    text-shadow: 1px 1px 0 #222;
+  }
+  .container main #games-section .filter-area.light-filter-area {
+    transition: color 0.5s;
+  }
+  .container main #games-section .filter-area.light-filter-area p {
+    color: white;
+    text-shadow: 1px 1px 0 #222;
+  }
+  .container main #games-section .filter-area .skill-list .light-skill-list {
+    transition: all 0.5s;
+    color: white;
+    background-color: rgba(82, 102, 250, 0.5568627451);
+  }
+  .container main #games-section .filter-area .skill-list .light-skill-list:hover {
+    background-color: rgba(149, 162, 255, 0.5568627451);
+    color: white;
+  }
+  .container main #games-section .filter-area .skill-list .light-skill-selected {
+    transition: all 0.5s;
+    text-shadow: 1px 2px 0 #222;
+    background-color: rgba(208, 157, 250, 0.5607843137);
+    box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
+    animation: lightSkillSelected 0.5s forwards;
+  }
+  .container main #games-section .filter-area .skill-list .light-skill-selected:hover {
+    background-color: rgba(221, 180, 255, 0.5607843137);
+    border: 1px solid #fff;
+  }
+  @keyframes lightSkillSelected {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .container main #games-section .light-project-grid {
     transition: all 0.5s;
     box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
     background-color: rgba(82, 102, 250, 0.5568627451);

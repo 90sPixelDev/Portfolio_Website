@@ -581,6 +581,25 @@ html {
 				}
 			}
 
+			#games-section {
+				.project-text {
+					transition: all 0.5s;
+					text-align: center;
+					color: #d8defd;
+				}
+				.games-note {
+					text-align: center;
+					margin: 1em 5em;
+					color: rgba(255, 255, 255, 0.5);
+				}
+				.games-text {
+				}
+				.games-area {
+				}
+				.games-list {
+				}
+			}
+
 			#contact-section {
 				background-color: #222a68;
 				width: 100%;
@@ -977,6 +996,71 @@ html {
 				}
 			}
 
+			#games-section {
+				min-height: 70vh;
+				margin-top: 10vw;
+				width: 100%;
+
+				h2 {
+					text-align: center;
+					font-size: 4em;
+					margin-bottom: 2em;
+				}
+				.project-grid {
+					grid-template-rows: auto;
+
+					grid-template-columns: 1fr 1fr 1fr;
+					gap: 3.5vw;
+					margin: 3vh 3vh;
+
+					.project {
+						transition: all 0.5s;
+						background-color: transparent;
+						max-height: 252px;
+						max-width: 350px;
+						.project-title {
+							opacity: 0;
+							transform: translateY(-200%);
+							text-align: center;
+							background-color: rgba(255, 255, 255, 0.5);
+							padding: 0.5rem 0;
+
+							transition: all 0.5s;
+						}
+					}
+					.project-parent {
+						transition: all 0.5s;
+						border-radius: 1em;
+						filter: saturate(0) brightness(0.75);
+
+						&:hover {
+							transform: scale(1.1);
+							background-color: #fff;
+							filter: brightness(1) saturate(1);
+							transform-origin: center;
+							.project {
+								background-position: top;
+								filter: drop-shadow(0 5px 5px #222);
+								box-shadow: inset 1px 1px 0 #222,
+									inset -1px 0 1px #222;
+								.project-title {
+									transform: translateY(-10%);
+									filter: drop-shadow(
+										0 0 0 transparent
+									);
+									color: black;
+									opacity: 100%;
+									background-color: transparent;
+								}
+							}
+						}
+					}
+					.project-parent-hide {
+						display: none;
+					}
+				}
+			}
+
 			#contact-section {
 				height: 70vh;
 				min-height: 495px;
@@ -1194,6 +1278,26 @@ html {
 				}
 			}
 
+			#games-section {
+				min-height: 70vh;
+				margin-top: 7em;
+				h2 {
+					font-size: 2.5em;
+					text-align: center;
+					margin-bottom: 1em;
+				}
+				.project-grid {
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: auto;
+					gap: 3.5vw;
+					margin: 0 2em;
+					.project {
+						height: 27vw;
+						width: 37vw;
+					}
+				}
+			}
+
 			#contact-section {
 				margin-top: 3em;
 				height: 50vh;
@@ -1386,6 +1490,25 @@ html {
 				}
 			}
 
+			#games-section {
+				min-height: 70vh;
+				margin-top: 7em;
+				h2 {
+					font-size: 2.5em;
+					margin-bottom: 1em;
+				}
+				.project-grid {
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: auto;
+					gap: 3.5vw;
+					margin: 0 2em;
+					.project {
+						height: 27vw;
+						width: 37.5vw;
+					}
+				}
+			}
+
 			#contact-section {
 				margin-top: 3em;
 				height: 50vh;
@@ -1551,6 +1674,63 @@ html {
 				}
 			}
 			#projects-section {
+				.light-project-text {
+					transition: color 0.5s;
+					color: white;
+					text-shadow: 1px 1px 0 #222;
+				}
+				.filter-area {
+					&.light-filter-area {
+						transition: color 0.5s;
+						p {
+							color: white;
+							text-shadow: 1px 1px 0 #222;
+						}
+					}
+					.skill-list {
+						.light-skill-list {
+							transition: all 0.5s;
+							color: white;
+							background-color: #5266fa8e;
+
+							&:hover {
+								background-color: #95a2ff8e;
+								color: white;
+							}
+						}
+						.light-skill-selected {
+							transition: all 0.5s;
+							text-shadow: 1px 2px 0 #222;
+							background-color: #d09dfa8f;
+							box-shadow: 0 3px 10px #17259179;
+
+							animation: lightSkillSelected 0.5s forwards;
+
+							&:hover {
+								background-color: #ddb4ff8f;
+								border: 1px solid #fff;
+							}
+						}
+						@keyframes lightSkillSelected {
+							0% {
+								transform: scale(1);
+							}
+							50% {
+								transform: scale(1.1);
+							}
+							100% {
+								transform: scale(1);
+							}
+						}
+					}
+				}
+				.light-project-grid {
+					transition: all 0.5s;
+					box-shadow: 0 3px 10px #17259179;
+					background-color: #5266fa8e;
+				}
+			}
+			#games-section {
 				.light-project-text {
 					transition: color 0.5s;
 					color: white;
