@@ -56,19 +56,7 @@ html body {
     padding: 0;
     opacity: 15%;
     z-index: -2;
-    -webkit-animation: bg-anim ease-in-out 15s infinite;
-            animation: bg-anim ease-in-out 15s infinite;
-  }
-  @-webkit-keyframes bg-anim {
-    0% {
-      transform: rotateZ(-15deg);
-    }
-    60% {
-      transform: rotateZ(15deg);
-    }
-    100% {
-      transform: rotateZ(-15deg);
-    }
+    animation: bg-anim ease-in-out 15s infinite;
   }
   @keyframes bg-anim {
     0% {
@@ -156,25 +144,7 @@ html body {
   .container main #profile-section .my-name::after {
     content: "|";
     display: inline-block;
-    -webkit-animation: typer 1.6s infinite;
-            animation: typer 1.6s infinite;
-  }
-  @-webkit-keyframes typer {
-    0% {
-      opacity: 0%;
-    }
-    30% {
-      opacity: 100%;
-    }
-    40% {
-      opacity: 100%;
-    }
-    95% {
-      opacity: 0%;
-    }
-    100% {
-      opacity: 0%;
-    }
+    animation: typer 1.6s infinite;
   }
   @keyframes typer {
     0% {
@@ -203,7 +173,6 @@ html body {
     transition: scale 1s;
   }
   .container main #profile-section #basic-info p {
-    height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
     background-color: rgba(34, 42, 104, 0.6352941176);
@@ -233,7 +202,6 @@ html body {
     border-radius: 3em;
     padding: 3em;
     width: 20em;
-    height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
     transition: all 1s;
@@ -258,25 +226,8 @@ html body {
   }
   .container main #profile-section .interests ul li:hover::before {
     content: "";
-    -webkit-animation: list-focus 1s ease-out both;
-            animation: list-focus 1s ease-out both;
+    animation: list-focus 1s ease-out both;
     display: inline-block;
-  }
-  @-webkit-keyframes list-focus {
-    0% {
-      opacity: 0%;
-      border-top: 0.4em solid transparent;
-      border-left: 0.4em solid #e2adf2;
-      border-bottom: 0.4em solid transparent;
-      transform: translateX(-2em);
-    }
-    100% {
-      opacity: 100%;
-      border-top: 0.4em solid transparent;
-      border-left: 0.4em solid #e2adf2;
-      border-bottom: 0.4em solid transparent;
-      margin-right: 1em;
-    }
   }
   @keyframes list-focus {
     0% {
@@ -383,7 +334,6 @@ html body {
     margin: 1em 3vw;
     grid-template-columns: 1fr 1fr minmax(0, 1fr);
     min-height: 50vh;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -421,21 +371,22 @@ html body {
     opacity: 100%;
   }
   .container main #skills-section #html-s > div,
-.container main #skills-section #css-s > div,
-.container main #skills-section #js-s > div,
-.container main #skills-section #ts-s > div,
-.container main #skills-section #visual-studio-code-s > div,
-.container main #skills-section #c-sharp-s > div,
-.container main #skills-section #mysql-s > div,
-.container main #skills-section #scss-s > div,
-.container main #skills-section #sql-s > div,
-.container main #skills-section #visual-studio-s > div,
-.container main #skills-section #react-s > div,
-.container main #skills-section #dot-net-core-s > div,
-.container main #skills-section #tailwind-s > div,
-.container main #skills-section #auth0-s > div,
-.container main #skills-section #firebase-s > div,
-.container main #skills-section #github-s > div {
+  .container main #skills-section #css-s > div,
+  .container main #skills-section #js-s > div,
+  .container main #skills-section #bt-s > div,
+  .container main #skills-section #ts-s > div,
+  .container main #skills-section #visual-studio-code-s > div,
+  .container main #skills-section #c-sharp-s > div,
+  .container main #skills-section #mysql-s > div,
+  .container main #skills-section #scss-s > div,
+  .container main #skills-section #sql-s > div,
+  .container main #skills-section #visual-studio-s > div,
+  .container main #skills-section #react-s > div,
+  .container main #skills-section #dot-net-core-s > div,
+  .container main #skills-section #tailwind-s > div,
+  .container main #skills-section #auth0-s > div,
+  .container main #skills-section #firebase-s > div,
+  .container main #skills-section #github-s > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -463,7 +414,6 @@ html body {
   .container main #projects-section .filter-area .skill-list {
     display: flex;
     flex-wrap: wrap;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     width: 100%;
@@ -490,24 +440,12 @@ html body {
   }
   .container main #projects-section .filter-area .skill-list .skill-selected {
     background-color: #222a68;
-    -webkit-animation: skillSelected 0.5s forwards;
-            animation: skillSelected 0.5s forwards;
+    animation: skillSelected 0.5s forwards;
   }
   .container main #projects-section .filter-area .skill-list .skill-selected:hover {
     background-color: #222a68;
     box-shadow: 0 0 15px 5px rgba(216, 216, 253, 0.2235294118) inset;
     border: 1px solid;
-  }
-  @-webkit-keyframes skillSelected {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
   @keyframes skillSelected {
     0% {
@@ -522,7 +460,6 @@ html body {
   }
   .container main #projects-section .project-grid {
     display: grid;
-    max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
     max-height: fit-content;
     justify-items: center;
@@ -572,6 +509,16 @@ html body {
     opacity: 100%;
   }
   .container main #projects-section .project-disclaimer {
+    text-align: center;
+    margin: 1em 5em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .container main #games-section .project-text {
+    transition: all 0.5s;
+    text-align: center;
+    color: #d8defd;
+  }
+  .container main #games-section .games-note {
     text-align: center;
     margin: 1em 5em;
     color: rgba(255, 255, 255, 0.5);
@@ -816,7 +763,6 @@ html body {
   }
   .container main .bio-section {
     padding: 5em;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
   }
@@ -850,7 +796,6 @@ html body {
     gap: 5em;
   }
   .container main #skills-section .skill-desc {
-    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }
@@ -914,6 +859,62 @@ html body {
     background-color: transparent;
   }
   .container main #projects-section .project-grid .project-parent-hide {
+    display: none;
+  }
+  .container main #games-section {
+    min-height: 70vh;
+    margin-top: 10vw;
+    width: 100%;
+  }
+  .container main #games-section h2 {
+    text-align: center;
+    font-size: 4em;
+    margin-bottom: 2em;
+  }
+  .container main #games-section .project-grid {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3.5vw;
+    margin: 3vh 3vh;
+  }
+  .container main #games-section .project-grid .project {
+    transition: all 0.5s;
+    background-color: transparent;
+    max-height: 252px;
+    max-width: 350px;
+  }
+  .container main #games-section .project-grid .project .project-title {
+    opacity: 0;
+    transform: translateY(-200%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.5rem 0;
+    transition: all 0.5s;
+  }
+  .container main #games-section .project-grid .project-parent {
+    transition: all 0.5s;
+    border-radius: 1em;
+    filter: saturate(0) brightness(0.75);
+  }
+  .container main #games-section .project-grid .project-parent:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    filter: brightness(1) saturate(1);
+    transform-origin: center;
+  }
+  .container main #games-section .project-grid .project-parent:hover .project {
+    background-position: top;
+    filter: drop-shadow(0 5px 5px #222);
+    box-shadow: inset 1px 1px 0 #222, inset -1px 0 1px #222;
+  }
+  .container main #games-section .project-grid .project-parent:hover .project .project-title {
+    transform: translateY(-10%);
+    filter: drop-shadow(0 0 0 transparent);
+    color: black;
+    opacity: 100%;
+    background-color: transparent;
+  }
+  .container main #games-section .project-grid .project-parent-hide {
     display: none;
   }
   .container main #contact-section {
@@ -1088,6 +1089,25 @@ html body {
     height: 27vw;
     width: 37vw;
   }
+  .container main #games-section {
+    min-height: 70vh;
+    margin-top: 7em;
+  }
+  .container main #games-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .container main #games-section .project-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 3.5vw;
+    margin: 0 2em;
+  }
+  .container main #games-section .project-grid .project {
+    height: 27vw;
+    width: 37vw;
+  }
   .container main #contact-section {
     margin-top: 3em;
     height: 50vh;
@@ -1252,6 +1272,24 @@ html body {
     height: 27vw;
     width: 37.5vw;
   }
+  .container main #games-section {
+    min-height: 70vh;
+    margin-top: 7em;
+  }
+  .container main #games-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+  }
+  .container main #games-section .project-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 3.5vw;
+    margin: 0 2em;
+  }
+  .container main #games-section .project-grid .project {
+    height: 27vw;
+    width: 37.5vw;
+  }
   .container main #contact-section {
     margin-top: 3em;
     height: 50vh;
@@ -1305,8 +1343,6 @@ html body {
     color: white;
     border: 1px solid white;
   }
-}
-@media all {
   .container header #nav-bar .mobile-menu .nav-toggle {
     border: 1px solid #fff;
   }
@@ -1402,23 +1438,11 @@ html body {
     text-shadow: 1px 2px 0 #222;
     background-color: rgba(208, 157, 250, 0.5607843137);
     box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
-    -webkit-animation: lightSkillSelected 0.5s forwards;
-            animation: lightSkillSelected 0.5s forwards;
+    animation: lightSkillSelected 0.5s forwards;
   }
   .container main #projects-section .filter-area .skill-list .light-skill-selected:hover {
     background-color: rgba(221, 180, 255, 0.5607843137);
     border: 1px solid #fff;
-  }
-  @-webkit-keyframes lightSkillSelected {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
   }
   @keyframes lightSkillSelected {
     0% {
@@ -1436,6 +1460,54 @@ html body {
     box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
     background-color: rgba(82, 102, 250, 0.5568627451);
   }
+  .container main #games-section .light-project-text {
+    transition: color 0.5s;
+    color: white;
+    text-shadow: 1px 1px 0 #222;
+  }
+  .container main #games-section .filter-area.light-filter-area {
+    transition: color 0.5s;
+  }
+  .container main #games-section .filter-area.light-filter-area p {
+    color: white;
+    text-shadow: 1px 1px 0 #222;
+  }
+  .container main #games-section .filter-area .skill-list .light-skill-list {
+    transition: all 0.5s;
+    color: white;
+    background-color: rgba(82, 102, 250, 0.5568627451);
+  }
+  .container main #games-section .filter-area .skill-list .light-skill-list:hover {
+    background-color: rgba(149, 162, 255, 0.5568627451);
+    color: white;
+  }
+  .container main #games-section .filter-area .skill-list .light-skill-selected {
+    transition: all 0.5s;
+    text-shadow: 1px 2px 0 #222;
+    background-color: rgba(208, 157, 250, 0.5607843137);
+    box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
+    animation: lightSkillSelected 0.5s forwards;
+  }
+  .container main #games-section .filter-area .skill-list .light-skill-selected:hover {
+    background-color: rgba(221, 180, 255, 0.5607843137);
+    border: 1px solid #fff;
+  }
+  @keyframes lightSkillSelected {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .container main #games-section .light-project-grid {
+    transition: all 0.5s;
+    box-shadow: 0 3px 10px rgba(23, 37, 145, 0.4745098039);
+    background-color: rgba(82, 102, 250, 0.5568627451);
+  }
   .container main #contact-section.light-contact-section {
     transition: all 0.5s;
     background-color: #5266fa;
@@ -1445,6 +1517,22 @@ html body {
     transition: all 0.5s;
     color: white;
     text-shadow: 1px 2px 0 #222;
+  }
+  .container main #contact-section .contact-sentences {
+    display: flex;
+    flex-direction: column;
+    min-height: 30%;
+  }
+  .container main #contact-section .contact-line {
+    margin: auto;
+    color: #c1c1c1;
+  }
+  .container main #contact-section .contact-line b {
+    color: #fff;
+  }
+  .container main #contact-section .contact-response {
+    color: #c1c1c1;
+    margin: auto;
   }
   .container main #contact-section #contact-form.light-form {
     color: white;

@@ -11,7 +11,7 @@ const navItem = document.querySelectorAll('.nav-item');
 const sectionInfo = document.querySelector('.section-info');
 const sectionTitle = document.querySelectorAll('.section');
 const skillsParent = document.querySelector('.skill-list');
-const projectGrid = document.querySelector('.project-grid');
+const projectGrid = document.querySelectorAll('.project-grid');
 const skillDesc = document.querySelectorAll('.skill-desc');
 let noProjectsDisplay = false;
 
@@ -29,7 +29,7 @@ const interests = document.querySelector('.interests');
 // const bioSection = document.querySelector('.bio-section');
 const skillsEl = document.querySelector('.skills');
 const skillDiv = document.querySelectorAll('.skill-div');
-const projectText = document.querySelector('.project-text');
+const projectText = document.querySelectorAll('.project-text');
 const filterArea = document.querySelector('.filter-area');
 let skillList;
 const contactSection = document.querySelector('#contact-section');
@@ -44,6 +44,7 @@ const navMenu = document.querySelector('.nav-menu');
 const skills = [
 	'react',
 	'api',
+	'BIRT',
 	'firebase',
 	'javascript',
 	'sass',
@@ -95,6 +96,34 @@ const projects = [
 	// },
 ];
 
+//! FOR GAME PROJECTS SECTION
+// const gameProjects = [
+// 	{
+// 		title: 'MeerkatBall',
+// 		url: 'https://rp-rooms.vercel.app/login',
+// 		class: 'rp-rooms',
+// 		skills: [
+// 			'typescript',
+// 			'react',
+// 			'tailwind',
+// 			'firebase',
+// 			'react-router',
+// 		],
+// 	},
+// 	{
+// 		title: 'MinExpense',
+// 		url: 'https://lienfont-react-expense-tracker.vercel.app',
+// 		class: 'mini-expense-tracker',
+// 		skills: ['javascript', 'react', 'firebase', 'tailwind', 'auth0'],
+// 	},
+// 	{
+// 		title: 'Free The Games',
+// 		url: 'https://free-the-games.vercel.app/index.html',
+// 		class: 'free-the-games',
+// 		skills: ['javascript', 'api', 'sass'],
+// 	},
+// ];
+
 if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
 
 themeBtn.addEventListener('click', () => {
@@ -141,7 +170,8 @@ const changeTheme = () => {
 		});
 
 		// PROJECT SECTION
-		projectText.classList.add('light-project-text');
+		projectText[0].classList.add('light-project-text');
+		projectText[1].classList.add('light-project-text');
 		filterArea.classList.add('light-filter-area');
 		skillList.forEach((el) => {
 			if (el.classList.contains('skill-selected')) {
@@ -151,12 +181,13 @@ const changeTheme = () => {
 			el.classList.remove('skill');
 			el.classList.add('light-skill-list');
 		});
-		projectGrid.classList.add('light-project-grid');
+		projectGrid[0].classList.add('light-project-grid');
+		projectGrid[1].classList.add('light-project-grid');
 
 		// CONTACT SECTION
 		contactSection.classList.add('light-contact-section');
 		contactTitle.classList.add('light-contact-title');
-		formElement.classList.add('light-form');
+		//formElement.classList.add('light-form');
 
 		// FOOTER SECTION
 		toTop.classList.add('light-to-top');
@@ -210,12 +241,13 @@ const changeTheme = () => {
 			el.classList.add('skill');
 			el.classList.remove('light-skill-list');
 		});
-		projectGrid.classList.remove('light-project-grid');
+		projectGrid[0].classList.remove('light-project-grid');
+		projectGrid[1].classList.remove('light-project-grid');
 
 		// CONTACT SECTION
 		contactTitle.classList.remove('light-contact-title');
 		contactSection.classList.remove('light-contact-section');
-		formElement.classList.remove('light-form');
+		//formElement.classList.remove('light-form');
 
 		// FOOTER SECTION
 		toTop.classList.remove('light-to-top');
@@ -258,6 +290,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	projects.forEach((project) => {
 		createProject(project);
 	});
+	projects.forEach((gameProject) => {
+		createGameProject(gameProject);
+	});
 	skillsListCreation();
 	skillList = skillsParent.querySelectorAll('li');
 
@@ -273,7 +308,7 @@ const createProject = (project) => {
 	projParent.style.opacity = 0;
 
 	projParent.classList.add('project-parent');
-	projectGrid.append(projParent);
+	projectGrid[0].append(projParent);
 
 	const proj = document.createElement('a');
 
@@ -305,8 +340,45 @@ const createProject = (project) => {
 			clearInterval(timer);
 		}
 	}, 0);
+};
+const createGameProject = (project) => {
+	const projParent = document.createElement('div');
 
-	// timer();
+	projParent.style.opacity = 0;
+
+	projParent.classList.add('project-parent');
+	projectGrid[1].append(projParent);
+
+	const proj = document.createElement('a');
+
+	proj.classList.add(project.class);
+	proj.classList.add('project');
+	proj.classList.add('anim');
+	proj.classList.add('fade-anim');
+
+	proj.href = project.url;
+	proj.target = '_blank';
+	proj.rel = 'noopener noreferrer';
+
+	projParent.append(proj);
+
+	const projTitle = document.createElement('p');
+	projTitle.textContent = project.title;
+	projTitle.classList.add('project-title');
+
+	proj.append(projTitle);
+
+	let slideSteps = 20;
+	let steps = 0;
+	const timer = setInterval(function () {
+		steps++;
+		slideSteps -= 1;
+		projParent.style.transform = `translateY(${slideSteps}px)`;
+		projParent.style.opacity = 0.05 * steps;
+		if (projParent.style.opacity >= 1) {
+			clearInterval(timer);
+		}
+	}, 0);
 };
 
 // CREATE ALL PROJECTS WHEN NO SKILLS SELECTED
@@ -407,34 +479,34 @@ const skillsListCreation = () => {
 	});
 };
 
+//! HAVE TO UPDATE CONTACT FORM SECTION WITH NEW API/CHANGES
 // FORM SECTION
 window.onload = function () {
-	document
-		.getElementById('contact-form')
-		.addEventListener('submit', function (event) {
-			event.preventDefault();
-
-			emailjs
-				.sendForm(
-					'service_8dcgfoh',
-					'template_3vxuz3j',
-					this,
-					'BGaBY2gWPgF8paWZQ'
-				)
-				.then(
-					function () {
-						console.log('SUCCESS!');
-						emailAfter.classList.add('email-success');
-					},
-					function (error) {
-						console.log('FAILED...', error);
-					}
-				);
-			this.user_name.value = '';
-			this.user_email.value = '';
-			this.message.value = '';
-		});
-	sectionInfo.textContent = 'Top';
+	// 	document
+	// 		.getElementById('contact-form')
+	// 		.addEventListener('submit', function (event) {
+	// 			event.preventDefault();
+	// 			emailjs
+	// 				.sendForm(
+	// 					'service_8dcgfoh',
+	// 					'template_3vxuz3j',
+	// 					this,
+	// 					'BGaBY2gWPgF8paWZQ'
+	// 				)
+	// 				.then(
+	// 					function () {
+	// 						console.log('SUCCESS!');
+	// 						emailAfter.classList.add('email-success');
+	// 					},
+	// 					function (error) {
+	// 						console.log('FAILED...', error);
+	// 					}
+	// 				);
+	// 			this.user_name.value = '';
+	// 			this.user_email.value = '';
+	// 			this.message.value = '';
+	// 		});
+	// 	sectionInfo.textContent = 'Top';
 };
 
 // SKILL DESCRIPTION TOOLTIP POSITIONING
