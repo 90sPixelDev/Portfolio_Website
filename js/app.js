@@ -171,7 +171,7 @@ const changeTheme = () => {
 
 		// PROJECT SECTION
 		projectText[0].classList.add('light-project-text');
-		projectText[1].classList.add('light-project-text');
+		// projectText[1].classList.add('light-project-text');
 		filterArea.classList.add('light-filter-area');
 		skillList.forEach((el) => {
 			if (el.classList.contains('skill-selected')) {
@@ -182,7 +182,7 @@ const changeTheme = () => {
 			el.classList.add('light-skill-list');
 		});
 		projectGrid[0].classList.add('light-project-grid');
-		projectGrid[1].classList.add('light-project-grid');
+		// projectGrid[1].classList.add('light-project-grid');
 
 		// CONTACT SECTION
 		contactSection.classList.add('light-contact-section');
@@ -231,7 +231,8 @@ const changeTheme = () => {
 		});
 
 		// PROJECT SECTION
-		projectText.classList.remove('light-project-text');
+		projectText[0].classList.remove('light-project-text');
+		// projectText[1].classList.remove('light-project-text');
 		filterArea.classList.remove('light-filter-area');
 		skillList.forEach((el) => {
 			if (el.classList.contains('light-skill-selected')) {
@@ -242,7 +243,7 @@ const changeTheme = () => {
 			el.classList.remove('light-skill-list');
 		});
 		projectGrid[0].classList.remove('light-project-grid');
-		projectGrid[1].classList.remove('light-project-grid');
+		// projectGrid[1].classList.remove('light-project-grid');
 
 		// CONTACT SECTION
 		contactTitle.classList.remove('light-contact-title');
@@ -290,9 +291,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	projects.forEach((project) => {
 		createProject(project);
 	});
-	projects.forEach((gameProject) => {
-		createGameProject(gameProject);
-	});
+	// Not creating game projects as I don't have thjat section enabled as I don't have good looking games to show atm or they are available elsewhere easier
+	// projects.forEach((gameProject) => {
+	// 	createGameProject(gameProject);
+	// });
 	skillsListCreation();
 	skillList = skillsParent.querySelectorAll('li');
 
@@ -346,6 +348,8 @@ const createGameProject = (project) => {
 
 	projParent.style.opacity = 0;
 
+	console.log(projParent);
+
 	projParent.classList.add('project-parent');
 	projectGrid[1].append(projParent);
 
@@ -388,9 +392,9 @@ const noSkillSelected = () => {
 };
 
 const createProjectElements = () => {
-	projectGrid.textContent = '';
-	projectGrid.style.display = 'grid';
-	projectGrid.style.padding = '2em 1em';
+	projectGrid[0].textContent = '';
+	projectGrid[0].style.display = 'grid';
+	projectGrid[0].style.padding = '2em 1em';
 	if (!currentProjectList[0] && noSkillSelected()) {
 		projects.forEach((project) => {
 			createProject(project);
@@ -404,8 +408,8 @@ const createProjectElements = () => {
 			'No projects available that use all skills selected. Please select another range of skills.';
 		noProjDisplay.style.color = '#fff';
 		noProjDisplay.style.textAlign = 'center';
-		projectGrid.style.display = 'block';
-		projectGrid.appendChild(noProjDisplay);
+		projectGrid[0].style.display = 'block';
+		projectGrid[0].appendChild(noProjDisplay);
 	} else {
 		currentProjectList.forEach((project) => {
 			createProject(project);
